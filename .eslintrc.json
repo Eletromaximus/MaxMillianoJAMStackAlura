@@ -21,12 +21,19 @@
         "@typescript-eslint"
     ],
     "rules": {
-        "no-use-before-define": "off",
-        "react/jsx-filename-extension": [
-            1,
-            {
-              "extensions": [".tsx"]
-            }
-          ]
-    }
+      "no-use-before-define": "off",
+			"react/jsx-filename-extension": [
+        1, 
+				{ 
+					"extensions":
+					  [".js", ".jsx", ".ts", "tsx"] }]
+
+    },
+		"settings": {
+			"import/resolver": {
+				"node": {
+					"extensions": [".ts", ".tsx", ".native.js", ".js", "jsx"]
+				}
+			}
+		}
 }

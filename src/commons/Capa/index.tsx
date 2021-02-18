@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Capa() {
+function Capa() {
   return (
     <div>
       <h1> Max Milliano </h1>
@@ -8,3 +8,4 @@ export default function Capa() {
     </div>
   );
 }
+export default Capa;
