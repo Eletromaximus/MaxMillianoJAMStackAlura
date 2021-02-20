@@ -1,18 +1,23 @@
 import React from 'react';
 import Capa from '../src/commons/Capa';
+import { Box } from '../src/fundation/Box';
 
 export default function Home() {
   return (
-    <div>
+    <Box
+      flex="1"
+      display="flex"
+      flexWrap="wrap"
+      flexDirection="column"
+      justifyContent="space-between"
+    >
 
-      <Capa />
-      <h1>Cabeçario, Logo, Navbar, sobre, contato</h1>
-      <h1>WrapperProjetos cobrindo os itens abaixo</h1>
-      <h1>** Título</h1>
-      <h1>** Cards</h1>
-      <h1>** Destaque</h1>
-      <h1>Rodapé</h1>
+      <div>
+        <div />
+      </div>
 
-    </div>
+      <h1>Max Milliano</h1>
+
+    </Box>
   );
 }

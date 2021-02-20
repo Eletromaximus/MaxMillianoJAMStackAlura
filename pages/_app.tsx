@@ -3,6 +3,10 @@ import React from 'react';
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../src/theme/GlobalStyle';
+import { darkTheme } from '../src/theme/colors';
+
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -13,7 +17,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           rel="stylesheet"
         />
       </Head>
-      <Component {...pageProps} />
+      <ThemeProvider theme={darkTheme}>
+        <GlobalStyle />
+        <Component {...pageProps} />
+      </ThemeProvider>
+
     </>
   );
 }
