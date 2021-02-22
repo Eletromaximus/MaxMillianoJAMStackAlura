@@ -1,8 +1,9 @@
+import typographyVariants from './typographyVariants';
 import breakpoints from './breakpoints';
-import { darkTheme, lightTheme } from './colors'
 
 const theme = {
   fontFamily: '\'Lato\', sans-serif',
+  typographyVariants,
   breakpoints,
 };
 

@@ -1,6 +1,10 @@
-import { createGlobalStyle } from 'styled-components';
-import { normalize } from 'styled-normalize';
-import breakpoints from './breakpoints';
+import { createGlobalStyle } from 'styled-components'
+import { normalize } from 'styled-normalize'
+//import { ThemeType } from '.';
+
+// type ThemeProps = {
+//   theme: ThemeType
+// }
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -12,8 +16,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: '\'Lato\', sans-serif';
-    background: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text}
+    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.colors.background};
   }
   
   html, body {
@@ -28,3 +32,4 @@ const GlobalStyle = createGlobalStyle`
   }
 `;
 export default GlobalStyle;
+
