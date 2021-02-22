@@ -7,9 +7,9 @@ export const CapaStyle = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  margin-top: 18px;
-  padding-left: 28px;
-  padding-right: 28px;
+  /* margin-top: 18px; */
+  /* padding-left: 28px;
+  padding-right: 28px; */
   width: 100%;
   height: 300px;
 `

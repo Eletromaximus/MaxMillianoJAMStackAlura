@@ -4,6 +4,7 @@ import { Box } from '../src/components/fundation/layout/Box';
 import Menu from '../src/commons/Menu'
 import { lightTheme, darkTheme } from '../src/components/theme/themes'
 import { Grid } from '../src/components/fundation/layout/Grid'
+import SectionTitle from '../src/commons/SectionTitle'
 
 export default function Home() {
   const [ theme, setTheme ] = useState(darkTheme)
@@ -14,20 +15,32 @@ export default function Home() {
 
   return (
     <Box
-      flex="1"
-      display="flex"
-      flexWrap="wrap"
-      flexDirection="column"
-      justifyContent="space-between"
+      flex='1'
+      display='flex'
+      flexWrap='wrap'
+      flexDirection='column'
+      width= '100%'
+
     >
       <Capa />
-      <Grid.Container>
-        <Menu toggleTheme={toggleTheme} />
-      </Grid.Container>
-      
-      
 
-      <h1>Max Milliano</h1>
+      <Menu toggleTheme={toggleTheme} />
+      <Grid.Container>
+        <Grid.Row>
+          <Grid.Col 
+            offset={{ xs: 0, md: 1 }}
+            value={{ xs: 12, md: 10 }}
+            display='flex'
+            flex='1'
+            alignItems='center'
+            justifyContent='center'
+            flexDirection='column'
+          >
+            <SectionTitle />
+          </Grid.Col>
+
+        </Grid.Row>
+      </Grid.Container>
 
     </Box>
   );

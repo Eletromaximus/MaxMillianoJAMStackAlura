@@ -5,7 +5,7 @@ import Head from 'next/head';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from '../src/components/theme/GlobalStyle';
 
-import { darkTheme } from '../src/components/theme/themes'
+import { lightTheme } from '../src/components/theme/themes'
 
 function MyApp({ Component, pageProps }: AppProps) {
  
@@ -19,7 +19,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
-      <ThemeProvider theme={darkTheme}>
+      <ThemeProvider theme={lightTheme}>
         <GlobalStyle />
         <Component {...pageProps} />
       </ThemeProvider>

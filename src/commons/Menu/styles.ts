@@ -14,13 +14,14 @@ export const MenuWrapper: any = styled.nav`
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
-  /* margin-top: 18px;
+  background-color: white;
+  margin-top: 18px;
   padding-left: 28px;
-  padding-right: 28px; */
+  padding-right: 28px; 
 
   ${breakpointsMedia({
     md: css`
-      justify-content: flex-start;
+      justify-content: space-between;
       margin-top: 32px;
       margin-left: auto;
       margin-right: auto;
@@ -111,7 +112,7 @@ MenuWrapper.RightSide = styled.div`
   display: flex;
   flex: 1;
   order: 2;
-  justify-content: flex-end;
+  justify-content: flex-start;
   ${breakpointsMedia({
     md: css`
       order: initial;

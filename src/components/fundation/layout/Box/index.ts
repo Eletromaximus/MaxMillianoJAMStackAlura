@@ -10,6 +10,7 @@ interface IBox {
   backgroundImage?: string | object;
   backgroundRepeat?: string | object;
   backgroundPosition?: string | object
+  width?: string | object
 }
 
 export const Box = styled.div<IBox>`
@@ -21,4 +22,5 @@ export const Box = styled.div<IBox>`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
+  ${propToStyle('width')}
 `
