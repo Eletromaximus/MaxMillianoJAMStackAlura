@@ -5,6 +5,7 @@ import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import { Button } from '@material-ui/core';
 import { ThemeContext } from 'styled-components';
 import Link from '../../components/Link';
+import Text from '../../components/fundation/Text'
 
 
 const links = [
@@ -37,7 +38,6 @@ export default function Home({toggleTheme} : Props ) {
       </MenuWrapper.RightSide>
 
       <MenuWrapper.CentralSide>
-      <ul>
           {links.map( link => {
             return (
               <li key={link.url}>
@@ -50,11 +50,12 @@ export default function Home({toggleTheme} : Props ) {
               </li>
             )
           })}
-        </ul>
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.LeftSide>
-       
+        <Text tag='span' variant='paragraph1'>
+          Olá
+        </Text>
       </MenuWrapper.LeftSide>
 
 

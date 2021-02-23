@@ -14,6 +14,7 @@ interface IProps {
 
 interface IContainer {
   marginTop?: string | object;
+  backgroundColor?: string | object;
 }
 export const Container = styled.div<IContainer>`
   width: 100%;

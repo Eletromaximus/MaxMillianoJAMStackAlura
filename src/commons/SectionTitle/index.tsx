@@ -6,7 +6,7 @@ import { TitleStyle } from './styles';
 export default function SectionTitle() {
   return (
     <TitleStyle>
-      <Text tag='h1' variant='Title' textAlign= 'center'>
+      <Text tag='h1' variant='Title' textAlign= 'center' color='black'>
         Meus Projetos
       </Text>
     </TitleStyle>
