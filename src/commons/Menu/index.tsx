@@ -4,9 +4,6 @@ import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
 import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
 import { Button } from '@material-ui/core';
 import { ThemeContext } from 'styled-components';
-import Link from '../../components/Link';
-import Text from '../../components/fundation/Text'
-
 
 const links = [
   {
@@ -41,21 +38,20 @@ export default function Home({toggleTheme} : Props ) {
           {links.map( link => {
             return (
               <li key={link.url}>
-                <Link
-                  variant='smallExcpetion'
+                <a
                   href={link.url}
                 >
                   {link.texto}
-                </Link>
+                </a>
               </li>
             )
           })}
       </MenuWrapper.CentralSide>
 
       <MenuWrapper.LeftSide>
-        <Text tag='span' variant='paragraph1'>
+        <span>
           Olá
-        </Text>
+        </span>
       </MenuWrapper.LeftSide>
 
 

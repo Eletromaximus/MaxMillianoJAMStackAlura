@@ -1,23 +1,13 @@
 import React from 'react';
-import Text from '../../components/fundation/Text';
-import {CapaStyle} from './styles/styles';
-import Image from 'next/image';
+import { CapaStyle } from './styles/styles';
 
 
 function Capa() {
   return (
     <CapaStyle>
-      <Text
-        tag='h1'
-        variant='Title'
-        textAlign={{
-          md: 'center',
-        }} >
+      <h1>
         Bem vindo ao meu Portifólio
-      </Text>
-
-
-
+      </h1>
     </CapaStyle>
   );
 }

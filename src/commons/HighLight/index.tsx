@@ -1,41 +1,28 @@
 import React from 'react';
-import { Grid } from '../../components/fundation/layout/Grid';
-import Text from '../../components/fundation/Text';
 
-import {
-  CardWrapper,
-  CardImage,
-  CardTitle,
-  CardInfoWrapper,
-  CardDescription,
-} from './styles';
+import { CardWrapper } from './styles';
 
 interface Props {
- size: number;
+ url: string;
  title: string;
- children?: string | React.ReactNode;
+ description: string;
+ alt: string;
 }
 
-export const HighLightCard = ({ size,  title, children }: Props) => (
-  <Grid.Col value={size}>
-    <CardWrapper>
-      <CardImage>
-        {children}
-      </CardImage>
-      <CardInfoWrapper>
-        <CardTitle>
-          <Text
-            variant="paragraph1"
-            tag="h2"
-            color="inherit"
-          >
-            {title}
-          </Text>
-        </CardTitle>
-        <CardDescription>
-          Relógio Pomodoro
-        </CardDescription>
-      </CardInfoWrapper>
-    </CardWrapper>
-  </Grid.Col>
-);
+function CardHighlight({ url, title, alt, description }: Props) {
+	return (
+		<>
+			<CardWrapper>
+				<CardWrapper.Image src={url} alt={alt} />
+				<CardWrapper.Footer>
+					<CardWrapper.Description>
+						<CardWrapper.Title>{title}</CardWrapper.Title>
+						<CardWrapper.Text>{description}</CardWrapper.Text>
+					</CardWrapper.Description>
+				</CardWrapper.Footer>
+			</CardWrapper>
+		</>
+	);
+}
+
+export default CardHighlight;

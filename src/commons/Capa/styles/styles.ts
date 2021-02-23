@@ -1,5 +1,6 @@
-import styled from 'styled-components'
-
+import styled, { css } from 'styled-components'
+import typographyVariants from '../../../components/theme/typographyVariants'
+import breakpointsMedia from '../../../components/theme/utils/breakpointsMedia'
 
 export const CapaStyle = styled.div`
   font-family: 'Lato', sans-serif;
@@ -7,9 +8,16 @@ export const CapaStyle = styled.div`
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  /* margin-top: 18px; */
-  /* padding-left: 28px;
-  padding-right: 28px; */
   width: 100%;
   height: 300px;
+  a {
+    ${breakpointsMedia({
+      xs: css`
+        font-size: ${typographyVariants.title.fontSize};
+        font-weight: ${typographyVariants.title.fontWeight};
+        font-size: ${typographyVariants.title.fontSize};
+      `
+    })}
+    
+  }
 `

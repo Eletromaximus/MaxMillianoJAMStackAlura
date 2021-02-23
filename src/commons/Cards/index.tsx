@@ -1,21 +1,22 @@
 import React from 'react';
-import { CardStyle } from './styles';
-import Link from 'next/link';
+import { CardWrapper } from './styles';
 
 interface Props {
   url: string;
-  children: string | React.ReactNode;
+  title: string;
+  alt: string;
 }
 
-export default function Card({ url, children }: Props) {
-  return(
-    <CardStyle>
-      <Link href={url}>
-        <a>
-          {children}
-        </a>
-      </Link>
-      
-    </CardStyle>
-  )
+
+export default function Card({ url, title, alt }: Props) {
+	return (
+		<>
+			<CardWrapper>
+				<CardWrapper.Image src={url} alt={alt} />
+				<CardWrapper.Footer>
+					<CardWrapper.Title>{title}</CardWrapper.Title>
+				</CardWrapper.Footer>
+			</CardWrapper>
+		</>
+	);
 }

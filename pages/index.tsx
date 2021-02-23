@@ -9,7 +9,7 @@ import {WrapperProjects} from '../src/commons/WrapperProjects';
 import Card from '../src/commons/Cards';
 import Image from 'next/image';
 import styled, { css } from 'styled-components';
-import { HighLightCard } from '../src/commons/HighLight';
+import HighLightCard from '../src/commons/HighLight';
 import breakpointsMedia from '../src/components/theme/utils/breakpointsMedia';
 
 
@@ -55,89 +55,25 @@ const OrdinaryRow = styled.div`
       <SectionTitle />
 
       <Grid.Container>
+        <MainRow>
+          <Grid.Row>
+            <HighLightCard
+              alt='pomodor Clock'
+              description='Relógio pomodoro com React e typescript'
+              title='Relógio Pomodoro'
+              url='https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png'
+            />
+          </Grid.Row>
+        </MainRow>
 
-
-            <MainRow>
-              <Grid.Row>
-                <HighLightCard
-                  size={12} 
-                  title={'Relógio Pomodoro'}
-                >
-                  <Image 
-                    src='https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'
-                    width={500}
-                    height={300} 
-                  />
-                </HighLightCard>
-              </Grid.Row>
-            </MainRow>
-
-            <OrdinaryRow>
-              <Grid.Row>
-                <Card url={'https://insta-alura-git-main.maxmillianox.vercel.app/'}>
-                  <Image
-                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
-                    width={200}
-                    height={300}
-                  />
-                </Card>
-
-                <Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
-                  <Image
-                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
-                    width={200}
-                    height={300}
-                  />
-
-                </Card><Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
-                  <Image
-                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
-                    width={200}
-                    height={300}
-                  />
-                </Card>
-              </Grid.Row>
-           </OrdinaryRow>
-
-
-
+        <OrdinaryRow>
+          <Grid.Row>
+            <Card url={'https://github.com/Eletromaximus/semanaomnistack11/blob/master/x2.png?raw=true'} title='Semana Omnistack 11' alt='semana omnistack 11'/> 
+            <Card url={'https://github.com/Eletromaximus/NLW3/blob/master/x.png?raw=true'} title='Next Level Week 3' alt='next level week 3'/> 
+            <Card url={'https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png'} title='InstaAlura' alt='instaAlura'/> 
+          </Grid.Row>
+        </OrdinaryRow>
       </Grid.Container>
-
     </Box>
   );
 }
-/* <Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
-  <Image
-    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
-    width={200}
-    height={300}
-  />
-</Card> */
-/* <WrapperProjects>
-              <WrapperProjects.RightSide>
-                <Card
-                  url={'https://github.com/Eletromaximus/PomodoroClock'}
-                >
-                  Relógio Pomodoro
-                </Card>
-              </WrapperProjects.RightSide>
-
-              <WrapperProjects.CentralSide>
-                <Card
-                  url={'https://github.com/Eletromaximus/PomodoroClock'}
-                >
-                  Relógio Pomodoro
-                </Card>
-              </WrapperProjects.CentralSide>
-
-              <WrapperProjects.LeftSide>
-                <Card
-                  url={'https://github.com/Eletromaximus/PomodoroClock'}
-                >
-                  Relógio Pomodoro
-                </Card>
-              </WrapperProjects.LeftSide>
-              
-
-            </WrapperProjects>
-*/

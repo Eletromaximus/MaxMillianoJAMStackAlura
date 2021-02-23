@@ -1,73 +1,67 @@
 import styled, { css } from 'styled-components';
 import breakpointsMedia from '../../components/theme/utils/breakpointsMedia';
+import typographys from '../../components/theme/typographyVariants'
 
+export const CardWrapper: any = styled.div`
+	height: auto;
+	border-radius: 5px;
+	border: 1px solid #c1c1c1;
+	padding: 10px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 5px;
+	flex: 1 350px;
+	transition: all 200ms linear;
+	cursor: pointer;
+	margin-bottom: 24px;
 
-export const CardImage = styled.div`
-  height: 180px;
-  ${breakpointsMedia({
-    md: css`
-      flex: 2;
-      height: 100%;
-    `,
-  })}
+	${breakpointsMedia({
+		md: css`
+			display: flex;
+			align-items: center;
+		`,
+	})}
+	&:hover {
+		transform: scale(0.98) translateY(-5px);
+		box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
+		border-radius: 0;
+	}
 `;
 
-export const CardInfoWrapper = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  padding-left: 25px;
-  padding-top: 10px;
-  padding-right: 10px;
-  padding-bottom: 10px;
+CardWrapper.Image = styled.img`
+	max-width: 100%;
+	object-fit: cover;
+	border-radius: 5px;
+	${breakpointsMedia({
+		md: css`
+			height: 250px;
+		`,
+	})}
 `;
 
-export const CardTitle = styled.div`
-  display: flex;
-  justify-content: center;
-  ${breakpointsMedia({
-    md: css`
-      flex: 1;
-      padding: 10px;
-      align-items: center;
-      justify-content: center;
-    `,
-  })}
-  h2 {
-    ${breakpointsMedia({
-      md: css`
-        font-size: 24px;
-      `,
-    })}
-  }
+CardWrapper.Footer = styled.div`
+	padding: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 `;
 
-export const CardDescription = styled.div`
-  flex: 2;
-  padding: 10px;
-  display: none;
-  ${breakpointsMedia({
-    md: css`
-      display: flex;
-    `,
-  })}
+CardWrapper.Description = styled.div`
+	padding: 10px;
+	& h2 {
+		margin-bottom: 24px;
+	}
 `;
 
-export const CardWrapper = styled.div`
-  max-width: 100%;
-  height: 250px;
-  margin-bottom: 30px;
-  border: 2px solid ${({ theme }) => theme.colors.primary};
-  color: ${({ theme }) => theme.colors.secundary};
-  &:hover {
-    border: 2px solid ${({ theme }) => theme.colors.primary};
-    color: ${({ theme }) => theme.colors.primary};
-  }
-  ${breakpointsMedia({
-    md: css`
-      display: flex;
-      height: 320px;
-      margin-bottom: 50px;
-    `,
-  })}
+CardWrapper.Title = styled.h2`
+	font-size: ${( ) => typographys.subtitle.fontSize};
+	font-weight: ${( ) => typographys.subtitle.fontWeight};
+	line-height : ${( ) => typographys.subtitle.lineHeight};
+`;
+
+CardWrapper.Text = styled.p`
+	font-size: ${( ) => typographys.paragraph2.fontSize};
+	font-weight: ${( ) => typographys.paragraph2.fontWeight};
+	line-height : ${( ) => typographys.paragraph2.lineHeight};
 `;

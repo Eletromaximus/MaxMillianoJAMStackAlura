@@ -1,15 +1,13 @@
-import styled, { css } from 'styled-components'
-import PropTypes from 'prop-types'
-import propToStyle from '../../theme/utils/propToStyle'
-// eslint-disable-next-line no-use-before-define
-import React from 'react'
-import typographyVariants from '../../theme/typographyVariants'
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
+import propToStyle from '../../theme/utils/propToStyle';
+import React from 'react';
+import typographyVariants from '../../theme/typographyVariants';
 
 interface Props {
   tag?: 'p' | 'span' | 'h1' | 'h2' | undefined;
   variant: string;
   textAlign?: string | object;
-  color?: string | object;
   children: string | number | React.ReactNode;
 }
 
@@ -30,8 +28,8 @@ export const TextStyleVariants: Record<string, any> = {
 }
 
 const TextBase = styled.span<Props>`
-  ${({ variant }) => TextStyleVariants[variant]}
-  ${propToStyle('textAlign')}
+  ${({ variant }) => TextStyleVariants[variant]};
+  ${propToStyle('textAlign')};
 `
 
 export default function Text ({ tag, variant, children, textAlign }: Props) {

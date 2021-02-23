@@ -27,14 +27,7 @@ export const MenuWrapper: any = styled.nav`
       margin-right: auto;
       width: 100%;
       padding: 0 16px;
-      max-width: 768px;
-    `,
-    lg: css`
-      max-width: 1160px; 
-    `,
-    xl: css`
-      max-width: 1222px;
-    `
+`
   })}
 `
 MenuWrapper.LeftSide = styled.div`
@@ -55,6 +48,9 @@ MenuWrapper.LeftSide = styled.div`
       padding-right: 16px;
     `
   })}
+  span {
+    ${TextStyleVariants.paragraph1}
+  }
 `
 
 MenuWrapper.CentralSide = styled.div`
@@ -84,11 +80,7 @@ MenuWrapper.CentralSide = styled.div`
     `
   })}
   a {
-    text-align: center;
-    display: block;
     text-decoration: none;
-    color: #88989E;
-    transition: 200ms ease-in-out;
     ${breakpointsMedia({
       xs: css`
         ${TextStyleVariants.smallestException}
@@ -97,12 +89,6 @@ MenuWrapper.CentralSide = styled.div`
         ${TextStyleVariants.paragraph1}
       `
     })}
-    &:hover,
-    &:focus {
-      font-weight: 500;
-      color: #070C0E;
-      
-    }
   }
 `
 
