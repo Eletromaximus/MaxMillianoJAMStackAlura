@@ -1,0 +1,1 @@
+{"ast":null,"code":"var breakpoints = {\n  xs: 0,\n  sm: 480,\n  md: 768,\n  lg: 992,\n  xl: 1200\n};\nexport default breakpoints;","map":null,"metadata":{},"sourceType":"module"}
