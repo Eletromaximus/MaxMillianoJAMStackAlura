@@ -58,6 +58,11 @@ CardWrapper.Title = styled.h2`
 	font-size: ${( ) => typographys.subtitle.fontSize};
 	font-weight: ${( ) => typographys.subtitle.fontWeight};
 	line-height : ${( ) => typographys.subtitle.lineHeight};
+
+	a{
+		text-decoration: none;
+		color: ${({ theme }) => theme.colors.text};
+	}
 `;
 
 CardWrapper.Text = styled.p`

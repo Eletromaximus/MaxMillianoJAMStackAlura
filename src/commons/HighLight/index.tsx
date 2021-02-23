@@ -7,16 +7,21 @@ interface Props {
  title: string;
  description: string;
  alt: string;
+ endereco: string;
 }
 
-function CardHighlight({ url, title, alt, description }: Props) {
+function CardHighlight({ url, title, alt, description, endereco }: Props) {
 	return (
 		<>
 			<CardWrapper>
 				<CardWrapper.Image src={url} alt={alt} />
 				<CardWrapper.Footer>
 					<CardWrapper.Description>
-						<CardWrapper.Title>{title}</CardWrapper.Title>
+						<CardWrapper.Title>
+							<a href={endereco}>
+							  {title}
+							</a>
+						</CardWrapper.Title>
 						<CardWrapper.Text>{description}</CardWrapper.Text>
 					</CardWrapper.Description>
 				</CardWrapper.Footer>

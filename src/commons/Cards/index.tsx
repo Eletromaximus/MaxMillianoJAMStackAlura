@@ -5,17 +5,22 @@ interface Props {
   url: string;
   title: string;
   alt: string;
+  href: string;
 }
 
 
-export default function Card({ url, title, alt }: Props) {
+export default function Card({ url, title, alt, href }: Props) {
 	return (
 		<>
 			<CardWrapper>
-				<CardWrapper.Image src={url} alt={alt} />
-				<CardWrapper.Footer>
-					<CardWrapper.Title>{title}</CardWrapper.Title>
-				</CardWrapper.Footer>
+			  <CardWrapper.Image src={url} alt={alt} />
+
+					<CardWrapper.Title>
+						<a href={href} target="_blank">
+							{title}
+						</a>
+					</CardWrapper.Title>
+
 			</CardWrapper>
 		</>
 	);

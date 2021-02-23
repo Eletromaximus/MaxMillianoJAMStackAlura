@@ -1,7 +1,8 @@
 import styled from 'styled-components';
 import typographys from '../../components/theme/typographyVariants'
 
-export const CardWrapper: any = styled.a`
+export const CardWrapper: any = styled.div`
+  text-decoration: none;
 	max-height: 350px;
 	border-radius: 5px;
 	border: 1px solid #c1c1c1;
@@ -22,16 +23,18 @@ export const CardWrapper: any = styled.a`
 
 CardWrapper.Image = styled.img`
 	max-width: 100%;
+	max-height: 70%;
 	object-fit: cover;
 	border-radius: 5px;
+
 `;
 
-CardWrapper.Footer = styled.div`
-	padding: 10px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-`;
+// CardWrapper.Footer = styled.div`
+// 	padding: 10px;
+// 	display: flex;
+// 	align-items: center;
+// 	justify-content: center;
+// `;
 
 CardWrapper.Description = styled.div`
 	padding: 10px;
@@ -44,6 +47,11 @@ CardWrapper.Title = styled.h2`
 	font-size: ${({ }) => typographys.title.fontSize};
 	font-weight: ${({ }) => typographys.title.fontWeight};
 	line-height: ${({ }) => typographys.title.lineHeight};
+  height: 30%;
+	a{
+		text-decoration: none;
+		color: ${({ theme }) => theme.colors.text};
+	}
 `;
 
 CardWrapper.Text = styled.p`
