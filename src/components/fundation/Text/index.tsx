@@ -6,7 +6,7 @@ import React from 'react'
 import typographyVariants from '../../theme/typographyVariants'
 
 interface Props {
-  tag?: 'p' | 'span' | 'h1' | undefined;
+  tag?: 'p' | 'span' | 'h1' | 'h2' | undefined;
   variant: string;
   textAlign?: string | object;
   color?: string | object;

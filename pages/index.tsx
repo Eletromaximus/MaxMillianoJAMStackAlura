@@ -7,13 +7,37 @@ import { Grid } from '../src/components/fundation/layout/Grid';
 import SectionTitle from '../src/commons/SectionTitle';
 import {WrapperProjects} from '../src/commons/WrapperProjects';
 import Card from '../src/commons/Cards';
+import Image from 'next/image';
+import styled, { css } from 'styled-components';
+import { HighLightCard } from '../src/commons/HighLight';
+import breakpointsMedia from '../src/components/theme/utils/breakpointsMedia';
+
 
 export default function Home() {
-  const [ theme, setTheme ] = useState(darkTheme)
+  const [ theme, setTheme ] = useState(darkTheme);
 
   const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? darkTheme : lightTheme) 
+    setTheme(theme.title === 'light' ? darkTheme : lightTheme) ;
   }
+
+  const MainRow = styled.div`
+  order: initial;
+  ${breakpointsMedia({
+    md: css`
+      order: 2;
+    `,
+  })}
+`;
+
+const OrdinaryRow = styled.div`
+  order: initial;
+  margin-top: 10px;
+  ${breakpointsMedia({
+    md: css`
+      order: 1;
+    `,
+  })}
+`;
 
   return (
     <Box
@@ -27,30 +51,69 @@ export default function Home() {
       <Capa />
 
       <Menu toggleTheme={toggleTheme} />
-      <Grid.Container>
-        <Grid.Row>
-          <Grid.Col 
-            offset={{ xs: 0, md: 1 }}
-            value={{ xs: 12, md: 10 }}
-            display='flex'
-            flex='1'
-            alignItems='center'
-            justifyContent='center'
-            flexDirection='column'
-          >
-            <SectionTitle />
-          </Grid.Col>
 
-          <Grid.Col
-            offset={{ xs: 0, md: 0}}
-            value={{ xs: 12, md: 12}}
-            display='flex'
-            flex='1'
-            alignItems='center'
-            justifyContent='center'
-            flexDirection='column'
-          >
-            <WrapperProjects>
+      <SectionTitle />
+
+      <Grid.Container>
+
+
+            <MainRow>
+              <Grid.Row>
+                <HighLightCard
+                  size={12} 
+                  title={'Relógio Pomodoro'}
+                >
+                  <Image 
+                    src='https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'
+                    width={500}
+                    height={300} 
+                  />
+                </HighLightCard>
+              </Grid.Row>
+            </MainRow>
+
+            <OrdinaryRow>
+              <Grid.Row>
+                <Card url={'https://insta-alura-git-main.maxmillianox.vercel.app/'}>
+                  <Image
+                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
+                    width={200}
+                    height={300}
+                  />
+                </Card>
+
+                <Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
+                  <Image
+                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
+                    width={200}
+                    height={300}
+                  />
+
+                </Card><Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
+                  <Image
+                    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
+                    width={200}
+                    height={300}
+                  />
+                </Card>
+              </Grid.Row>
+           </OrdinaryRow>
+
+
+
+      </Grid.Container>
+
+    </Box>
+  );
+}
+/* <Card url={'https://github.com/Eletromaximus/PomodoroClock'}>
+  <Image
+    src={'https://github.com/Eletromaximus/PomodoroClock/blob/master/pomodoro.png?raw=true'}
+    width={200}
+    height={300}
+  />
+</Card> */
+/* <WrapperProjects>
               <WrapperProjects.RightSide>
                 <Card
                   url={'https://github.com/Eletromaximus/PomodoroClock'}
@@ -77,11 +140,4 @@ export default function Home() {
               
 
             </WrapperProjects>
-          </Grid.Col>
-
-        </Grid.Row>
-      </Grid.Container>
-
-    </Box>
-  );
-}
+*/

@@ -1,6 +1,6 @@
 import React from 'react';
 import { CardStyle } from './styles';
-import Link from 'next/link'
+import Link from 'next/link';
 
 interface Props {
   url: string;
@@ -15,6 +15,7 @@ export default function Card({ url, children }: Props) {
           {children}
         </a>
       </Link>
+      
     </CardStyle>
   )
 }
