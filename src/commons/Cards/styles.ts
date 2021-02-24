@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import typographys from '../../components/theme/typographyVariants'
 
 export const CardWrapper: any = styled.div`
+  margin: 10px;
   text-decoration: none;
 	max-height: 350px;
 	border-radius: 5px;
@@ -23,18 +24,11 @@ export const CardWrapper: any = styled.div`
 
 CardWrapper.Image = styled.img`
 	max-width: 100%;
-	max-height: 70%;
+	height: 70%;
 	object-fit: cover;
 	border-radius: 5px;
 
 `;
-
-// CardWrapper.Footer = styled.div`
-// 	padding: 10px;
-// 	display: flex;
-// 	align-items: center;
-// 	justify-content: center;
-// `;
 
 CardWrapper.Description = styled.div`
 	padding: 10px;
@@ -44,9 +38,9 @@ CardWrapper.Description = styled.div`
 `;
 
 CardWrapper.Title = styled.h2`
-	font-size: ${({ }) => typographys.title.fontSize};
-	font-weight: ${({ }) => typographys.title.fontWeight};
-	line-height: ${({ }) => typographys.title.lineHeight};
+	font-size: ${ typographys.subtitle.fontSize};
+	font-weight: ${ typographys.subtitle.fontWeight};
+	line-height: ${ typographys.subtitle.lineHeight};
   height: 30%;
 	a{
 		text-decoration: none;
@@ -55,7 +49,7 @@ CardWrapper.Title = styled.h2`
 `;
 
 CardWrapper.Text = styled.p`
-	font-size: ${({ }) => typographys.paragraph2.fontSize};
-	font-weight: ${({ }) => typographys.paragraph2.fontWeight};
-	line-height: ${({ }) => typographys.paragraph2.lineHeight};
+	font-size: ${ typographys.paragraph2.fontSize};
+	font-weight: ${ typographys.paragraph2.fontWeight};
+	line-height: ${ typographys.paragraph2.lineHeight};
 `;
