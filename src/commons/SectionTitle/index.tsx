@@ -1,9 +1,9 @@
-import React from 'react';
-import Text from '../../components/fundation/Text';
+import React from 'react'
+import Text from '../../components/fundation/Text'
 
-import { TitleStyle } from './styles';
+import { TitleStyle } from './styles'
 
-export default function SectionTitle() {
+export default function SectionTitle () {
   return (
     <TitleStyle>
       <Text tag='h1' variant='Title' textAlign= 'center'>

@@ -1,9 +1,9 @@
-import React, { useContext } from 'react';
-import { MenuWrapper } from './styles';
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects';
-import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined';
-import { Button } from '@material-ui/core';
-import { ThemeContext } from 'styled-components';
+import React, { useContext } from 'react'
+import { MenuWrapper } from './styles'
+import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
+import EmojiObjectsOutlinedIcon from '@material-ui/icons/EmojiObjectsOutlined'
+import { Button } from '@material-ui/core'
+import { ThemeContext } from 'styled-components'
 
 const links = [
   {
@@ -20,8 +20,8 @@ interface Props {
   toggleTheme(): void;
 }
 
-export default function Home({toggleTheme} : Props ) {
-  const { title } = useContext(ThemeContext);
+export default function Home ({ toggleTheme } : Props) {
+  const { title } = useContext(ThemeContext)
 
   return (
     <MenuWrapper>
@@ -30,12 +30,12 @@ export default function Home({toggleTheme} : Props ) {
         <Button
           onChange={toggleTheme}
         >
-         {title === 'dark' ? <EmojiObjectsIcon /> : <EmojiObjectsOutlinedIcon /> } 
+         {title === 'dark' ? <EmojiObjectsIcon /> : <EmojiObjectsOutlinedIcon /> }
         </Button>
       </MenuWrapper.RightSide>
 
       <MenuWrapper.CentralSide>
-          {links.map( link => {
+          {links.map(link => {
             return (
               <li key={link.url}>
                 <a
@@ -54,8 +54,7 @@ export default function Home({toggleTheme} : Props ) {
         </span>
       </MenuWrapper.LeftSide>
 
-
     </MenuWrapper>
-    
-  );
+
+  )
 }

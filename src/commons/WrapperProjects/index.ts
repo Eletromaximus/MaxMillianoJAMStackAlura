@@ -16,7 +16,7 @@ export const WrapperProjects = styled.div`
     ${breakpointsMedia({
     md: css`
       order: 2;
-    `,
+    `
   })}
 
   div + div {
@@ -25,11 +25,8 @@ export const WrapperProjects = styled.div`
     ${breakpointsMedia({
     md: css`
       order: 1;
-    `,
+    `
   })}
   }
-  }
-  
-
-
+}
 `

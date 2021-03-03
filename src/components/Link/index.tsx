@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-use-before-define
-import React from 'react';
-import { LinkBase }  from './styles';
+import React from 'react'
+import { LinkBase } from './styles'
 
 interface ILinkProps {
   variant: string;

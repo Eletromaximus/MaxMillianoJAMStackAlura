@@ -1,6 +1,6 @@
-import React from 'react';
+import React from 'react'
 
-import { CardWrapper } from './styles';
+import { CardWrapper } from './styles'
 
 interface Props {
  url: string;
@@ -10,8 +10,8 @@ interface Props {
  endereco: string;
 }
 
-function CardHighlight({ url, title, alt, description, endereco }: Props) {
-	return (
+function CardHighlight ({ url, title, alt, description, endereco }: Props) {
+  return (
 		<>
 			<CardWrapper>
 				<CardWrapper.Image src={url} alt={alt} />
@@ -19,7 +19,7 @@ function CardHighlight({ url, title, alt, description, endereco }: Props) {
 					<CardWrapper.Description>
 						<CardWrapper.Title>
 							<a href={endereco}>
-							  {title}
+								{title}
 							</a>
 						</CardWrapper.Title>
 						<CardWrapper.Text>{description}</CardWrapper.Text>
@@ -27,7 +27,7 @@ function CardHighlight({ url, title, alt, description, endereco }: Props) {
 				</CardWrapper.Footer>
 			</CardWrapper>
 		</>
-	);
+  )
 }
 
-export default CardHighlight;
+export default CardHighlight

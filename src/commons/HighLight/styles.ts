@@ -1,5 +1,5 @@
-import styled, { css } from 'styled-components';
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia';
+import styled, { css } from 'styled-components'
+import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
 import typographys from '../../components/theme/typographyVariants'
 
 export const CardWrapper: any = styled.div`
@@ -20,14 +20,14 @@ export const CardWrapper: any = styled.div`
 		md: css`
 			display: flex;
 			align-items: center;
-		`,
+		`
 	})}
 	&:hover {
 		transform: scale(0.98) translateY(-5px);
 		box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
 		border-radius: 0;
 	}
-`;
+`
 
 CardWrapper.Image = styled.img`
 	max-width: 100%;
@@ -36,37 +36,37 @@ CardWrapper.Image = styled.img`
 	${breakpointsMedia({
 		md: css`
 			height: 250px;
-		`,
+		`
 	})}
-`;
+`
 
 CardWrapper.Footer = styled.div`
 	padding: 10px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-`;
+`
 
 CardWrapper.Description = styled.div`
 	padding: 10px;
 	& h2 {
 		margin-bottom: 24px;
 	}
-`;
+`
 
 CardWrapper.Title = styled.h2`
-	font-size: ${( ) => typographys.subtitle.fontSize};
-	font-weight: ${( ) => typographys.subtitle.fontWeight};
-	line-height : ${( ) => typographys.subtitle.lineHeight};
+	font-size: ${() => typographys.subtitle.fontSize};
+	font-weight: ${() => typographys.subtitle.fontWeight};
+	line-height : ${() => typographys.subtitle.lineHeight};
 
 	a{
 		text-decoration: none;
 		color: ${({ theme }) => theme.colors.text};
 	}
-`;
+`
 
 CardWrapper.Text = styled.p`
-	font-size: ${( ) => typographys.paragraph2.fontSize};
-	font-weight: ${( ) => typographys.paragraph2.fontWeight};
-	line-height : ${( ) => typographys.paragraph2.lineHeight};
-`;
+	font-size: ${() => typographys.paragraph2.fontSize};
+	font-weight: ${() => typographys.paragraph2.fontWeight};
+	line-height : ${() => typographys.paragraph2.lineHeight};
+`

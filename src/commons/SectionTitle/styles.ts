@@ -1,7 +1,6 @@
-import { typography } from 'material-ui/styles';
-import styled, { css } from 'styled-components';
+import styled, { css } from 'styled-components'
 import typographyVariants from '../../components/theme/typographyVariants'
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia';
+import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
 
 export const TitleStyle = styled.div`
   margin: 10px;
@@ -16,6 +15,6 @@ export const TitleStyle = styled.div`
         font-size: ${typographyVariants.title.fontSize}
         font-weight: ${typographyVariants.title.fontWeight}
         line-height: ${typographyVariants.title.lineHeight}
-      `,
+      `
     })}
 }`

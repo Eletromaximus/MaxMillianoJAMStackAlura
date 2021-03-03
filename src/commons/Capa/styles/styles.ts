@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import typographyVariants from '../../../components/theme/typographyVariants'
 import breakpointsMedia from '../../../components/theme/utils/breakpointsMedia'
 
-export const CapaStyle = styled.div`
+const CapaStyle = styled.div`
   font-family: 'Lato', sans-serif;
   display: flex;
   align-items: center;
@@ -12,12 +12,14 @@ export const CapaStyle = styled.div`
   height: 300px;
   a {
     ${breakpointsMedia({
-      xs: css`
+    xs: css`
         font-size: ${typographyVariants.title.fontSize};
         font-weight: ${typographyVariants.title.fontWeight};
         font-size: ${typographyVariants.title.fontSize};
       `
-    })}
+  })}
     
   }
 `
+
+export default CapaStyle

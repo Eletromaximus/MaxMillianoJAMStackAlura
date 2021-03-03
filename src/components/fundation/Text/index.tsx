@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import propToStyle from '../../theme/utils/propToStyle';
-import React from 'react';
-import typographyVariants from '../../theme/typographyVariants';
+import styled, { css } from 'styled-components'
+import PropTypes from 'prop-types'
+import propToStyle from '../../theme/utils/propToStyle'
+import React from 'react'
+import typographyVariants from '../../theme/typographyVariants'
 
 interface Props {
   tag?: 'p' | 'span' | 'h1' | 'h2' | undefined;

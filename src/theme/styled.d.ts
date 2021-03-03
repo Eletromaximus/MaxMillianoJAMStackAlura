@@ -1,4 +1,4 @@
-import 'styled-components';
+import 'styled-components'
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -11,6 +11,6 @@ declare module 'styled-components' {
       background: string;
       text: string;
     }
-    
+
   }
 }
