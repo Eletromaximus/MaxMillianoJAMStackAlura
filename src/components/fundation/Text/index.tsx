@@ -5,7 +5,7 @@ import React from 'react'
 import typographyVariants from '../../theme/typographyVariants'
 
 interface Props {
-  tag?: 'p' | 'span' | 'h1' | 'h2' | undefined;
+  tag?: 'p' | 'span' | 'h1' | 'h2';
   variant: string;
   textAlign?: string | object;
   children: string | number | React.ReactNode;
@@ -21,22 +21,33 @@ const paragraph1 = css`
   font-weight: ${() => typographyVariants.paragraph1.fontWeight};
   line-height: ${() => typographyVariants.paragraph1.lineHeight};
 `
+const title = css`
+  font-size: ${() => typographyVariants.title.fontSize};
+  font-weight: ${() => typographyVariants.title.fontWeight};
+  line-height: ${() => typographyVariants.title.lineHeight};
+`
+const navbar = css`
+  font-size: ${() => typographyVariants.title.fontSize};
+  font-weight: ${() => typographyVariants.title.fontWeight};
+  line-height: ${() => typographyVariants.title.lineHeight};
+`
 
 export const TextStyleVariants: Record<string, any> = {
   smallestException,
-  paragraph1
+  paragraph1,
+  title,
+  navbar
 }
 
 const TextBase = styled.span<Props>`
   ${({ variant }) => TextStyleVariants[variant]};
   ${propToStyle('textAlign')};
 `
-
-export default function Text ({ tag, variant, children, textAlign }: Props) {
+export default function Text (props: Props) {
   return (
 
-    <TextBase as={tag} variant={variant} textAlign={textAlign}>
-      {children}
+    <TextBase as={props.tag} variant={props.variant} textAlign={props.textAlign}>
+      {props.children}
     </TextBase>
   )
 }

@@ -5,7 +5,6 @@ export const WrapperProjects = styled.div`
   width: 100%;
   display: flex;
   flex: 1;
-  height: 1200px;
   margin-top: 28px;
   border-radius: 10px;
   flex-direction: column;

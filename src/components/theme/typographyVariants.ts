@@ -29,6 +29,11 @@ const typographyVariants = {
     fontSize: '12px',
     fontWeight: '400',
     lineHeight: 1
+  },
+  navBar: {
+    fontSize: '28px',
+    fontWeight: '400',
+    lineHeight: 1.25
   }
 }
 

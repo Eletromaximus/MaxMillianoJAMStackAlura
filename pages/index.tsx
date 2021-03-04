@@ -8,6 +8,7 @@ import SectionTitle from '../src/commons/SectionTitle'
 import { WrapperProjects } from '../src/commons/WrapperProjects'
 import Card from '../src/commons/Cards'
 import HighLightCard from '../src/commons/HighLight'
+import Footer from '../src/commons/Footer'
 
 export default function Home () {
   const [theme, setTheme] = useState(darkTheme)
@@ -29,9 +30,9 @@ export default function Home () {
 
       <Menu toggleTheme={toggleTheme} />
 
-      <SectionTitle />
-
       <Grid.Container>
+
+      <SectionTitle />
         <WrapperProjects>
           <Grid.Row>
             <HighLightCard
@@ -65,6 +66,7 @@ export default function Home () {
           </Grid.Row>
         </WrapperProjects>
       </Grid.Container>
+      <Footer />
     </Box>
   )
 }
