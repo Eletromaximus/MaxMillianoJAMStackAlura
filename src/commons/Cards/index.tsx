@@ -1,6 +1,5 @@
 import React from 'react'
 import { CardWrapper } from './styles'
-
 interface Props {
   url: string;
   title: string;
@@ -18,7 +17,6 @@ export default function Card ({ url, title, alt, href }: Props) {
 							{title}
 						</a>
 					</CardWrapper.Title>
-
 			</CardWrapper>
 		</>
   )
