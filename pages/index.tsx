@@ -9,8 +9,11 @@ import { WrapperProjects } from '../src/commons/WrapperProjects'
 import Card from '../src/commons/Cards'
 import HighLightCard from '../src/commons/HighLight'
 import Footer from '../src/commons/Footer'
+import Modal from '../src/commons/Modal'
+import FormCadastro from '../src/patterns/FormCadastro'
 
 export default function Home () {
+  const [isOpen, setIsOpen] = useState(false)
   const [theme, setTheme] = useState(darkTheme)
 
   const toggleTheme = () => {
@@ -27,8 +30,18 @@ export default function Home () {
 
     >
       <Capa />
+      <Modal
+        isOpen={isOpen}
+        onClose={() => {
+          setIsOpen(false)
+        }}
+      >
+        {/* {(propsDoModal: any) => {
+          <FormCadastro propsDoModal={propsDoModal} />
+        }} */}
+      </Modal>
 
-      <Menu toggleTheme={toggleTheme} />
+      <Menu toggleTheme={toggleTheme} onClick={() => setIsOpen(!isOpen)}/>
 
       <Grid.Container>
 

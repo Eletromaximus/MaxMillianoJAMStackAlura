@@ -2,17 +2,20 @@ import React from 'react'
 
 import NavbarWrapper from './styles'
 import Link from '../../components/fundation/Link'
+import { Button } from '@material-ui/core'
 
-export default function Navbar () {
+interface Props {
+  onClick: () => void;
+}
+export default function Navbar (props: Props) {
   return (
     <NavbarWrapper>
       <li>
-        <Link
-          variant='navbar'
-          href=''
+        <Button
+          onClick={props.onClick}
         >
           Sobre Mim
-        </Link>
+        </Button>
       </li>
       <li>
         <Link

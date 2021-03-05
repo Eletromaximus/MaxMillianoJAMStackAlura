@@ -9,9 +9,10 @@ import Navbar from '../NavBar'
 
 interface Props {
   toggleTheme(): void;
+  onClick: () => void;
 }
 
-export default function Home ({ toggleTheme } : Props) {
+export default function Home ({ toggleTheme, onClick } : Props) {
   const { title } = useContext(ThemeContext)
 
   return (
@@ -28,7 +29,7 @@ export default function Home ({ toggleTheme } : Props) {
         <NavbarWrapper>
 
         </NavbarWrapper>
-          <Navbar/>
+          <Navbar onClick={ onClick} />
       </MenuWrapper.RightSide>
 
     </MenuWrapper>
