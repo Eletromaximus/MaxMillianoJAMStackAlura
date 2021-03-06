@@ -1,12 +1,15 @@
 import React from 'react'
 import CapaStyle from './styles/styles'
+import Text from '../../components/fundation/Text'
 
 function Capa () {
   return (
     <CapaStyle>
-      <h1>
+      <Text
+        variant='title'
+      >
         Bem vindo ao meu Portifólio
-      </h1>
+      </Text>
     </CapaStyle>
   )
 }

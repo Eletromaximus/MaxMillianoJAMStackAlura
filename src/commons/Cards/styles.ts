@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import typographys from '../../components/theme/typographyVariants'
+// import typographys from '../../components/theme/typographyVariants'
 
 export const CardWrapper: any = styled.div`
   margin: 10px;
@@ -20,6 +20,9 @@ export const CardWrapper: any = styled.div`
 		box-shadow: 0 3px 25px rgba(0, 0, 0, 0.4);
 		border-radius: 0;
 	}
+	Link {
+		height: 30%;
+	}
 `
 
 CardWrapper.Image = styled.img`
@@ -30,26 +33,15 @@ CardWrapper.Image = styled.img`
 
 `
 
-CardWrapper.Description = styled.div`
-	padding: 10px;
-	& h2 {
-		margin-bottom: 24px;
-	}
-`
+// CardWrapper.Description = styled.div`
+// 	padding: 10px;
+// 	& h2 {
+// 		margin-bottom: 24px;
+// 	}
+// `
 
-CardWrapper.Title = styled.h2`
-	font-size: ${typographys.subtitle.fontSize};
-	font-weight: ${typographys.subtitle.fontWeight};
-	line-height: ${typographys.subtitle.lineHeight};
-  height: 30%;
-	a{
-		text-decoration: none;
-		color: ${({ theme }) => theme.colors.text};
-	}
-`
-
-CardWrapper.Text = styled.p`
-	font-size: ${typographys.paragraph2.fontSize};
-	font-weight: ${typographys.paragraph2.fontWeight};
-	line-height: ${typographys.paragraph2.lineHeight};
-`
+// CardWrapper.Text = styled.p`
+// 	font-size: ${typographys.paragraph2.fontSize};
+// 	font-weight: ${typographys.paragraph2.fontWeight};
+// 	line-height: ${typographys.paragraph2.lineHeight};
+// `

@@ -1,6 +1,11 @@
 import styled, { css } from 'styled-components'
 import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
 import typographys from '../../components/theme/typographyVariants'
+// import { TextStyleVariants } from '../../components/fundation/Text'
+
+// interface Props {
+//   variant: string;
+// }
 
 export const CardWrapper: any = styled.div`
 	height: auto;
@@ -53,17 +58,18 @@ CardWrapper.Description = styled.div`
 		margin-bottom: 24px;
 	}
 `
-
-CardWrapper.Title = styled.h2`
-	font-size: ${() => typographys.subtitle.fontSize};
+/* font-size: ${() => typographys.subtitle.fontSize};
 	font-weight: ${() => typographys.subtitle.fontWeight};
-	line-height : ${() => typographys.subtitle.lineHeight};
+	line-height : ${() => typographys.subtitle.lineHeight}; */
+// CardWrapper.Title = styled.h2<Props>`
 
-	a{
-		text-decoration: none;
-		color: ${({ theme }) => theme.colors.text};
-	}
-`
+//   ${({ variant }) => TextStyleVariants[variant]}
+// 	a{
+// 		text-decoration: none;
+
+// 		color: ${({ theme }) => theme.colors.text};
+// 	}
+// `
 
 CardWrapper.Text = styled.p`
 	font-size: ${() => typographys.paragraph2.fontSize};

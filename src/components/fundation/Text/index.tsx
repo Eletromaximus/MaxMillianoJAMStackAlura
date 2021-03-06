@@ -1,14 +1,16 @@
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
-import propToStyle from '../../theme/utils/propToStyle'
 import React from 'react'
 import typographyVariants from '../../theme/typographyVariants'
+// import get from 'lodash/get'
+import propToStyle from '../../theme/utils/propToStyle'
 
 interface Props {
   tag?: 'p' | 'span' | 'h1' | 'h2';
   variant: string;
   textAlign?: string | object;
   children: string | number | React.ReactNode;
+  color?: string;
 }
 
 const smallestException = css`
@@ -41,12 +43,13 @@ export const TextStyleVariants: Record<string, any> = {
 
 const TextBase = styled.span<Props>`
   ${({ variant }) => TextStyleVariants[variant]};
-  ${propToStyle('textAlign')};
+  ${propToStyle('color')}
 `
+// color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
 export default function Text (props: Props) {
   return (
 
-    <TextBase as={props.tag} variant={props.variant} textAlign={props.textAlign}>
+    <TextBase as={props.tag} variant={props.variant} textAlign={props.textAlign} color={props.color}>
       {props.children}
     </TextBase>
   )

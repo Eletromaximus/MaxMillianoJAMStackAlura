@@ -51,7 +51,8 @@ export default function Home () {
         <WrapperProjects>
           <Grid.Row>
             <HighLightCard
-              alt="pomodor Clock"
+              variant="title"
+              alt="pomodoro Clock"
               description="Relógio pomodoro com React e typescript"
               title="Relógio Pomodoro"
               url="https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png"

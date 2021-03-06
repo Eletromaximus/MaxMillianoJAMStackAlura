@@ -42,6 +42,7 @@ function FormContent () {
       <Text
         variant='title'
         tag='h1'
+        color='black'
       >
         ENVIE SUA MENSAGEM
       </Text>
@@ -90,7 +91,7 @@ export default function FormCadastro ({ propsDoModal }: any) {
       marginLeft={0}
       marginRight={0}
       flex={1}
-      justifyContent='flex-end'
+      justifyContent='center'
     >
       <Grid.Col
         display='flex'

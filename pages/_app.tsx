@@ -1,14 +1,13 @@
-import React from 'react';
-import type { AppProps } from 'next/app';
-import Head from 'next/head';
+import React from 'react'
+import type { AppProps } from 'next/app'
+import Head from 'next/head'
 
-import { ThemeProvider } from 'styled-components';
-import GlobalStyle from '../src/components/theme/GlobalStyle';
+import { ThemeProvider } from 'styled-components'
+import GlobalStyle from '../src/components/theme/GlobalStyle'
 
 import { lightTheme } from '../src/components/theme/themes'
 
-function MyApp({ Component, pageProps }: AppProps) {
- 
+function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
@@ -25,7 +24,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       </ThemeProvider>
 
     </>
-  );
+  )
 }
 
-export default MyApp;
+export default MyApp

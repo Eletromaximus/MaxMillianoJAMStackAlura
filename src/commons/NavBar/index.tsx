@@ -21,6 +21,7 @@ export default function Navbar (props: Props) {
         <Link
           variant='navbar'
           href=''
+          color='black'
         >
           Contato
         </Link>
