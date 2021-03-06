@@ -4,13 +4,15 @@ import propToStyle from '../../../theme/utils/propToStyle'
 interface IBox {
   display?: string | object;
   flexDirection?: string | object;
-  justifyContent?: string | object
+  justifyContent?: string | object;
   flex?: string | object;
   flexWrap?: string | object;
   backgroundImage?: string | object;
   backgroundRepeat?: string | object;
-  backgroundPosition?: string | object
-  width?: string | object
+  backgroundPosition?: string | object;
+  backgroundColor?: string | object;
+  boxShadown?: string | object;
+  padding?: string | object;
 }
 
 export const Box = styled.div<IBox>`
@@ -22,5 +24,8 @@ export const Box = styled.div<IBox>`
   ${propToStyle('backgroundImage')}
   ${propToStyle('backgroundRepeat')}
   ${propToStyle('backgroundPosition')}
-  ${propToStyle('width')}
+  ${propToStyle('backgroundColor')}
+
+  ${propToStyle('boxShadow')}
+  ${propToStyle('padding')}
 `

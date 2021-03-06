@@ -1,5 +1,7 @@
+// eslint-disable-next-line no-use-before-define
 import React from 'react'
 import styled from 'styled-components'
+// import Text from '../../fundation/Text'
 
 interface IInput {
   placeholder: string;
@@ -15,10 +17,9 @@ const InputWrapper = styled.div`
 
 const Input = styled.input`
   width: 100%;
-  border: 1px solid ${({ theme }) => theme.colors.text};
+  border: 1px solid black;
   padding: 12px 16px;
   outline: 0;
-  border-radius: ${({ theme }) => theme.colors.secundary};
 `
 export default function TextField (props: IInput) {
   return (

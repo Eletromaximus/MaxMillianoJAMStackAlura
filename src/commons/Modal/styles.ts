@@ -4,16 +4,10 @@ interface IModalWrapper {
   isOpen: boolean;
 }
 
-export const LockScroll = createGlobalStyle`
-  body{
-    overflow: hidden;
-  }
-`
-
 export const ModalWrapper = styled.div<IModalWrapper>`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: stretch;
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
@@ -40,4 +34,9 @@ export const ModalWrapper = styled.div<IModalWrapper>`
       `
     }
   }}
+`
+export const LockScroll = createGlobalStyle`
+  body{
+    overflow: hidden;
+  }
 `

@@ -8,7 +8,7 @@ interface IModal {
   children?: any;
 }
 
-export default function Modal ({ isOpen, onClose, children }: IModal) {
+function Modal ({ isOpen, onClose, children }: IModal) {
   return (
     <ModalWrapper
     isOpen={isOpen}
@@ -21,9 +21,11 @@ export default function Modal ({ isOpen, onClose, children }: IModal) {
       }
     }}
     >
-      {/* {children({
+      {children({
         'data-modal-safe-area': 'true'
-      })} */}Testando
+      })}
     </ModalWrapper>
   )
 }
+
+export default Modal

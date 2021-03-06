@@ -10,10 +10,10 @@ import Card from '../src/commons/Cards'
 import HighLightCard from '../src/commons/HighLight'
 import Footer from '../src/commons/Footer'
 import Modal from '../src/commons/Modal'
-import FormCadastro from '../src/patterns/FormCadastro'
+import FormCadastro from '../src/patterns/FormCadastro/index'
 
 export default function Home () {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   const [theme, setTheme] = useState(darkTheme)
 
   const toggleTheme = () => {
@@ -25,23 +25,25 @@ export default function Home () {
       flex="1"
       display="flex"
       flexWrap="wrap"
+      justifyContent="space-between"
       flexDirection="column"
-      width="100%"
 
     >
-      <Capa />
+
       <Modal
-        isOpen={isOpen}
+        isOpen={isModalOpen}
         onClose={() => {
-          setIsOpen(false)
+          setIsModalOpen(false)
         }}
       >
-        {/* {(propsDoModal: any) => {
+        {(propsDoModal: any) => (
           <FormCadastro propsDoModal={propsDoModal} />
-        }} */}
-      </Modal>
+        )}
 
-      <Menu toggleTheme={toggleTheme} onClick={() => setIsOpen(!isOpen)}/>
+      </Modal>
+      <Capa />
+
+      <Menu toggleTheme={toggleTheme} onClick={() => setIsModalOpen(!isModalOpen)}/>
 
       <Grid.Container>
 

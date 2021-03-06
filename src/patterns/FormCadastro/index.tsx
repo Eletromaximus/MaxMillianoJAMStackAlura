@@ -5,19 +5,19 @@ import Button from '@material-ui/core/Button'
 import { Grid } from '../../components/fundation/layout/Grid'
 import { Box } from '../../components/fundation/layout/Box'
 
-const formStates = {
-  DEFAULT: 'DEFAULT',
-  LOADING: 'LOADING',
-  DONE: 'DONE',
-  ERROR: 'ERROR'
-}
+// const formStates = {
+//   DEFAULT: 'DEFAULT',
+//   LOADING: 'LOADING',
+//   DONE: 'DONE',
+//   ERROR: 'ERROR'
+// }
 
 function FormContent () {
   const [, setIsFormSubmited] = useState(false)
-  const [, setSubmissionStates] = useState(formStates.DEFAULT)
+  // const [, setSubmissionStates] = useState(formStates.DEFAULT)
   const [userInfo, setUserInfo] = useState({
-    usuario: '',
-    username: ''
+    name: '',
+    email: ''
   })
 
   function handleChange (event: any) {
@@ -29,41 +29,13 @@ function FormContent () {
     })
   }
 
-  const isFomInvalid = userInfo.usuario.length === 0 || userInfo.username.length === 0
+  const isFomInvalid = userInfo.name.length === 0 || userInfo.email.length === 0
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault()
 
         setIsFormSubmited(true)
-
-        const userDTO = {
-          username: userInfo.usuario,
-          name: userInfo.username
-        }
-
-        fetch('https://instalura-api.vercel.app/api/users', {
-          method: 'Post',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(userDTO)
-        })
-          .then((respostaDoServidor) => {
-            if (respostaDoServidor.ok) {
-              return respostaDoServidor.json()
-            }
-            throw new Error(' Não foi possível cadastrar o usuário agora :(')
-          })
-          .then(() => {
-            setSubmissionStates(formStates.DONE)
-          })
-          .catch(() => {
-            setSubmissionStates(formStates.ERROR)
-          })
-          .finally(() => {
-
-          })
       }}
     >
 
@@ -71,35 +43,34 @@ function FormContent () {
         variant='title'
         tag='h1'
       >
-        Pronto para saber da vida dos outros?
-      </Text>
-      <Text
-        variant='paragraph1'
-        tag='p'
-      >
-        Você está a um passo de saber tudoo que está
-        rolando no bairro, complete seu cadastro agora!
+        ENVIE SUA MENSAGEM
       </Text>
 
+      <h2> Seu Nome </h2>
       <div>
         <TextField
-          placeholder='Maximus'
+          placeholder='Seu Nome'
           type='text'
-          name='username'
+          name='email'
           onChange={handleChange}
-          value={userInfo.username}
+          value={userInfo.name}
         />
       </div>
 
+       <h2> Seu Email </h2>
       <div>
         <TextField
-          placeholder='Max Milliano'
+          placeholder='Seu Email'
           type='text'
-          name='usuario'
+          name='email'
           onChange={handleChange}
-          value={userInfo.usuario}
+          value={userInfo.email}
         />
       </div>
+
+      <textarea>
+
+      </textarea>
 
       <Button
         type='submit'
@@ -115,9 +86,16 @@ function FormContent () {
 
 export default function FormCadastro ({ propsDoModal }: any) {
   return (
-    <Grid.Row>
+    <Grid.Row
+      marginLeft={0}
+      marginRight={0}
+      flex={1}
+      justifyContent='flex-end'
+    >
       <Grid.Col
         display='flex'
+        paddingRight={{ md: '0' }}
+        flex={1}
         value={{ xs: 12, md: 5, lg: 4 }}
       >
         <Box
