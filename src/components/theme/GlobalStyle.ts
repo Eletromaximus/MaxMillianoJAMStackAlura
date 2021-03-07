@@ -1,7 +1,12 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
+import { ThemeType } from '.'
 
-const GlobalStyle = createGlobalStyle`
+type ThemeProps = {
+  theme: ThemeType
+}
+
+const GlobalStyle = createGlobalStyle<ThemeProps>`
   * {
     box-sizing: border-box;
   }
@@ -10,7 +15,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    font-family: '\'Lato\', sans-serif';
+    font-family: ${({ theme }) => theme.fontFamily};
     color: ${({ theme }) => theme.colors.text};
     background: ${({ theme }) => theme.colors.background};
   }

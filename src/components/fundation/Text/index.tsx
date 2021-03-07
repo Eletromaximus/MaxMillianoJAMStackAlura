@@ -6,7 +6,7 @@ import typographyVariants from '../../theme/typographyVariants'
 import propToStyle from '../../theme/utils/propToStyle'
 
 interface Props {
-  tag?: 'p' | 'span' | 'h1' | 'h2';
+  tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3';
   variant: string;
   textAlign?: string | object;
   children: string | number | React.ReactNode;
@@ -28,6 +28,11 @@ const title = css`
   font-weight: ${() => typographyVariants.title.fontWeight};
   line-height: ${() => typographyVariants.title.lineHeight};
 `
+const subtitle = css`
+  font-size: ${() => typographyVariants.subtitle.fontSize};
+  font-weight: ${() => typographyVariants.subtitle.fontWeight};
+  line-height: ${() => typographyVariants.subtitle.lineHeight};
+`
 const navbar = css`
   font-size: ${() => typographyVariants.title.fontSize};
   font-weight: ${() => typographyVariants.title.fontWeight};
@@ -38,6 +43,7 @@ export const TextStyleVariants: Record<string, any> = {
   smallestException,
   paragraph1,
   title,
+  subtitle,
   navbar
 }
 

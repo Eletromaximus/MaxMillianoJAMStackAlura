@@ -40,25 +40,38 @@ function FormContent () {
     >
 
       <Text
-        variant='title'
-        tag='h1'
+        variant='subtitle'
+        tag='h2'
         color='black'
       >
         ENVIE SUA MENSAGEM
       </Text>
 
-      <h2> Seu Nome </h2>
+      <Text
+        variant='paragraph1'
+        tag='h3'
+        color='black'
+      >
+        Seu Nome
+      </Text>
       <div>
         <TextField
           placeholder='Seu Nome'
           type='text'
-          name='email'
+          name='name'
           onChange={handleChange}
           value={userInfo.name}
         />
       </div>
 
-       <h2> Seu Email </h2>
+      <Text
+        variant='paragraph1'
+        tag='h3'
+        color='black'
+      >
+        Seu Email
+      </Text>
+
       <div>
         <TextField
           placeholder='Seu Email'
@@ -69,6 +82,13 @@ function FormContent () {
         />
       </div>
 
+      <Text
+        variant='paragraph1'
+        tag='h3'
+        color='black'
+      >
+        Sua Mensagem
+      </Text>
       <textarea>
 
       </textarea>
@@ -105,6 +125,7 @@ export default function FormCadastro ({ propsDoModal }: any) {
           flexDirection='column'
           justifyContent='center'
           flex={1}
+          height='50%'
           padding={{
             xs: '16px',
             md: '85px'

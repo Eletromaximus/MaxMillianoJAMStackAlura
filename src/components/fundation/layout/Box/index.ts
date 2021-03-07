@@ -13,6 +13,8 @@ interface IBox {
   backgroundColor?: string | object;
   boxShadown?: string | object;
   padding?: string | object;
+  width?: string | object;
+  height?: string | object;
 }
 
 export const Box = styled.div<IBox>`
@@ -28,4 +30,6 @@ export const Box = styled.div<IBox>`
 
   ${propToStyle('boxShadow')}
   ${propToStyle('padding')}
+  ${propToStyle('width')}
+  ${propToStyle('height')}
 `

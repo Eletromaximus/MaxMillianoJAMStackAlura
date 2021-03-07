@@ -34,3 +34,7 @@ export default function TextField (props: IInput) {
     </InputWrapper>
   )
 }
+
+// TextField.defaultProps = {
+//   tag: 'input'
+// }
