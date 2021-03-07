@@ -2,22 +2,15 @@ import React, { useState } from 'react'
 import Text from '../../components/fundation/Text'
 import TextField from '../../components/Forms/TextField'
 import Button from '@material-ui/core/Button'
-import { Grid } from '../../components/fundation/layout/Grid'
-import { Box } from '../../components/fundation/layout/Box'
 
-// const formStates = {
-//   DEFAULT: 'DEFAULT',
-//   LOADING: 'LOADING',
-//   DONE: 'DONE',
-//   ERROR: 'ERROR'
-// }
+import { Content, FormMessageWrapper } from './styles'
 
 function FormContent () {
   const [, setIsFormSubmited] = useState(false)
-  // const [, setSubmissionStates] = useState(formStates.DEFAULT)
   const [userInfo, setUserInfo] = useState({
     name: '',
-    email: ''
+    email: '',
+    message: ''
   })
 
   function handleChange (event: any) {
@@ -29,13 +22,16 @@ function FormContent () {
     })
   }
 
-  const isFomInvalid = userInfo.name.length === 0 || userInfo.email.length === 0
   return (
     <form
       onSubmit={(event) => {
         event.preventDefault()
 
         setIsFormSubmited(true)
+      }}
+
+      style={{
+        marginTop: '30px'
       }}
     >
 
@@ -54,15 +50,15 @@ function FormContent () {
       >
         Seu Nome
       </Text>
-      <div>
-        <TextField
-          placeholder='Seu Nome'
-          type='text'
-          name='name'
-          onChange={handleChange}
-          value={userInfo.name}
-        />
-      </div>
+
+      <TextField
+        placeholder='Seu Nome'
+        type='text'
+        name='name'
+        onChange={handleChange}
+        value={userInfo.name}
+      />
+      <Text tag='span' color='purple'> Esse campo é necessário </Text>
 
       <Text
         variant='paragraph1'
@@ -72,15 +68,14 @@ function FormContent () {
         Seu Email
       </Text>
 
-      <div>
-        <TextField
-          placeholder='Seu Email'
-          type='text'
-          name='email'
-          onChange={handleChange}
-          value={userInfo.email}
-        />
-      </div>
+      <TextField
+        placeholder='Seu Email'
+        type='text'
+        name='email'
+        onChange={handleChange}
+        value={userInfo.email}
+      />
+      <Text tag='span' color='purple'> Esse campo é necessário </Text>
 
       <Text
         variant='paragraph1'
@@ -89,14 +84,33 @@ function FormContent () {
       >
         Sua Mensagem
       </Text>
-      <textarea>
 
-      </textarea>
+      <textarea
+        style={{
+          width: '80%',
+          border: '1px solid black',
+          padding: '12px 16px',
+          outline: '0',
+          resize: 'none'
+        }}
+        maxLength={500}
+        name='message'
+        onChange={handleChange}
+        value={userInfo.message}
+      />
+      <Text tag='span' color='purple'> Esse campo é necessário </Text>
 
       <Button
         type='submit'
-        disabled={isFomInvalid}
+        style={{
+          marginTop: '20px',
+          width: '80%',
+          backgroundColor: '#4f4789',
+          color: '#fffded'
+        }}
+        // disabled={isFomInvalid}
         fullWidth
+        variant='outlined'
       >
         Cadastrar
       </Button>
@@ -107,36 +121,12 @@ function FormContent () {
 
 export default function FormCadastro ({ propsDoModal }: any) {
   return (
-    <Grid.Row
-      marginLeft={0}
-      marginRight={0}
-      flex={1}
-      justifyContent='center'
-    >
-      <Grid.Col
-        display='flex'
-        paddingRight={{ md: '0' }}
-        flex={1}
-        value={{ xs: 12, md: 5, lg: 4 }}
-      >
-        <Box
-          boxShadow='-10px 0px 24px rgba(7, 12, 14, 0.1)'
-          display='flex'
-          flexDirection='column'
-          justifyContent='center'
-          flex={1}
-          height='50%'
-          padding={{
-            xs: '16px',
-            md: '85px'
-          }}
-          backgroundColor='white'
-          {...propsDoModal}
-        >
-          <FormContent />
-        </Box>
-      </Grid.Col>
-    </Grid.Row>
+
+    <FormMessageWrapper>
+      <Content {...propsDoModal}>
+        <FormContent />
+      </Content>
+    </FormMessageWrapper>
 
   )
 }

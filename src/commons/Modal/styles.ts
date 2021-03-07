@@ -7,7 +7,7 @@ interface IModalWrapper {
 export const ModalWrapper = styled.div<IModalWrapper>`
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: center;
   background: rgba(0, 0, 0, 0.9);
   position: fixed;
   top: 0;
