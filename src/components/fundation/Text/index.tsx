@@ -11,6 +11,8 @@ interface Props {
   textAlign?: string | object;
   children: string | number | React.ReactNode;
   color?: string;
+  name?: string;
+  ref?: string | object;
 }
 
 const smallestException = css`
@@ -55,7 +57,14 @@ const TextBase = styled.span<Props>`
 export default function Text (props: Props) {
   return (
 
-    <TextBase as={props.tag} variant={props.variant} textAlign={props.textAlign} color={props.color}>
+    <TextBase
+      as={props.tag}
+      variant={props.variant}
+      textAlign={props.textAlign}
+      color={props.color}
+      name={props.name}
+      ref={props.ref}
+    >
       {props.children}
     </TextBase>
   )

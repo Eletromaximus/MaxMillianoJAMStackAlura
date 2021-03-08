@@ -2,16 +2,33 @@ import React, { useState } from 'react'
 import Text from '../../components/fundation/Text'
 import TextField from '../../components/Forms/TextField'
 import Button from '@material-ui/core/Button'
+import { useForm } from 'react-hook-form'
+// import { yupResolver } from '@hookform/resolvers/yup'
+// import * as yup from 'yup'
 
 import { Content, FormMessageWrapper } from './styles'
 
+// const schema = yup.object().shape({
+//   name: yup.string().required(),
+//   email: yup.string().required(),
+//   message: yup.string().required()
+// })
+
 function FormContent () {
-  const [, setIsFormSubmited] = useState(false)
+  const { register, handleSubmit, errors } = useForm({
+    defaultValues: {
+      name: '',
+      email: '',
+      message: ''
+    }
+  })
   const [userInfo, setUserInfo] = useState({
     name: '',
     email: '',
     message: ''
   })
+
+  const onSubmit = (data: any) => console.log(data)
 
   function handleChange (event: any) {
     const fieldName = event.target.getAttribute('name')
@@ -24,12 +41,7 @@ function FormContent () {
 
   return (
     <form
-      onSubmit={(event) => {
-        event.preventDefault()
-
-        setIsFormSubmited(true)
-      }}
-
+      onSubmit={handleSubmit(onSubmit)}
       style={{
         marginTop: '30px'
       }}
@@ -47,6 +59,7 @@ function FormContent () {
         variant='paragraph1'
         tag='h3'
         color='black'
+        name='name'
       >
         Seu Nome
       </Text>
@@ -57,8 +70,9 @@ function FormContent () {
         name='name'
         onChange={handleChange}
         value={userInfo.name}
+        xref={register({ required: true, pattern: /[^a-zà-ú]/gi })}
       />
-      <Text tag='span' color='purple'> Esse campo é necessário </Text>
+       {errors.name?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
       <Text
         variant='paragraph1'
@@ -74,8 +88,9 @@ function FormContent () {
         name='email'
         onChange={handleChange}
         value={userInfo.email}
+        xref={register({ required: true })}
       />
-      <Text tag='span' color='purple'> Esse campo é necessário </Text>
+      {errors.email?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
       <Text
         variant='paragraph1'
@@ -93,12 +108,13 @@ function FormContent () {
           outline: '0',
           resize: 'none'
         }}
+        ref={register({ required: true })}
         maxLength={500}
         name='message'
         onChange={handleChange}
         value={userInfo.message}
       />
-      <Text tag='span' color='purple'> Esse campo é necessário </Text>
+      {errors.message?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
       <Button
         type='submit'

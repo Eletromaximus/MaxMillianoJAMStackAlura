@@ -10,6 +10,7 @@ interface IInput {
   value: string;
   children?: string;
   onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
+  xref: ((instance: HTMLInputElement | null) => void) | React.RefObject<HTMLInputElement> | null | undefined;
 }
 // const InputWrapper = styled.div`
 //   margin-bottom: 60px;
@@ -31,6 +32,7 @@ export default function TextField (props: IInput) {
         name={props.name}
         onChange={ props.onChange }
         value={ props.value }
+        ref={props.xref}
       />
 
   )
