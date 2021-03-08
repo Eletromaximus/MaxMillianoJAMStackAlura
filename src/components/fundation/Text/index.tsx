@@ -63,7 +63,6 @@ export default function Text (props: Props) {
       textAlign={props.textAlign}
       color={props.color}
       name={props.name}
-      ref={props.ref}
     >
       {props.children}
     </TextBase>
