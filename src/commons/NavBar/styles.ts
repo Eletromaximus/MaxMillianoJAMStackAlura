@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import { TextStyleVariants } from '../../components/fundation/Text'
+import { TextStyleVariants } from '../../components/foundation/Text'
 import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
 
 const NavbarWrapper = styled.nav`

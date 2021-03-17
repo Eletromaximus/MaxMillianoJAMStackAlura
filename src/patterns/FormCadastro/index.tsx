@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import Text from '../../components/fundation/Text'
+import Text from '../../components/foundation/Text'
 import TextField from '../../components/Forms/TextField'
 import Button from '@material-ui/core/Button'
 import { useForm } from 'react-hook-form'

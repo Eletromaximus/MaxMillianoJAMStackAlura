@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../components/fundation/Link/index'
+import Link from '../../components/foundation/Link/index'
 
 import { CardWrapper } from './styles'
 

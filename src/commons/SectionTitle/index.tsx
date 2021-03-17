@@ -1,5 +1,5 @@
 import React from 'react'
-import Text from '../../components/fundation/Text'
+import Text from '../../components/foundation/Text'
 
 import { TitleStyle } from './styles'
 
