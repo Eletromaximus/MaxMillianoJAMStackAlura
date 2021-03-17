@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../components/foundation/Link'
+import Link from '../../foundation/Link'
 import { CardWrapper } from './styles'
 interface Props {
   url: string;

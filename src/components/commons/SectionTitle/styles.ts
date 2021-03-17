@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import typographyVariants from '../../components/theme/typographyVariants'
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
+import typographyVariants from '../../../theme/typographyVariants'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 
 export const TitleStyle = styled.div`
   margin: 10px;

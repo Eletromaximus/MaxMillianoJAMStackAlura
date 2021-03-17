@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import { TextStyleVariants } from '../../components/foundation/Text'
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
+import { TextStyleVariants } from '../../foundation/Text'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 
 const NavbarWrapper = styled.nav`
   display: flex;

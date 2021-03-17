@@ -3,9 +3,9 @@ import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
 import { ThemeProvider } from 'styled-components'
-import GlobalStyle from '../src/components/theme/GlobalStyle'
+import GlobalStyle from '../src/theme/GlobalStyle'
 
-import { lightTheme } from '../src/components/theme/themes'
+import { lightTheme } from '../src/theme/themes'
 
 function MyApp ({ Component, pageProps }: AppProps) {
   return (

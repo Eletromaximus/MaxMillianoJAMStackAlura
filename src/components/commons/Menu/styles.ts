@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
-import { TextStyleVariants } from '../../components/foundation/Text'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
+import { TextStyleVariants } from '../../foundation/Text'
 
 export const MenuWrapper: any = styled.header`
   display: flex;

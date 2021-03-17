@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import breakpointsMedia from '../../components/theme/utils/breakpointsMedia'
-import typographys from '../../components/theme/typographyVariants'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
+import typographys from '../../../theme/typographyVariants'
 // import { TextStyleVariants } from '../../components/fundation/Text'
 
 // interface Props {

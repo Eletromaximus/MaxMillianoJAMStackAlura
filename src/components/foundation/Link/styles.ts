@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import propToStyle from '../../theme/utils/propToStyle'
+import propToStyle from '../../../theme/utils/propToStyle'
 import { TextStyleVariants } from '../Text/index'
 interface ILinkProps {
   variant: string;

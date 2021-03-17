@@ -1,9 +1,9 @@
 import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
-import typographyVariants from '../../theme/typographyVariants'
+import typographyVariants from '../../../theme/typographyVariants'
 // import get from 'lodash/get'
-import propToStyle from '../../theme/utils/propToStyle'
+import propToStyle from '../../../theme/utils/propToStyle'
 
 interface Props {
   tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3';

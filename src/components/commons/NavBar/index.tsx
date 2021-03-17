@@ -1,7 +1,7 @@
 import React from 'react'
 
 import NavbarWrapper from './styles'
-import Link from '../../components/foundation/Link'
+import Link from '../../foundation/Link'
 import { Button } from '@material-ui/core'
 
 interface Props {
