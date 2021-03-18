@@ -5,7 +5,8 @@ import { ThemeType } from '.'
 type ThemeProps = {
   theme: ThemeType
 }
-
+// color: ${({ theme }) => theme.colors.mode.light.text};
+// background: ${({ theme }) => theme.colors.mode.light.background};
 const GlobalStyle = createGlobalStyle<ThemeProps>`
   * {
     box-sizing: border-box;
@@ -16,8 +17,8 @@ const GlobalStyle = createGlobalStyle<ThemeProps>`
     margin: 0;
     padding: 0;
     font-family: ${({ theme }) => theme.fontFamily};
-    color: ${({ theme }) => theme.colors.text};
-    background: ${({ theme }) => theme.colors.background};
+    color: ${({ theme }) => theme.colors.mode.light.text};
+    background: ${({ theme }) => theme.colors.mode.light.background};
   }
   
   html, body {

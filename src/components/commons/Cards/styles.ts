@@ -1,5 +1,4 @@
 import styled from 'styled-components'
-// import typographys from '../../components/theme/typographyVariants'
 
 export const CardWrapper: any = styled.div`
   margin: 10px;
@@ -32,16 +31,3 @@ CardWrapper.Image = styled.img`
 	border-radius: 5px;
 
 `
-
-// CardWrapper.Description = styled.div`
-// 	padding: 10px;
-// 	& h2 {
-// 		margin-bottom: 24px;
-// 	}
-// `
-
-// CardWrapper.Text = styled.p`
-// 	font-size: ${typographys.paragraph2.fontSize};
-// 	font-weight: ${typographys.paragraph2.fontWeight};
-// 	line-height: ${typographys.paragraph2.lineHeight};
-// `

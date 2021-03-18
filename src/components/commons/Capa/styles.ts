@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components'
-import typographyVariants from '../../../../theme/typographyVariants'
-import breakpointsMedia from '../../../../theme/utils/breakpointsMedia'
+import typographyVariants from '../../../theme/typographyVariants'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 
 const CapaStyle = styled.div`
   font-family: 'Lato', sans-serif;

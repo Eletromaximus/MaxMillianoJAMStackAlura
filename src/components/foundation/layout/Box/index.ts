@@ -15,6 +15,7 @@ interface IBox {
   padding?: string | object;
   width?: string | object;
   height?: string | object;
+  mode?: string;
 }
 
 export const Box = styled.div<IBox>`
@@ -32,4 +33,6 @@ export const Box = styled.div<IBox>`
   ${propToStyle('padding')}
   ${propToStyle('width')}
   ${propToStyle('height')}
+
+  /* ${({ theme, mode }) => mode === 'light' ? theme.mode.light.background : theme.mode.dark.background} */
 `

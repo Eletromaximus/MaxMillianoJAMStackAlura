@@ -2,11 +2,6 @@ import React from 'react'
 import type { AppProps } from 'next/app'
 import Head from 'next/head'
 
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from '../src/theme/GlobalStyle'
-
-import { lightTheme } from '../src/theme/themes'
-
 function MyApp ({ Component, pageProps }: AppProps) {
   return (
     <>
@@ -17,11 +12,7 @@ function MyApp ({ Component, pageProps }: AppProps) {
           rel="stylesheet" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
       </Head>
-      <ThemeProvider theme={lightTheme}>
-        <GlobalStyle />
         <Component {...pageProps} />
-      </ThemeProvider>
-
     </>
   )
 }

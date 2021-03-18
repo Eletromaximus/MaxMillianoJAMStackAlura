@@ -1,5 +1,5 @@
 import React from 'react'
-import CapaStyle from './styles/styles'
+import CapaStyle from './styles'
 import Text from '../../foundation/Text'
 
 function Capa () {

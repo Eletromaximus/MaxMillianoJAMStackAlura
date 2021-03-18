@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
 import typographyVariants from '../../../theme/typographyVariants'
-// import get from 'lodash/get'
+// import Link from '../Link'
 import propToStyle from '../../../theme/utils/propToStyle'
 
 interface Props {
@@ -12,7 +12,7 @@ interface Props {
   children: string | number | React.ReactNode;
   color?: string;
   name?: string;
-  ref?: string | object;
+  href?: string | object;
 }
 
 const smallestException = css`
@@ -55,6 +55,9 @@ const TextBase = styled.span<Props>`
 `
 // color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
 export default function Text (props: Props) {
+  // const hasTag = Boolean(props.href)
+  // const tag = hasTag ? Link : props.tag
+
   return (
 
     <TextBase
