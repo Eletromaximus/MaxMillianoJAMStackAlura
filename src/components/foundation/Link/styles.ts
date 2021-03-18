@@ -1,5 +1,5 @@
 import styled, { css } from 'styled-components'
-import propToStyle from '../../theme/utils/propToStyle'
+import propToStyle from '../../../theme/utils/propToStyle'
 import { TextStyleVariants } from '../Text/index'
 interface ILinkProps {
   variant: string;
@@ -13,7 +13,7 @@ export const LinkBase = styled.a<ILinkProps>`
   ${({ color }) => {
     if (!color) {
       return css`
-        color: ${({ theme }) => theme.colors.text}
+        color: ${({ theme }) => theme.colors.mode.light.text}
       `
     } else {
       return css`
