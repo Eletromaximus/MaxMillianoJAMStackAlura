@@ -9,10 +9,6 @@ const NavbarWrapper = styled.nav`
   padding: 0;
   margin: 0;
   list-style: none;
-  a {
-    text-decoration: none;
-    margin-right: 75px;
-  }
   ${breakpointsMedia({
     md: css`
       a {

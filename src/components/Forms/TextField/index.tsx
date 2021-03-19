@@ -1,7 +1,6 @@
 // eslint-disable-next-line no-use-before-define
 import React from 'react'
 import styled from 'styled-components'
-// import Text from '../../fundation/Text'
 
 interface IInput {
   placeholder: string;
@@ -12,9 +11,6 @@ interface IInput {
   onChange: ((event: React.ChangeEvent<HTMLInputElement>) => void) | undefined;
   xref: ((instance: HTMLInputElement | null) => void) | React.RefObject<HTMLInputElement> | null | undefined;
 }
-// const InputWrapper = styled.div`
-//   margin-bottom: 60px;
-// `
 
 const Input = styled.input`
   width: 80%;
@@ -37,7 +33,3 @@ export default function TextField (props: IInput) {
 
   )
 }
-
-// TextField.defaultProps = {
-//   tag: 'input'
-// }
