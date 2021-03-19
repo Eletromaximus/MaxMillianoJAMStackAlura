@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import PropTypes from 'prop-types'
 import React from 'react'
 import typographyVariants from '../../../theme/typographyVariants'
-// import Link from '../Link'
+import Link from '../Link'
 import propToStyle from '../../../theme/utils/propToStyle'
 
 interface Props {
@@ -13,6 +13,7 @@ interface Props {
   color?: string;
   name?: string;
   href?: string | object;
+  paddingRight?: string | object;
 }
 
 const smallestException = css`
@@ -50,24 +51,23 @@ export const TextStyleVariants: Record<string, any> = {
 }
 
 const TextBase = styled.span<Props>`
-  ${({ variant }) => TextStyleVariants[variant]};
+  ${(props) => TextStyleVariants[props.variant]};
   ${propToStyle('color')}
+  ${propToStyle('paddingRight')}
 `
 // color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
-export default function Text (props: Props) {
-  // const hasTag = Boolean(props.href)
-  // const tag = hasTag ? Link : props.tag
+export default function Text ({ variant, href, tag, children, ...props }: Props) {
+  const hasTag = Boolean(href)
+  const xtag = hasTag ? Link : tag
 
   return (
 
     <TextBase
-      as={props.tag}
-      variant={props.variant}
-      textAlign={props.textAlign}
-      color={props.color}
-      name={props.name}
+      as={xtag}
+      variant={variant}
+      {...props}
     >
-      {props.children}
+      {children}
     </TextBase>
   )
 }

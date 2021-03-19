@@ -6,7 +6,7 @@ export const FooterWrapper = styled.nav`
   justify-content: center;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.mode.light.primary};
   height: 68px;
   margin-top: 10px;
 

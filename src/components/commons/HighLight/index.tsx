@@ -1,5 +1,5 @@
 import React from 'react'
-import Link from '../../foundation/Link/index'
+import Text from '../../foundation/Text/index'
 
 import { CardWrapper } from './styles'
 
@@ -11,18 +11,19 @@ interface Props {
  endereco: string;
  variant: string;
  color?: string;
+ target?: string;
 }
 
-function CardHighlight ({ url, title, alt, description, endereco, variant, color }: Props) {
+function CardHighlight ({ url, title, alt, description, endereco, variant, ...props }: Props) {
   return (
 		<>
 			<CardWrapper >
 				<CardWrapper.Image src={url} alt={alt} />
 				<CardWrapper.Footer>
 					<CardWrapper.Description>
-						<Link variant={variant} href={endereco} color={color} target="_blanck">
+						<Text variant={variant} href={endereco} target="_blanck" {...props} >
 								{title}
-						</Link>
+						</Text>
 						<CardWrapper.Text>{description}</CardWrapper.Text>
 					</CardWrapper.Description>
 				</CardWrapper.Footer>

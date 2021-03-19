@@ -1,13 +1,13 @@
 import styled, { css } from 'styled-components'
 import propToStyle from '../../../theme/utils/propToStyle'
-import { TextStyleVariants } from '../Text/index'
+import { TextStyleVariants } from '../Text'
 interface ILinkProps {
+  textAlign?: string | object;
   variant: string;
-  color?: string;
 }
 
 export const LinkBase = styled.a<ILinkProps>`
-  ${({ variant }) => TextStyleVariants[variant]}
+  ${(props) => TextStyleVariants[props.variant]};
   ${propToStyle('textAlign')};
   text-decoration: none;
   ${({ color }) => {
@@ -21,6 +21,5 @@ export const LinkBase = styled.a<ILinkProps>`
       `
     }
   }}
-  
   
 `

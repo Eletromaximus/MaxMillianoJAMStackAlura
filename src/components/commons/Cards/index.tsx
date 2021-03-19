@@ -1,26 +1,25 @@
 import React from 'react'
-import Link from '../../foundation/Link'
+import Text from '../../foundation/Text'
 import { CardWrapper } from './styles'
 interface Props {
   url: string;
   title: string;
   alt: string;
   href: string;
-  target?: string;
+
 }
 
-export default function Card ({ url, title, alt, href, target }: Props) {
+export default function Card ({ url, title, alt, href }: Props) {
   return (
 		<>
 			<CardWrapper>
 				<CardWrapper.Image src={url} alt={alt} />
-					<Link
+					<Text
             href={href}
 						variant='title'
-						target={ target }
 					>
 							{title}
-					</Link>
+					</Text>
 			</CardWrapper>
 		</>
   )

@@ -12,7 +12,7 @@ export const FormMessageWrapper = styled.section`
 export const Content = styled.div`
   width: 92%;
   height: 60%;
-  background-color: ${({ theme }) => theme.colors.primary};
+  background-color: ${({ theme }) => theme.colors.mode.light.primary};
   border-radius: 20px;
   & form {
     display: flex;
