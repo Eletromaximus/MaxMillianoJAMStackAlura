@@ -57,6 +57,7 @@ export const Grid = {
     ${propToStyle('marginLeft')}
     ${propToStyle('marginRight')}
     ${propToStyle('justifyContent')}
+    ${propToStyle('marginTop')}
   `,
   Col: styled.div<IProps>`
     padding-right: 16px;
