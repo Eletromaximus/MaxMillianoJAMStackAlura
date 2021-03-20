@@ -16,9 +16,9 @@ interface IWebsitePagesWrapper {
     backgroundRepeat: string,
     backgroundPosition: string,
   };
-  menuProps: {
-    display: boolean;
-  };
+  menuProps: boolean
+  capaProps: boolean
+  footerProps: boolean
 }
 
 export const WebsitePagesContext = createContext({
@@ -29,7 +29,9 @@ export default function WebsitePagesWrapper ({
   children,
   seoProps,
   pageBoxProps,
-  menuProps
+  menuProps,
+  capaProps,
+  footerProps
 }: IWebsitePagesWrapper) {
   const [isModalOpen, setIsModalState] = useState(false)
 
@@ -48,10 +50,9 @@ export default function WebsitePagesWrapper ({
       flexDirection='column'
       {...pageBoxProps}
     >
-
+      { capaProps && <Capa/>}
       {menuProps && (
         <>
-          <Capa/>
           <Menu onClick={() => setIsModalState(!isModalOpen)} />
         </>
       )}
@@ -69,7 +70,7 @@ export default function WebsitePagesWrapper ({
 
       {children}
 
-      <Footer/>
+      {footerProps && <Footer/>}
 
     </Box>
     </WebsitePagesContext.Provider>
@@ -79,7 +80,7 @@ export default function WebsitePagesWrapper ({
 WebsitePagesWrapper.defaultProps = {
   seoProps: {},
   pageBoxProps: {},
-  menuProps: {
-    display: true
-  }
+  menuProps: true,
+  capaProps: true,
+  footerProps: true
 }
