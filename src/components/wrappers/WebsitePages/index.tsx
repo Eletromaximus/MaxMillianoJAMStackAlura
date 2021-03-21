@@ -5,6 +5,7 @@ import Menu from '../../commons/Menu'
 import Modal from '../../commons/Modal'
 import { Box } from '../../foundation/layout/Box'
 import FormCadastro from '../../patterns/FormCadastro'
+import SEO from '../../commons/SEO'
 
 interface IWebsitePagesWrapper {
   children: React.ReactNode;
@@ -43,7 +44,7 @@ export default function WebsitePagesWrapper ({
         }
       }}
     >
-      {/* <SEO {...seoProps}/> */}
+      <SEO {...seoProps}/>
     <Box
       display='flex'
       flex='1'
@@ -53,7 +54,7 @@ export default function WebsitePagesWrapper ({
       { capaProps && <Capa/>}
       {menuProps && (
         <>
-          <Menu onClick={() => setIsModalState(!isModalOpen)} />
+          <Menu onClick={() => setIsModalState(!isModalOpen)} href='/About' />
         </>
       )}
 
