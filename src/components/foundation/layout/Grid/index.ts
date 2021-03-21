@@ -10,8 +10,9 @@ interface IProps {
   flexDirection?: string | object;
   alignItems?: string | object;
   justifyContent?: string | object;
-  marginLeft?: number | object;
-  marginRight?: number | object;
+  marginLeft?: string | object;
+  marginRight?: string | object;
+  marginTop?: string | object;
   paddingRight?: string | object;
 }
 
