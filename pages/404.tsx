@@ -71,7 +71,6 @@ function Page404 () {
         offset={{ xs: 0, md: 4 }}
         value={{ xs: 12, md: 6 }}
         justifyContent='flex-end'
-
         >
           <ErrorBase>
             <h1>4<span>0</span>4</h1>
