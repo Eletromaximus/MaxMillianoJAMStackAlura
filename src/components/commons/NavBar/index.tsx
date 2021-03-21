@@ -6,8 +6,9 @@ import Button from '../../foundation/Button'
 
 interface Props {
   onClick: () => void;
+  href: string;
 }
-export default function Navbar ({ onClick }: Props) {
+export default function Navbar ({ onClick, href }: Props) {
   return (
     <NavbarWrapper>
       <li>
@@ -16,17 +17,17 @@ export default function Navbar ({ onClick }: Props) {
           onClick={onClick}
           paddingRight='30px'
         >
-          Sobre Mim
+          Contato
         </Button>
       </li>
       <li>
         <Text
           variant='navbar'
-          href=''
+          href={href}
           color='black'
           paddingRight='40px'
         >
-          Contato
+          Sobre Mim
         </Text>
       </li>
     </NavbarWrapper>

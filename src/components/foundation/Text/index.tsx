@@ -65,6 +65,7 @@ export default function Text ({ variant, href, tag, children, ...props }: Props)
     <TextBase
       as={xtag}
       variant={variant}
+      href={href}
       {...props}
     >
       {children}

@@ -10,9 +10,10 @@ import Navbar from '../NavBar'
 interface Props {
   // toggleTheme(): void;
   onClick: () => void;
+  href: string;
 }
 
-export default function Home ({ onClick } : Props) {
+export default function Home ({ onClick, href } : Props) {
   // const { title } = useContext(ThemeContext)
 
   return (
@@ -29,7 +30,7 @@ export default function Home ({ onClick } : Props) {
         <NavbarWrapper>
 
         </NavbarWrapper>
-          <Navbar onClick={ onClick} />
+          <Navbar onClick={ onClick} href={href} />
       </MenuWrapper.RightSide>
 
     </MenuWrapper>

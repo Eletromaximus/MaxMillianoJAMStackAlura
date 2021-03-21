@@ -23,5 +23,10 @@
     "rules": {
         "no-use-before-define":"off",
         "no-tabs":"off"
+    },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
     }
 }

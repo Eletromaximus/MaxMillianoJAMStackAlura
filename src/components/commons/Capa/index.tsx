@@ -7,6 +7,7 @@ function Capa () {
     <CapaStyle>
       <Text
         variant='title'
+        href='/'
       >
         Bem vindo ao meu Portifólio
       </Text>
