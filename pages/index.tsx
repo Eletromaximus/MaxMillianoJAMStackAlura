@@ -10,7 +10,9 @@ function HomeScreen () {
   return (
     <Grid.Container>
 
-    <SectionTitle />
+    <SectionTitle >
+      Meus Projetos
+    </SectionTitle>
       <WrapperProjects>
         <Grid.Row>
           <HighLightCard

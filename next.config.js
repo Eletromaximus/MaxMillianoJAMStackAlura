@@ -4,6 +4,8 @@ module.exports = {
     domains: [
       'github.com',
       'bootcamp-alura-01-git-modulo01.omariosouto.vercel',
-      'insta-alura-git-main.maxmillianox.vercel.app'],
-  },
-};
+      'insta-alura-git-main.maxmillianox.vercel.app',
+      'avatars.githubusercontent.com'
+    ]
+  }
+}

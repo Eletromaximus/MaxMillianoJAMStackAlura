@@ -4,6 +4,7 @@ import React from 'react'
 import typographyVariants from '../../../theme/typographyVariants'
 import Link from '../Link'
 import propToStyle from '../../../theme/utils/propToStyle'
+import get from 'lodash/get'
 
 interface Props {
   tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3';
@@ -51,11 +52,12 @@ export const TextStyleVariants: Record<string, any> = {
 }
 
 const TextBase = styled.span<Props>`
-  ${(props) => TextStyleVariants[props.variant]};
+  ${(props) => TextStyleVariants[props.variant]}
   ${propToStyle('color')}
   ${propToStyle('paddingRight')}
+  color: ${(props) => get(props.theme, `colors.mode.light.${props.color}`)}
 `
-// color: ${(props) => get(props.theme, `colors.${props.color}.color`)};
+// ;
 export default function Text ({ variant, href, tag, children, ...props }: Props) {
   const hasTag = Boolean(href)
   const xtag = hasTag ? Link : tag

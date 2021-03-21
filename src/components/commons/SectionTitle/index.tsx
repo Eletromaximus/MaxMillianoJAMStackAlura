@@ -3,11 +3,15 @@ import Text from '../../foundation/Text'
 
 import { TitleStyle } from './styles'
 
-export default function SectionTitle () {
+interface IProps {
+  children: React.ReactNode
+}
+
+export default function SectionTitle ({ children }: IProps) {
   return (
     <TitleStyle>
       <Text tag='h1' variant='Title' textAlign= 'center'>
-        Meus Projetos
+        {children}
       </Text>
     </TitleStyle>
   )
