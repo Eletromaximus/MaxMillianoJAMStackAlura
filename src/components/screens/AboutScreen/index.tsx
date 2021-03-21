@@ -16,8 +16,10 @@ export default function AboutScreen ({ repositories }: IAboutScreenProps) {
   return (
     <Grid.Container flex={1}>
       <Grid.Row
-        marginTop='60px'
         flexDirection='row'
+        marginTop={{
+          xs: '300px', md: '60px'
+        }}
       >
         <Grid.Col
           offset={{ xs: 0, md: 3 }}
@@ -27,6 +29,7 @@ export default function AboutScreen ({ repositories }: IAboutScreenProps) {
           flexDirection='column'
           justifyContent='center'
           alignItems='center'
+
         >
           <div>
             <Image
