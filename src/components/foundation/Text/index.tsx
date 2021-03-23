@@ -15,6 +15,7 @@ interface Props {
   name?: string;
   href?: string | object;
   paddingRight?: string | object;
+  marginBottom?: string | object;
 }
 
 const smallestException = css`
@@ -54,6 +55,7 @@ export const TextStyleVariants: Record<string, any> = {
 const TextBase = styled.span<Props>`
   ${(props) => TextStyleVariants[props.variant]}
   ${propToStyle('color')}
+  ${propToStyle('marginBottom')}
   ${propToStyle('paddingRight')}
   color: ${(props) => get(props.theme, `colors.mode.light.${props.color}`)}
 `

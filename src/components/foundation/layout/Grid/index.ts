@@ -13,6 +13,7 @@ interface IProps {
   marginLeft?: string | object;
   marginRight?: string | object;
   marginTop?: string | object;
+  marginBottom?: string | object;
   paddingRight?: string | object;
 }
 
@@ -62,6 +63,7 @@ export const Grid = {
     ${propToStyle('marginRight')}
     ${propToStyle('justifyContent')}
     ${propToStyle('marginTop')}
+    ${propToStyle('marginBottom')}
   `,
   Col: styled.div<IProps>`
     padding-right: 16px;

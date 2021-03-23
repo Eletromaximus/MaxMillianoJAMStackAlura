@@ -93,6 +93,6 @@ export default websitePageHOC(Page404, {
       justifyContent: 'space-between'
     },
     menuProps: true,
-    capaProps: false
+    capaProps: true
   }
 })
