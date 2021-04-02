@@ -7,6 +7,7 @@ interface IGithub {
   html_url: string;
   fork: boolean;
   updated_at: string;
+  id: number;
 }
 
 export default websitePageHOC(AboutScreen)
@@ -32,7 +33,8 @@ export async function getStaticProps () {
     .map((repository) => {
       return {
         name: repository.name,
-        url: repository.html_url
+        url: repository.html_url,
+        id: repository.id
       }
     })
 

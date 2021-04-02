@@ -8,7 +8,8 @@ import { Box } from '../../foundation/layout/Box'
 export interface IAboutScreenProps {
   repositories: {
     name: string
-    url: string
+    url: string,
+    id: number
   }[]
 }
 
@@ -69,18 +70,15 @@ export default function AboutScreen ({ repositories }: IAboutScreenProps) {
 
             <Box as='ul'>
               {repositories.map((repositorie) => (
-                <>
-                  <li style={{ listStyle: 'none' }} key={repositorie.url}>
-                    <Text paddingRight='10px' variant='navbar'>
+
+                  <li style={{ listStyle: 'none' }} key={repositorie.id}>
+                    <Text paddingRight='10px' variant='navbar' tag='p'>
                       {repositorie.name}:
                     </Text>
-                    <li style={{ paddingTop: 10 }}>
-                      <Text color='secundary' href={repositorie.url}>
-                        {repositorie.url}
-                      </Text>
-                    </li>
+                    <Text color='secundary' href={repositorie.url}>
+                      {repositorie.url}
+                    </Text>
                   </li>
-                </>
               ))}
             </Box>
           </Grid.Col>
