@@ -13,13 +13,24 @@ interface IProjectGithub {
 export default websitePageHOC(ProjectScreen)
 
 export async function getStaticProps ({ params } : any) {
-  const repostoriesData = await fetch('https://api.github.com/users/eletromaximus/repos')
+  const repostoriesData = await fetch(
+    'https://api.github.com/users/eletromaximus/repos')
     .then(async (respostaDoServer) => {
       const resposta = await respostaDoServer.json()
       return resposta
     })
 
-  const projectData = repostoriesData.find((element: any) => (JSON.stringify(element.id) === params.id))
+  if (repostoriesData.length <= 1) {
+    return {
+      notFound: true
+    }
+  }
+
+  const projectData = repostoriesData
+    .find((element: any) => (
+      JSON.stringify(element.id) === String(params.id)
+    ))
+
   const project: IProjectGithub = {
     name: projectData.name,
     html_url: projectData.html_url,
@@ -34,6 +45,7 @@ export async function getStaticProps ({ params } : any) {
         seoProps: {
           headTitle: project.name
         }
+
       }
     }
   }
@@ -46,7 +58,7 @@ export async function getStaticPaths () {
       return resposta
     })
 
-  const idsList: any[] = repostoriesData.map((elemento: any) => {
+  const idsList = repostoriesData.map((elemento: any) => {
     return JSON.stringify(elemento.id)
   })
 

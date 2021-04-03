@@ -9,20 +9,6 @@ $bg: #313942;
 $ghost: #528cce;
 $heading: #e7ebf2;
 
-/* body {
-  background-color: $bg;
-  font-family: 'Montserrat', sans-serif;
-}
-
-main {
-  align-items: center;
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  justify-content: center;
-  text-align: center;
-} */
-
 h1 {
   color: $heading;
   font-size: 12.5rem;

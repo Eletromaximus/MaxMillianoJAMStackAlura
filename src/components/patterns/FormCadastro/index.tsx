@@ -3,16 +3,8 @@ import Text from '../../foundation/Text'
 import TextField from '../../Forms/TextField'
 import Button from '@material-ui/core/Button'
 import { useForm } from 'react-hook-form'
-// import { yupResolver } from '@hookform/resolvers/yup'
-// import * as yup from 'yup'
 
 import { Content, FormMessageWrapper } from './styles'
-
-// const schema = yup.object().shape({
-//   name: yup.string().required(),
-//   email: yup.string().required(),
-//   message: yup.string().required()
-// })
 
 function FormContent () {
   const { register, handleSubmit, errors } = useForm({
