@@ -1,3 +1,4 @@
+/* eslint-disable jest/expect-expect */
 /// <reference types="cypress" />
 
 describe('/pages', () => {
