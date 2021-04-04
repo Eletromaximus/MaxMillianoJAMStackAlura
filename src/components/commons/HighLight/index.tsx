@@ -11,7 +11,7 @@ interface Props {
  endereco: string;
  variant: string;
  color?: string;
- target?: string;
+//  target?: string;
 }
 
 function CardHighlight ({ url, title, alt, description, endereco, variant, ...props }: Props) {
@@ -21,7 +21,7 @@ function CardHighlight ({ url, title, alt, description, endereco, variant, ...pr
 				<CardWrapper.Image src={url} alt={alt} />
 				<CardWrapper.Footer>
 					<CardWrapper.Description>
-						<Text variant={variant} href={endereco} target="_blanck" {...props} >
+						<Text variant={variant} href={endereco} {...props} >
 								{title}
 						</Text>
 						<CardWrapper.Text>{description}</CardWrapper.Text>
