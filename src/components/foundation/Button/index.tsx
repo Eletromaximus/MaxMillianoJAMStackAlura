@@ -12,6 +12,7 @@ interface IButton {
   href?: string;
   paddingRight?: string | object;
   padding?: string | object;
+  name?: string;
 }
 
 const ButtonBase = styled.button<IButton>`

@@ -17,7 +17,7 @@ export default function Home ({ onClick, href } : Props) {
   // const { title } = useContext(ThemeContext)
 
   return (
-    <MenuWrapper>
+    <MenuWrapper >
       <MenuWrapper.LeftSide>
           {/* <Button
           onChange={toggleTheme}

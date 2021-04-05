@@ -37,6 +37,7 @@ function FormContent () {
       style={{
         marginTop: '30px'
       }}
+      id='formMessage'
     >
 
       <Text

@@ -10,12 +10,13 @@ interface Props {
 }
 export default function Navbar ({ onClick, href }: Props) {
   return (
-    <NavbarWrapper>
+    <NavbarWrapper >
       <li>
         <Button
           variant='subtitle'
           onClick={onClick}
           paddingRight='30px'
+          name='contato'
         >
           Contato
         </Button>
@@ -26,6 +27,7 @@ export default function Navbar ({ onClick, href }: Props) {
           href={href}
           color='black'
           paddingRight='40px'
+          name='sobre'
         >
           Sobre Mim
         </Text>
