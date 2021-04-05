@@ -50,6 +50,9 @@ module.exports = {
       env: {
         jest: true
       },
+      rules: {
+        'jest/no-commented-out-tests': 'off'
+      },
       // eslint-disable-next-line global-require, import/no-extraneous-dependencies
       ...require('eslint-plugin-jest').configs.recommended
     }
