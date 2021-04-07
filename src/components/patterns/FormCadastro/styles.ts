@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const FormMessageWrapper = styled.section`
-  width: 700px;
-  height: 95%;
+  width: 100%;
+  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -11,7 +11,7 @@ export const FormMessageWrapper = styled.section`
 
 export const Content = styled.div`
   width: 92%;
-  height: 60%;
+  height: 65%;
   background-color: ${({ theme }) => theme.colors.mode.light.primary};
   border-radius: 20px;
   & form {
