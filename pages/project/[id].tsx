@@ -2,64 +2,47 @@
 // import React from 'react'
 import websitePageHOC from '../../src/components/wrappers/WebsitePages/hoc'
 import ProjectScreen from '../../src/components/screens/ProjectScreen'
-
-interface IProjectGithub {
-	name: string,
-	html_url: string,
-	description: string,
-	blobs_url?: string,
-}
+import { getContent } from './getContent'
 
 export default websitePageHOC(ProjectScreen)
 
-export async function getStaticProps ({ params } : any) {
-  const repostoriesData = await fetch(
-    'https://api.github.com/users/eletromaximus/repos')
-    .then(async (respostaDoServer) => {
-      const resposta = await respostaDoServer.json()
-      return resposta
-    })
+interface IParams {
+  params?: any;
+  preview: boolean;
+}
+// const preview = false
+export async function getStaticProps ({ params, preview }: IParams) {
+  const projetos = await getContent({ preview })
 
-  if (repostoriesData.length <= 1) {
+  if (projetos.allProjetos.length <= 0) {
+    console.log('entrou aqui')
     return {
       notFound: true
     }
   }
 
-  const projectData = repostoriesData
+  const projeto = projetos.allProjetos
     .find((element: any) => (
-      JSON.stringify(element.id) === String(params.id)
+      JSON.stringify(element.idDoProjeto) === String(params.id)
     ))
-
-  const project: IProjectGithub = {
-    name: projectData.name,
-    html_url: projectData.html_url,
-    description: projectData.description,
-    blobs_url: projectData.blobs_url
-  }
 
   return {
     props: {
-      project,
+      projeto,
       pageWrapperProps: {
         seoProps: {
-          headTitle: project.name
+          headTitle: projeto.name
         }
-
       }
     }
   }
 }
 
-export async function getStaticPaths () {
-  const repostoriesData = await fetch('https://api.github.com/users/eletromaximus/repos')
-    .then(async (respostaDoServer) => {
-      const resposta = await respostaDoServer.json()
-      return resposta
-    })
+export async function getStaticPaths ({ preview }: IParams) {
+  const projetos = await getContent({ preview })
 
-  const idsList = repostoriesData.map((elemento: any) => {
-    return JSON.stringify(elemento.id)
+  const idsList = projetos.allProjetos.map((elemento: any) => {
+    return JSON.stringify(elemento.idDoProjeto)
   })
 
   const ids = idsList.map((elemento: any) => {
