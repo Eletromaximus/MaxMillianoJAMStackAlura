@@ -1,10 +1,10 @@
-import { CMSGraphQLClient, gql } from '../../src/infra/cms/CMSGraphQl'
+import { CMSGraphQLClient, gql } from './CMSGraphQl'
 
 interface IProps {
   preview: boolean
 }
 
-export async function getContent ({ preview }: IProps) {
+export default async function getContent ({ preview }: IProps) {
   const query = gql`
   query {
     allProjetos{

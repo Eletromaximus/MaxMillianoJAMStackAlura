@@ -2,7 +2,7 @@
 // import React from 'react'
 import websitePageHOC from '../../src/components/wrappers/WebsitePages/hoc'
 import ProjectScreen from '../../src/components/screens/ProjectScreen'
-import { getContent } from './getContent'
+import getContent from '../../src/infra/cms/getContent'
 
 export default websitePageHOC(ProjectScreen)
 
