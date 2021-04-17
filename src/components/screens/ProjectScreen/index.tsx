@@ -7,37 +7,18 @@ import Text from '../../foundation/Text'
 import Image from 'next/image'
 
 interface IProjectGithub {
-	project: {
-	name: string,
-	html_url: string,
-	description: string,
-	blobs_url: string
-}}
+	projeto: {
+		name: string,
+		description: string,
+		imagemDoProjeto: {
+			url: string
+		},
+		url: string,
+		idDoProjeto: number
+	}
+}
 
-const imageLinks = [
-  {
-    title: 'PomodoroClock',
-    url: 'https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png'
-  },
-
-  {
-    url: 'https://raw.githubusercontent.com/Eletromaximus/semanaomnistack11/master/x2.png',
-    title: 'semanaomnistack11'
-  },
-
-  {
-    url: 'https://raw.githubusercontent.com/Eletromaximus/NLW3/master/x.png',
-    title: 'NLW3'
-  },
-
-  {
-    url: 'https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png',
-    title: 'InstaAlura'
-  }
-]
-
-export default function ProjectScreen ({ project }: IProjectGithub) {
-  const sourceLink = imageLinks.find((img: {title: string, url: string}) => img.title === project.name)
+export default function ProjectScreen ({ projeto } : IProjectGithub) {
   return (
       <Box
 				display='flex'
@@ -55,8 +36,8 @@ export default function ProjectScreen ({ project }: IProjectGithub) {
 					paddingRight={{ md: 20 }}
 					style={{ minWidth: '700px' }}
 				>
-					{ sourceLink && <Image
-						src={sourceLink.url}
+					{ projeto.imagemDoProjeto.url && <Image
+						src={projeto.imagemDoProjeto.url}
 						width={750}
 						height={550}
 					/>}
@@ -76,28 +57,24 @@ export default function ProjectScreen ({ project }: IProjectGithub) {
 						variant='title'
 						textAlign='center'
 					>
-						{project.name}
-					</Text>
-
-					<Text
-						variant='navbar'
-						tag='p'
-						color='secundary'
-					>
-						{project.description}
+						{projeto.name}
 					</Text>
 
 					<Text
 						variant='paragraph1'
-						href={project.html_url}
+						tag='p'
+						color='secundary'
 					>
-						{project.html_url}
+						{projeto.description}
+					</Text>
+
+					<Text
+						variant='paragraph1'
+						href={projeto.url}
+					>
+						{projeto.url}
 					</Text>
 				</Grid.Col>
 			</Box>
   )
-}
-
-ProjectScreen.defaultProps = {
-  blobs_html: ''
 }

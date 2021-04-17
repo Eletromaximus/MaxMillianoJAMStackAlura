@@ -7,7 +7,8 @@ module.exports = {
       'bootcamp-alura-01-git-modulo01.omariosouto.vercel',
       'insta-alura-git-main.maxmillianox.vercel.app',
       'raw.githubusercontent.com',
-      'avatars.githubusercontent.com'
+      'avatars.githubusercontent.com',
+      'www.datocms-assets.com'
     ]
   }
 }
