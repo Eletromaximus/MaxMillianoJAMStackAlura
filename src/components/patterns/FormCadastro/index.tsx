@@ -1,35 +1,20 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Text from '../../foundation/Text'
-import TextField from '../../Forms/TextField'
 import Button from '@material-ui/core/Button'
 import { useForm } from 'react-hook-form'
 
 import { Content, FormMessageWrapper } from './styles'
 
 function FormContent () {
-  const { register, handleSubmit, errors } = useForm({
+  const { register, handleSubmit, formState: { errors } } = useForm({
     defaultValues: {
       name: '',
       email: '',
       message: ''
     }
   })
-  const [userInfo, setUserInfo] = useState({
-    name: '',
-    email: '',
-    message: ''
-  })
 
   const onSubmit = (data: any) => console.log(data)
-
-  function handleChange (event: any) {
-    const fieldName = event.target.getAttribute('name')
-    setUserInfo({
-      ...userInfo,
-      [fieldName]: event.target.value
-
-    })
-  }
 
   return (
     <form
@@ -57,13 +42,10 @@ function FormContent () {
         Seu Nome
       </Text>
 
-      <TextField
+      <input
         placeholder='Seu Nome'
         type='text'
-        name='name'
-        onChange={handleChange}
-        value={userInfo.name}
-        xref={register({ required: true, pattern: /[^a-zà-ú]/gi })}
+        {...register('name', { required: true, pattern: /[^a-zà-ú]/gi })}
       />
        {errors.name?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
@@ -75,13 +57,10 @@ function FormContent () {
         Seu Email
       </Text>
 
-      <TextField
+      <input
         placeholder='Seu Email'
         type='text'
-        name='email'
-        onChange={handleChange}
-        value={userInfo.email}
-        xref={register({ required: true })}
+        {...register('email', { required: true })}
       />
       {errors.email?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
@@ -101,11 +80,7 @@ function FormContent () {
           outline: '0',
           resize: 'none'
         }}
-        ref={register({ required: true })}
-        maxLength={500}
-        name='message'
-        onChange={handleChange}
-        value={userInfo.message}
+        {...register('message', { required: true, maxLength: 500 })}
       />
       {errors.message?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
 
