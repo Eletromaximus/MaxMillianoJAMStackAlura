@@ -1,4 +1,5 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
+import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 
 export const FormMessageWrapper = styled.section`
   width: 100%;
@@ -10,7 +11,16 @@ export const FormMessageWrapper = styled.section`
 `
 
 export const Content = styled.div`
-  width: 92%;
+  ${breakpointsMedia({
+    sm: css`
+      width: 100%;
+      height: 65%
+    `,
+    md: css`
+      width: 500px;
+      height: 50%;
+    `
+  })};
   height: 65%;
   background-color: ${({ theme }) => theme.colors.mode.light.primary};
   border-radius: 20px;
@@ -20,6 +30,11 @@ export const Content = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    input {
+      width: 80%;
+      border: 1px solid black;
+    }
   }
 
 `

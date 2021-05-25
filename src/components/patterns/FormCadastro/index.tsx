@@ -20,7 +20,7 @@ function FormContent () {
     <form
       onSubmit={handleSubmit(onSubmit)}
       style={{
-        marginTop: '30px'
+        margin: '30px 20px'
       }}
       id='formMessage'
     >
