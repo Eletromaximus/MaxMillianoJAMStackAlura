@@ -23,13 +23,13 @@ export default function Navbar ({ onClick, href }: Props) {
       </li>
       <li>
         <Text
-          variant='navbar'
+          variant='subtitle'
           href={href}
           color='black'
           paddingRight='40px'
           name='sobre'
         >
-          Sobre Mim
+          {'<Sobre Mim/>'}
         </Text>
       </li>
     </NavbarWrapper>
