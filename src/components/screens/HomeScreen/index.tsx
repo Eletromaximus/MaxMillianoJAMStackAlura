@@ -1,6 +1,5 @@
 import React from 'react'
 import { Grid } from '../../foundation/layout/Grid'
-import SectionTitle from '../../commons/SectionTitle'
 import { WrapperProjects } from '../../commons/WrapperProjects'
 import Card from '../../commons/Cards'
 import HighLightCard from '../../commons/HighLight'
@@ -9,9 +8,6 @@ export default function HomeScreen () {
   return (
     <Grid.Container>
 
-    <SectionTitle >
-      Meus Projetos
-    </SectionTitle>
       <WrapperProjects>
         <Grid.Row>
           <HighLightCard
