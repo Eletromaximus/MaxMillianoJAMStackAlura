@@ -3,23 +3,25 @@ import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 import { FooterWrapper } from './styles'
-import { Button } from '@material-ui/core'
+import Button from '../../foundation/Button'
 
 export default function Footer () {
   return (
     <FooterWrapper>
       <Button
+        variant='paragraph1'
         href='https://github.com/Eletromaximus'
-        target='_blank'
+        color='black'
       >
-        <GitHubIcon />
+        <GitHubIcon fontSize='large' />
       </Button>
 
       <Button
+        variant='paragraph1'
         href='https://www.linkedin.com/in/maxmilliano/'
-        target='_blank'
+        color='black'
       >
-        <LinkedInIcon />
+        <LinkedInIcon fontSize='large' />
       </Button>
     </FooterWrapper>
   )

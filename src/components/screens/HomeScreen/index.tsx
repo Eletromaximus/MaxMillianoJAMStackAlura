@@ -11,12 +11,12 @@ export default function HomeScreen () {
       <WrapperProjects>
         <Grid.Row>
           <HighLightCard
+            url="https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png"
+            title="InstaAlura"
+            alt="instaAlura"
+            endereco="/project/337503798"
             variant="title"
-            alt="pomodoro Clock"
-            description="Relógio pomodoro com React e typescript"
-            title="Relógio Pomodoro"
-            url="https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png"
-            endereco="/project/257099735"
+            description="Projeto desenvolvido no BootCamp JAMStack Alura"
           />
         </Grid.Row>
 
@@ -34,10 +34,10 @@ export default function HomeScreen () {
             href="/project/303780279"
           />
           <Card
-            url="https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png"
-            title="InstaAlura"
-            alt="instaAlura"
-            href="/project/337503798"
+            alt="pomodoro Clock"
+            title="Relógio Pomodoro"
+            url="https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png"
+            href="/project/257099735"
           />
         </Grid.Row>
       </WrapperProjects>

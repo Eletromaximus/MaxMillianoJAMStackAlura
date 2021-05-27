@@ -7,12 +7,14 @@ import Link from '../Link'
 
 interface IButton {
   variant: string;
+  target: string;
   children: React.ReactNode;
   onClick?: () => void;
   href?: string;
   paddingRight?: string | object;
   padding?: string | object;
   name?: string;
+  color?: string;
 }
 
 const ButtonBase = styled.button<IButton>`
@@ -30,8 +32,13 @@ export default function Button ({ variant, href, children, ...props }: IButton) 
   const tag = hasTag ? Link : 'button'
 
   return (
-    <ButtonBase as={tag} variant={variant} {...props} >
+    <ButtonBase as={tag} variant={variant} href={href} {...props} >
       {children}
     </ButtonBase>
   )
+}
+
+Button.defaultProps = {
+  variant: 'paragraph1',
+  target: '_blanck'
 }

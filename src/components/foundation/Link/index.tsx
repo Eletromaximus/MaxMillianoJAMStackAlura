@@ -7,7 +7,7 @@ interface ILinkProps {
   href: string;
   children: React.ReactNode,
   color?: string;
-  target?: string;
+  target: string;
   variant: string;
 }
 
@@ -16,7 +16,7 @@ export default function Link ({ href, children, target, variant, ...props }: ILi
 
     <NextLink href={href} passHref>
       <LinkBase
-        target={target === '' ? '_blanck' : target}
+        target={target}
         variant={variant}
         {...props}
       >
@@ -29,5 +29,6 @@ export default function Link ({ href, children, target, variant, ...props }: ILi
 
 Link.defaultProps = {
   href: '',
-  variant: 'subtitle'
+  variant: 'subtitle',
+  target: '_blanck'
 }
