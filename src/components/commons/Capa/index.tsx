@@ -9,7 +9,13 @@ function Capa () {
         variant='title'
         href='/'
       >
-        Bem vindo ao meu Portifólio
+        Max Milliano
+      </Text>
+      <br/>
+      <Text
+        variant='subtitle'
+      >
+        Desenvolvedor Web
       </Text>
     </CapaStyle>
   )

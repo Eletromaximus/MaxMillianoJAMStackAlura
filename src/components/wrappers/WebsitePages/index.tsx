@@ -45,35 +45,35 @@ export default function WebsitePagesWrapper ({
       }}
     >
       <SEO {...seoProps}/>
-    <Box
-      display='flex'
-      flex='1'
-      flexDirection='column'
-      {...pageBoxProps}
-    >
-      { capaProps && <Capa/>}
-      {menuProps && (
-        <>
-          <Menu onClick={() => setIsModalState(!isModalOpen)} href='/About' />
-        </>
-      )}
+      <Box
+        display='flex'
+        flex='1'
+        flexDirection='column'
+        {...pageBoxProps}
+      >
+        { capaProps && <Capa/>}
+        {menuProps && (
+          <>
+            <Menu onClick={() => setIsModalState(!isModalOpen)} href='/About' />
+          </>
+        )}
 
-      <Modal
-				isOpen={isModalOpen}
-				onClose={() => { setIsModalState(false) }}>
-				{(propsDoModal: any) => (
-					<FormCadastro
-						propsDoModal={propsDoModal}
-						Close={() => setIsModalState(false)}
-					/>
-				)}
-			</Modal>
+        <Modal
+          isOpen={isModalOpen}
+          onClose={() => { setIsModalState(false) }}>
+          {(propsDoModal: any) => (
+            <FormCadastro
+              propsDoModal={propsDoModal}
+              Close={() => setIsModalState(false)}
+            />
+          )}
+        </Modal>
 
-      {children}
+        {children}
 
-      {footerProps && <Footer/>}
+        {footerProps && <Footer/>}
 
-    </Box>
+      </Box>
     </WebsitePagesContext.Provider>
   )
 }

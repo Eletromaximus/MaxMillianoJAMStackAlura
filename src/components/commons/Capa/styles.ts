@@ -6,10 +6,11 @@ const CapaStyle = styled.div`
   font-family: 'Lato', sans-serif;
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  height: 300px;
+  height: 50vh;
   a {
     ${breakpointsMedia({
     xs: css`

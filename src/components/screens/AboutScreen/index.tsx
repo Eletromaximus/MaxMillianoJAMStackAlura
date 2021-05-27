@@ -2,7 +2,6 @@ import React from 'react'
 import { Grid } from '../../foundation/layout/Grid'
 import Image from 'next/image'
 import Text from '../../foundation/Text'
-import SectionTitle from '../../commons/SectionTitle'
 import { Box } from '../../foundation/layout/Box'
 
 export interface IAboutScreenProps {
@@ -58,9 +57,6 @@ export default function AboutScreen ({ repositories }: IAboutScreenProps) {
               Acompanhe abaixo os meus projetos:
             </Text>
           </div>
-            <SectionTitle >
-              Meus Projetos pessoais
-            </SectionTitle>
           <Grid.Col
             offset={{ xs: 0, md: 0 }}
             value={{ xs: 12, md: 6 }}
