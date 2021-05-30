@@ -11,21 +11,18 @@ export const ModeContext = createContext({
 export default function WebsiteGlobalProvider ({ children }: any) {
   const [theme, setTheme] = useState(dark)
 
-  function toogleTheme () {
-    const res = theme.title === 'light' ? dark : light
-    return res
-  }
-
   useEffect(() => {
     const mode = localStorage.getItem('themeMode')
-    if (mode === null) {
-      useState(dark)
-    }
     if (mode === theme.title) {
       setTheme(toogleTheme())
       localStorage.setItem('themeMode', theme.title)
     }
   }, [])
+
+  function toogleTheme () {
+    const res = theme.title === 'light' ? dark : light
+    return res
+  }
 
   return (
     <ModeContext.Provider value={{
