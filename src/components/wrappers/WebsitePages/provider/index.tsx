@@ -13,9 +13,6 @@ export default function WebsiteGlobalProvider ({ children }: any) {
 
   useEffect(() => {
     const mode = localStorage.getItem('themeMode')
-    if (mode === null) {
-      useState(dark)
-    }
     if (mode === theme.title) {
       setTheme(toogleTheme())
       localStorage.setItem('themeMode', theme.title)

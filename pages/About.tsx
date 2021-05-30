@@ -14,11 +14,11 @@ export default websitePageHOC(AboutScreen)
 
 export async function getStaticProps () {
   const listRepostories: IGithub[] = await fetch(
-    'https://api.github.com/users/eletromaximus/reposdfd'
+    'https://api.github.com/users/eletromaximus/repos'
   )
     .then((response) => response.json())
 
-  if (listRepostories.length >= 2) {
+  if (listRepostories.length <= 2) {
     const repositories = listRepostories
       .filter((repository) => !repository.fork)
       .sort((a, b) => {
