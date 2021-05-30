@@ -1,4 +1,7 @@
-const breakpoints: { [unit: string]: number } = {
+export interface IBreakpoints {
+  [unit: string]: number
+}
+const breakpoints: IBreakpoints = {
   xs: 0,
   sm: 480,
   md: 768,

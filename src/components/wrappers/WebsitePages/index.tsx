@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 import Capa from '../../commons/Capa'
 import Footer from '../../commons/Footer'
 import Menu from '../../commons/Menu'
@@ -6,6 +6,7 @@ import Modal from '../../commons/Modal'
 import { Box } from '../../foundation/layout/Box'
 import FormCadastro from '../../patterns/FormCadastro'
 import SEO from '../../commons/SEO'
+import { ModeContext } from '../WebsitePages/provider'
 
 interface IWebsitePagesWrapper {
   children: React.ReactNode;
@@ -20,6 +21,7 @@ interface IWebsitePagesWrapper {
   menuProps: boolean
   capaProps: boolean
   footerProps: boolean
+  modeButton: boolean
 }
 
 export const WebsitePagesContext = createContext({
@@ -32,9 +34,11 @@ export default function WebsitePagesWrapper ({
   pageBoxProps,
   menuProps,
   capaProps,
-  footerProps
+  footerProps,
+  modeButton
 }: IWebsitePagesWrapper) {
   const [isModalOpen, setIsModalState] = useState(false)
+  const modeChangeContext = useContext(ModeContext)
 
   return (
     <WebsitePagesContext.Provider
@@ -52,11 +56,15 @@ export default function WebsitePagesWrapper ({
         {...pageBoxProps}
       >
         { capaProps && <Capa/>}
-        {menuProps && (
-          <>
-            <Menu onClick={() => setIsModalState(!isModalOpen)} href='/About' />
-          </>
-        )}
+        {menuProps &&
+            <Menu
+              onClick={() => setIsModalState(!isModalOpen)}
+              changeMode={() => {
+                modeChangeContext.toggleModeContext()
+              }}
+              href='/About'
+            />
+        }
 
         <Modal
           isOpen={isModalOpen}
@@ -83,5 +91,6 @@ WebsitePagesWrapper.defaultProps = {
   pageBoxProps: {},
   menuProps: true,
   capaProps: true,
-  footerProps: true
+  footerProps: true,
+  modeButton: false
 }

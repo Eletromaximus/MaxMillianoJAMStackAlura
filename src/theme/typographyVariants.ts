@@ -1,5 +1,12 @@
-const typographyVariants = {
+export interface ITypography {
+  [title: string]: {
+    fontSize: string,
+    fontWeight: string,
+    lineHeight: number
+  }
+}
 
+const typographyVariants: ITypography = {
   title: {
     fontSize: '32px',
     fontWeight: '900',

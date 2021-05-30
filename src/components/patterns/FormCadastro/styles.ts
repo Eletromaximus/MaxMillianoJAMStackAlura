@@ -22,7 +22,7 @@ export const Content = styled.div`
     `
   })};
   height: 65%;
-  background-color: ${({ theme }) => theme.colors.mode.light.primary};
+  background-color: ${({ theme }) => theme.colors.primary};
   border-radius: 20px;
   & form {
     display: flex;

@@ -1,24 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 import { normalize } from 'styled-normalize'
-import { ThemeType } from '.'
 
-type ThemeProps = {
-  theme: ThemeType
-}
-// color: ${({ theme }) => theme.colors.mode.light.text};
-// background: ${({ theme }) => theme.colors.mode.light.background};
-const GlobalStyle = createGlobalStyle<ThemeProps>`
+const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
-  /* Full height layout */
+
   ${normalize}
   body {
     margin: 0;
     padding: 0;
     font-family: ${({ theme }) => theme.fontFamily};
-    color: ${({ theme }) => theme.colors.mode.light.text};
-    background: ${({ theme }) => theme.colors.mode.light.background};
+    color: ${({ theme }) => theme.colors.text};
+    background: ${({ theme }) => theme.colors.background};
   }
   
   html, body {

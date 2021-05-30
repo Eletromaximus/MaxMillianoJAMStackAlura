@@ -13,7 +13,7 @@ export const LinkBase = styled.a<ILinkProps>`
   ${({ color }) => {
     if (!color) {
       return css`
-        color: ${({ theme }) => theme.colors.mode.light.text}
+        color: ${({ theme }) => theme.colors.text}
       `
     } else {
       return css`
