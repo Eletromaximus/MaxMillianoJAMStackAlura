@@ -12,9 +12,11 @@ interface IButton {
   onClick?: () => void;
   href?: string;
   paddingRight?: string | object;
-  padding?: string | object;
+  padding?: string | object | number;
+  margin?: string | object | number;
   name?: string;
   color?: string;
+  width?: string;
 }
 
 const ButtonBase = styled.button<IButton>`
@@ -24,7 +26,9 @@ const ButtonBase = styled.button<IButton>`
   ${(props) => TextStyleVariants[props.variant]};
   ${propToStyle('color')};
   ${propToStyle('paddingRight')};
+  ${propToStyle('margin')};
   ${propToStyle('padding')};
+  ${propToStyle('width')};
 `
 // color: ${({ theme, variant }) => get(theme, `colors.${variant}.color`)}
 export default function Button ({ variant, href, children, ...props }: IButton) {
@@ -40,5 +44,6 @@ export default function Button ({ variant, href, children, ...props }: IButton) 
 
 Button.defaultProps = {
   variant: 'paragraph1',
-  target: '_blanck'
+  target: '_blanck',
+  href: undefined
 }

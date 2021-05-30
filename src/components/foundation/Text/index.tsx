@@ -1,5 +1,4 @@
 import styled, { css } from 'styled-components'
-import PropTypes from 'prop-types'
 import React from 'react'
 import typographyVariants from '../../../theme/typographyVariants'
 import Link from '../Link'
@@ -7,13 +6,13 @@ import propToStyle from '../../../theme/utils/propToStyle'
 import get from 'lodash/get'
 
 interface Props {
-  tag?: 'p' | 'span' | 'h1' | 'h2' | 'h3';
+  tag: 'p' | 'span' | 'h1' | 'h2' | 'h3' | any;
   variant: string;
   textAlign?: string | object;
   children: string | number | React.ReactNode;
   color?: string;
   name?: string;
-  href?: string | object;
+  href: string | object;
   paddingRight?: string | object;
   marginBottom?: string | object;
 }
@@ -64,12 +63,23 @@ export default function Text ({ variant, href, tag, children, ...props }: Props)
   const hasTag = Boolean(href)
   const xtag = hasTag ? Link : tag
 
-  return (
+  if (href) {
+    return (
+      <TextBase
+        as={xtag}
+        variant={variant}
+        href={href}
+        {...props}
+      >
+        {children}
+      </TextBase>
+    )
+  }
 
+  return (
     <TextBase
       as={xtag}
       variant={variant}
-      href={href}
       {...props}
     >
       {children}
@@ -77,13 +87,8 @@ export default function Text ({ variant, href, tag, children, ...props }: Props)
   )
 }
 
-Text.prototype = {
-  tag: PropTypes.string.isRequired,
-  variant: PropTypes.string.isRequired,
-  children: PropTypes.node.isRequired
-}
-
 Text.defaultProps = {
   tag: 'span',
-  variant: 'paragraph1'
+  variant: 'paragraph1',
+  href: undefined
 }
