@@ -7,8 +7,8 @@ export const MenuWrapper: any = styled.header`
   justify-content: space-between;
   align-items: center;
   
-  background-color: ${({ theme }) => theme.colors.mode.light.primary};
-  border: 2px solid ${({ theme }) => theme.colors.mode.light.secundary}
+  background-color: ${({ theme }) => theme.colors.primary};
+  border: 2px solid ${({ theme }) => theme.colors.secundary}
 
   
 
@@ -32,6 +32,10 @@ MenuWrapper.LeftSide = styled.div`
       padding-left: 150px;
     `
   })}
+
+  #modeChange {
+    color: ${({ theme }) => theme.colors.background}
+  }
   `
 MenuWrapper.RightSide = styled.div`
 `

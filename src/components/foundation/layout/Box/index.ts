@@ -35,4 +35,3 @@ export const Box = styled.div<IBox>`
   ${propToStyle('height')}
 
 `
-/* ${({ theme, mode }) => mode === 'light' ? theme.mode.light.background : theme.mode.dark.background} */

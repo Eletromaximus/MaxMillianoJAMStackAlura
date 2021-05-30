@@ -30,5 +30,5 @@ export default function Link ({ href, children, target, variant, ...props }: ILi
 Link.defaultProps = {
   href: '',
   variant: 'subtitle',
-  target: '_blanck'
+  target: ''
 }

@@ -57,7 +57,7 @@ const TextBase = styled.span<Props>`
   ${propToStyle('color')}
   ${propToStyle('marginBottom')}
   ${propToStyle('paddingRight')}
-  color: ${(props) => get(props.theme, `colors.mode.light.${props.color}`)}
+  color: ${(props) => get(props.theme, `colors.${props.color}`)}
 `
 // ;
 export default function Text ({ variant, href, tag, children, ...props }: Props) {
