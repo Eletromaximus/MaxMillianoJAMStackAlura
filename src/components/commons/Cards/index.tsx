@@ -1,4 +1,5 @@
 import React from 'react'
+import Button from '../../foundation/Button'
 import Text from '../../foundation/Text'
 import { CardWrapper } from './styles'
 interface Props {
@@ -11,16 +12,18 @@ interface Props {
 
 export default function Card ({ url, title, alt, href }: Props) {
   return (
-		<>
 			<CardWrapper>
-				<CardWrapper.Image src={url} alt={alt} />
-					<Text
-            href={href}
-						variant='title'
-					>
+				<Button
+					padding='none'
+					href={href}
+				>
+					<CardWrapper.Image src={url} alt={alt} />
+						<Text
+							variant='title'
+						>
 							{title}
 					</Text>
+				</Button>
 			</CardWrapper>
-		</>
   )
 }
