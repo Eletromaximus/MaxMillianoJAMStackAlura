@@ -18,7 +18,7 @@ export async function getStaticProps () {
   )
     .then((response) => response.json())
 
-  if (listRepostories.length <= 2) {
+  if (listRepostories.length >= 2) {
     const repositories = listRepostories
       .filter((repository) => !repository.fork)
       .sort((a, b) => {
