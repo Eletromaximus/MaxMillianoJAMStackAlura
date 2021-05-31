@@ -7,7 +7,6 @@ interface Props {
   title: string;
   alt: string;
   href: string;
-
 }
 
 export default function Card ({ url, title, alt, href }: Props) {

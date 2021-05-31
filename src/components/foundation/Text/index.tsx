@@ -3,7 +3,6 @@ import React from 'react'
 import typographyVariants from '../../../theme/typographyVariants'
 import Link from '../Link'
 import propToStyle from '../../../theme/utils/propToStyle'
-import get from 'lodash/get'
 
 interface Props {
   tag: 'p' | 'span' | 'h1' | 'h2' | 'h3' | any;
@@ -52,11 +51,10 @@ export const TextStyleVariants: Record<string, any> = {
 }
 
 const TextBase = styled.span<Props>`
-  ${(props) => TextStyleVariants[props.variant]}
+  ${({ variant }) => TextStyleVariants[variant]}
   ${propToStyle('color')}
   ${propToStyle('marginBottom')}
   ${propToStyle('paddingRight')}
-  color: ${(props) => get(props.theme, `colors.${props.color}`)}
 `
 // ;
 export default function Text ({ variant, href, tag, children, ...props }: Props) {
