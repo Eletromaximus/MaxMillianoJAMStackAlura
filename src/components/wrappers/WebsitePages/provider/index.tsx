@@ -1,7 +1,8 @@
 import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../../../../theme/GlobalStyle'
 import PropTypes from 'prop-types'
-import React, { createContext, useEffect, useState } from 'react'
+import React, { createContext } from 'react'
+import useLocalStorage from '../../../../hook/useLocalStorage'
 import dark from '../../../../theme/themes/dark'
 import light from '../../../../theme/themes/light'
 
@@ -9,29 +10,15 @@ export const ModeContext = createContext({
   toggleModeContext: () => {}
 })
 export default function WebsiteGlobalProvider ({ children }: any) {
-  const [theme, setTheme] = useState(dark)
+  const [theme, setTheme] = useLocalStorage('theme', dark)
 
-  useEffect(() => {
-    const mode = localStorage.getItem('themeMode')
-    if (mode === theme.title) {
-      setTheme(toogleTheme())
-      localStorage.setItem('themeMode', theme.title)
-    }
-  }, [])
-
-  function toogleTheme () {
-    const res = theme.title === 'light' ? dark : light
-    return res
+  function toggleDark () {
+    theme === dark ? setTheme(light) : setTheme(dark)
   }
 
   return (
     <ModeContext.Provider value={{
-      toggleModeContext: () => {
-        setTheme(
-          toogleTheme()
-        )
-        localStorage.setItem('themeMode', theme.title)
-      }
+      toggleModeContext: () => { toggleDark() }
     }}>
       <ThemeProvider theme={theme}>
         <GlobalStyle />

@@ -27,7 +27,6 @@ interface IWebsitePagesWrapper {
 export const WebsitePagesContext = createContext({
   toggleModalCadastro: () => {}
 })
-
 export default function WebsitePagesWrapper ({
   children,
   seoProps,

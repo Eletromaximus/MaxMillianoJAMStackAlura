@@ -7,7 +7,8 @@ interface ILinkProps {
 }
 
 export const LinkBase = styled.a<ILinkProps>`
-  ${(props) => TextStyleVariants[props.variant]};
+  ${propToStyle('color')};
+  ${({ variant }) => TextStyleVariants[variant]};
   ${propToStyle('textAlign')};
   text-decoration: none;
   ${({ color }) => {
