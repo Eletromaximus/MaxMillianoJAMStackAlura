@@ -21,7 +21,6 @@ interface IWebsitePagesWrapper {
   menuProps: boolean
   capaProps: boolean
   footerProps: boolean
-  modeButton: boolean
 }
 
 export const WebsitePagesContext = createContext({
@@ -33,8 +32,7 @@ export default function WebsitePagesWrapper ({
   pageBoxProps,
   menuProps,
   capaProps,
-  footerProps,
-  modeButton
+  footerProps
 }: IWebsitePagesWrapper) {
   const [isModalOpen, setIsModalState] = useState(false)
   const modeChangeContext = useContext(ModeContext)
@@ -90,6 +88,5 @@ WebsitePagesWrapper.defaultProps = {
   pageBoxProps: {},
   menuProps: true,
   capaProps: true,
-  footerProps: true,
-  modeButton: false
+  footerProps: true
 }
