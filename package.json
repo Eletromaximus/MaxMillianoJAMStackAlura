@@ -76,6 +76,9 @@
       "path": "cz-conventional-changelog"
     }
   },
+  "resolutions": {
+    "browserslist": "^4.16.5"
+  },
   "files": [
     "src/styles/styled.d.ts"
   ]
