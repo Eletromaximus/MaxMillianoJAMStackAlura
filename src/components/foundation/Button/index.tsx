@@ -9,7 +9,7 @@ interface IButton {
   variant: string;
   target: string;
   children: React.ReactNode;
-  onClick?: (e?: Event) => void;
+  onClick?: (e?: React.MouseEvent<HTMLElement>) => void;
   href?: string;
   paddingRight?: string | object;
   padding?: string | object | number;
