@@ -14,7 +14,10 @@ export default function Navbar ({ onClick, href }: Props) {
       <li>
         <Button
           variant='subtitle'
-          onClick={onClick}
+          onClick={(e: Event) =>{
+            e.preventDefault()
+            onClick()
+          }}
           paddingRight='30px'
           name='contato'
         >
