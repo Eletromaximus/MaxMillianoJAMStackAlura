@@ -3,13 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
     node: true,
-    'cypress/globals': true,
     'jest/globals': true
   },
   extends: [
     'plugin:react/recommended',
-    'standard',
-    'plugin:cypress/recommended'
+    'standard'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -38,7 +36,7 @@ module.exports = {
       version: 'detect'
     },
     jest: {
-      version: 26
+      version: 27
     }
   },
   overrides: [
