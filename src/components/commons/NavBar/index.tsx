@@ -8,14 +8,15 @@ interface Props {
   onClick: () => void;
   href: string;
 }
+
 export default function Navbar ({ onClick, href }: Props) {
   return (
     <NavbarWrapper >
       <li>
         <Button
           variant='subtitle'
-          onClick={(e: Event) =>{
-            e.preventDefault()
+          onClick={(e) => {
+            e?.preventDefault()
             onClick()
           }}
           paddingRight='30px'
