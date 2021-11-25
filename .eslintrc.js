@@ -19,17 +19,11 @@ module.exports = {
   },
   plugins: [
     'react',
-    '@typescript-eslint',
-    'cypress'
+    '@typescript-eslint'
   ],
   rules: {
     'no-use-before-define': 'off',
     'no-tabs': 'off',
-    'cypress/no-assigning-return-values': 'error',
-    'cypress/no-unnecessary-waiting': 'error',
-    'cypress/assertion-before-screenshot': 'warn',
-    'cypress/no-force': 'warn',
-    'cypress/no-async-tests': 'error'
   },
   settings: {
     react: {
