@@ -25,6 +25,7 @@ module.exports = {
     'no-use-before-define': 'off',
     'no-tabs': 'off',
   },
+  ignorePatterns: ['.eslintrc.js', 'commitlint.config.js'],
   settings: {
     react: {
       version: 'detect'
