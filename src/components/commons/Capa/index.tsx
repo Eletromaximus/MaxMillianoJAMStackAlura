@@ -1,22 +1,16 @@
 import React from 'react'
 import CapaStyle from './styles'
-import Text from '../../foundation/Text'
 
 function Capa () {
   return (
     <CapaStyle>
-      <Text
-        variant='title'
-        href='/'
-      >
+      <span>
         Max Milliano
-      </Text>
+      </span>
       <br/>
-      <Text
-        variant='subtitle'
-      >
-        Desenvolvedor Web
-      </Text>
+      <span>
+        Portfólio
+      </span>
     </CapaStyle>
   )
 }

@@ -3,14 +3,20 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 import { TextStyleVariants } from '../../foundation/Text'
 
 export const MenuWrapper: any = styled.header`
+  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
-  background-color: ${({ theme }) => theme.colors.primary};
-  border: 2px solid ${({ theme }) => theme.colors.secundary}
+  height: 80px;
+  width: 100%;
+  opacity: 0.8;
+  background-color: #C4C4C4;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
 
-  
+  a + a {
+    margin-left: 50px;
+  }
 
   ${breakpointsMedia({
     md: css`
@@ -27,15 +33,21 @@ export const MenuWrapper: any = styled.header`
 `
 MenuWrapper.LeftSide = styled.div`
     padding-left: 80px;
-  ${breakpointsMedia({
+  /* ${breakpointsMedia({
     md: css`
-      padding-left: 150px;
+      padding-left: 100px;
     `
-  })}
+  })} */
 
   #modeChange {
     color: ${({ theme }) => theme.colors.background}
   }
-  `
+`
+MenuWrapper.MiddleSide = styled.div`
+  display: flex;
+  width: 511px;
+  justify-content: space-between ;
+
+`
 MenuWrapper.RightSide = styled.div`
 `
