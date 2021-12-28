@@ -65,7 +65,7 @@ export default function AboutScreen ({ repositories }: IAboutScreenProps) {
           >
 
             <Box as='ul'>
-              {repositories.map((repositorie) => (
+              {repositories && repositories.map((repositorie) => (
 
                   <li style={{ listStyle: 'none' }} key={repositorie.id}>
                     <Text paddingRight='10px' variant='navbar' tag='p'>

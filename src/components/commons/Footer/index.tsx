@@ -23,6 +23,7 @@ export default function Footer () {
       >
         <LinkedInIcon fontSize='large' />
       </Button>
+      <a href='https://iconscout.com/icons/linkedin' target='_blank' rel='noreferrer'>Linkedin Icon</a> by <a href='https://iconscout.com/contributors/icon-mafia' target='_blank' rel='noreferrer'>Icon Mafia</a>
     </FooterWrapper>
   )
 }

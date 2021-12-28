@@ -10,7 +10,24 @@ const CapaStyle = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
-  height: 50vh;
+  height: 846px;
+  background: linear-gradient(
+          rgba(0, 0, 0, 0.7), 
+          rgba(0, 0, 0, 0.7)
+        ), url('/city2.jpg');
+  color: #FFFFFF;
+  font-family: 'Poppins', sans-serif;
+  
+  span {
+    weight: 400;
+    font-family: Poppins, sans-serif;
+    font-size: 72px;
+  }
+
+  span:nth-child(3) {
+    font-size: 42px;
+  }
+
   a {
     ${breakpointsMedia({
     xs: css`

@@ -13,23 +13,22 @@
     "commit": "cz",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "jest",
-    "test:watch": "yarn jest --watch",
-    "build/start": "yarn build && yarn start",
+    "test:watch": "jest --watch",
+    "build/start": "npm run build && npm run start",
     "prepare": "husky install"
   },
   "dependencies": {
     "@material-ui/core": "^4.11.3",
     "@material-ui/icons": "^4.11.2",
     "@types/jsonwebtoken": "^8.5.1",
-    "browserslist": "^4.16.5",
     "graphql": "^15.7.2",
     "graphql-request": "^3.6.1",
     "jsonwebtoken": "^8.5.1",
-    "next": "^12.0.4",
+    "next": "^12.0.7",
     "next-images": "^1.7.0",
     "nookies": "^2.5.2",
-    "react": "17.0.1",
-    "react-dom": "17.0.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "react-hook-form": "^7.6.6",
     "remove": "^0.1.5",
     "styled-components": "^5.2.1",
@@ -67,15 +66,12 @@
     "lodash": "^4.17.21",
     "react-test-renderer": "^17.0.2",
     "start-server-and-test": "^1.12.3",
-    "typescript": "^4.1.5"
+    "typescript": "^4.5.4"
   },
   "config": {
     "commitizen": {
       "path": "cz-conventional-changelog"
     }
-  },
-  "resolutions": {
-    "browserslist": "^4.16.5"
   },
   "files": [
     "src/styles/styled.d.ts"

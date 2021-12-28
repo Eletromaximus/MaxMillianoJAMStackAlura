@@ -52,7 +52,6 @@ export default function WebsitePagesWrapper ({
         flexDirection='column'
         {...pageBoxProps}
       >
-        { capaProps && <Capa/>}
         {menuProps &&
             <Menu
               onClick={() => setIsModalState(!isModalOpen)}
@@ -62,6 +61,7 @@ export default function WebsitePagesWrapper ({
               href='/About'
             />
         }
+        { capaProps && <Capa/>}
 
         <Modal
           isOpen={isModalOpen}

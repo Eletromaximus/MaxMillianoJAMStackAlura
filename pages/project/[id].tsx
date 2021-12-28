@@ -15,7 +15,6 @@ export async function getStaticProps ({ params, preview }: IParams) {
   const projetos = await getContent({ preview })
 
   if (projetos.allProjetos.length <= 0) {
-    console.log('entrou aqui')
     return {
       notFound: true
     }
