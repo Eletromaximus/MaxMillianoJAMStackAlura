@@ -2,18 +2,18 @@ import styled, { css } from 'styled-components'
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 import { TextStyleVariants } from '../../foundation/Text'
 
-export const MenuWrapper: any = styled.header`
+export const MenuWrapper = styled.nav`
   position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
   width: 100%;
+  height: 80px;
   opacity: 0.8;
   background-color: #C4C4C4;
   color: #000000;
   font-family: 'Poppins', sans-serif;
-
+  min-width: 480px;
   a + a {
     margin-left: 50px;
   }
@@ -26,28 +26,50 @@ export const MenuWrapper: any = styled.header`
     `
   })}
 
-  li a {
-    text-decoration: none;
-    margin-right: 75px;
-  }
 `
-MenuWrapper.LeftSide = styled.div`
-    padding-left: 80px;
-  /* ${breakpointsMedia({
+export const LeftSide = styled.div`
+  ${breakpointsMedia({
+    xs: css`
+      padding-left: 20px;
+    `,
+    sm: css`
+      padding-left: 20px;
+    `,
     md: css`
-      padding-left: 100px;
+      padding-left: 20px;
+    `,
+    xl: css`
+      padding-left: 80px;
     `
-  })} */
+  })}
 
-  #modeChange {
-    color: ${({ theme }) => theme.colors.background}
-  }
 `
-MenuWrapper.MiddleSide = styled.div`
+export const MiddleSide = styled.div`
   display: flex;
-  width: 511px;
-  justify-content: space-between ;
+
+  ${breakpointsMedia({
+    sm: css`
+      width: auto;
+    `,
+    lg: css`
+      justify-content: space-between;
+      width: 511px;
+    `
+  })}
 
 `
-MenuWrapper.RightSide = styled.div`
+export const RightSide = styled.div`
+
+  ${breakpointsMedia({
+    sm: css`
+      padding-right: 20px;
+    `,
+    md: css`
+      padding-right: 40px;
+    `,
+    xl: css`
+      padding-right: 100px;
+    `
+  })}
+  
 `

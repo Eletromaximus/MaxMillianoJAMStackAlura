@@ -1,6 +1,6 @@
 import React from 'react'
 import { Grid } from '../../foundation/layout/Grid'
-import { WrapperProjects } from '../../commons/WrapperProjects'
+// import { WrapperProjects } from '../../commons/WrapperProjects'
 import Card from '../../commons/Cards'
 import HighLightCard from '../../commons/HighLight'
 
@@ -8,7 +8,6 @@ export default function HomeScreen () {
   return (
     <Grid.Container>
 
-      <WrapperProjects>
         <Grid.Row>
           <HighLightCard
             url="https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png"
@@ -40,7 +39,6 @@ export default function HomeScreen () {
             href="/project/257099735"
           />
         </Grid.Row>
-      </WrapperProjects>
     </Grid.Container>
   )
 }

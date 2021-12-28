@@ -1,5 +1,5 @@
-import React from 'react'
-import { MenuWrapper } from './styles'
+import React, { useEffect, useState } from 'react'
+import * as M from './styles'
 
 // import NavbarWrapper from '../NavBar/styles'
 // import Navbar from '../NavBar'
@@ -15,9 +15,25 @@ interface Props {
 }
 
 export default function Home ({ onClick, href, changeMode } : Props) {
+  const [width, setWindowWidth] = useState(0)
+  const breakpoint = 992
+
+  useEffect(() => {
+    updateDimensions()
+
+    window.addEventListener('resize', updateDimensions)
+    return () =>
+      window.removeEventListener('resize', updateDimensions)
+  }, [])
+
+  const updateDimensions = () => {
+    const width = window.innerWidth
+    setWindowWidth(width)
+  }
+
   return (
-    <MenuWrapper >
-      <MenuWrapper.LeftSide>
+    <M.MenuWrapper >
+      <M.LeftSide>
         <Button
           target='_blank'
           href='https://www.behance.net/maxmilsouzam/'
@@ -38,32 +54,37 @@ export default function Home ({ onClick, href, changeMode } : Props) {
         >
           <img src={'/linkedin.svg'} alt="linkedin" />
         </Button>
-      </MenuWrapper.LeftSide>
+      </M.LeftSide>
 
-      <MenuWrapper.MiddleSide>
-        <Text>
-          Quem sou
-        </Text>
-        <Text>
-          O que Faço
-        </Text>
-        <Text>
-          Resumo
-        </Text>
-        <Text>
-          Entre em contato
-        </Text>
-      </MenuWrapper.MiddleSide>
-      <MenuWrapper.RightSide>
+      <M.MiddleSide>
+        {width >= breakpoint
+          ? <>
+            <Text>
+              Quem sou
+            </Text>
+            <Text>
+              O que Faço
+            </Text>
+            <Text>
+              Resumo
+            </Text>
+            <Text>
+              Entre em contato
+            </Text>
+          </>
+          : <Button>
+            Menu
+          </Button>
+        }
+      </M.MiddleSide>
+
+      <M.RightSide>
         <Button
           onClick={() => changeMode()}
-          padding={'0 100px 0 0'}
         >
           <EmojiObjectsIcon id='modeChange' />
         </Button>
-      </MenuWrapper.RightSide>
-
-    </MenuWrapper>
-
+      </M.RightSide>
+    </M.MenuWrapper>
   )
 }
