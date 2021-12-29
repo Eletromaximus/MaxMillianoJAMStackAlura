@@ -1,8 +1,5 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import * as M from './styles'
-
-// import NavbarWrapper from '../NavBar/styles'
-// import Navbar from '../NavBar'
 
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
 import Button from '../../foundation/Button'
@@ -10,26 +7,12 @@ import Text from '../../foundation/Text'
 
 interface Props {
   onClick: () => void;
-  href: string;
   changeMode: () => void;
+  width?: number;
 }
 
-export default function Home ({ onClick, href, changeMode } : Props) {
-  const [width, setWindowWidth] = useState(0)
+export default function Home ({ onClick, changeMode, width } : Props) {
   const breakpoint = 992
-
-  useEffect(() => {
-    updateDimensions()
-
-    window.addEventListener('resize', updateDimensions)
-    return () =>
-      window.removeEventListener('resize', updateDimensions)
-  }, [])
-
-  const updateDimensions = () => {
-    const width = window.innerWidth
-    setWindowWidth(width)
-  }
 
   return (
     <M.MenuWrapper >
@@ -57,7 +40,7 @@ export default function Home ({ onClick, href, changeMode } : Props) {
       </M.LeftSide>
 
       <M.MiddleSide>
-        {width >= breakpoint
+        {width && (width >= breakpoint)
           ? <>
             <Text>
               Quem sou
