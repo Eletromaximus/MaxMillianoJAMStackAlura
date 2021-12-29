@@ -8,7 +8,7 @@ interface IProps {
   flex?: number | object;
   display?: string | object;
   flexDirection?: string | object;
-  flexWrap: string | object;
+  flexWrap?: string | object;
   alignItems?: string | object;
   justifyContent?: string | object;
   marginLeft?: string | object;
