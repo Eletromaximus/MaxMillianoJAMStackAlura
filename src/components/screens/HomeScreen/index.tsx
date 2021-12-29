@@ -1,46 +1,64 @@
 import React from 'react'
+import { Box } from '../../foundation/layout/Box'
 import { Grid } from '../../foundation/layout/Grid'
-import { WrapperProjects } from '../../commons/WrapperProjects'
-import Card from '../../commons/Cards'
-import HighLightCard from '../../commons/HighLight'
+import Text from '../../foundation/Text'
 
-export default function HomeScreen () {
+interface IHome {
+  width: number
+}
+
+export default function HomeScreen ({ width }: IHome) {
   return (
-    <Grid.Container>
+    <Box
+      display='flex'
+      justifyContent={{
+        sm: 'space-between',
+        lg: 'center'
+      }}
+      style={{
+        alignItems: 'center'
+      }}
+      height='846px'
+    >
+      <Grid.Col
+        value={{
+          xs: '12',
+          sm: '5'
+        }}
+        display='flex'
+        justifyContent='space-between'
+        alignItems='center'
+        flexWrap={{
+          sm: 'nowrap',
+          xs: 'wrap'
+        }}
+      >
+        <Box
+          display='flex'
+          width={{ xs: '100%' }}
+          style={{ justifyContent: 'center' }}
+        >
+          <img src='/eumini.png' alt='avatar' />
+        </Box>
 
-      <WrapperProjects>
-        <Grid.Row>
-          <HighLightCard
-            url="https://github.com/Eletromaximus/InstaAlura/raw/main/instaAlura.png"
-            title="InstaAlura"
-            alt="instaAlura"
-            endereco="/project/337503798"
-            variant="title"
-            description="Projeto desenvolvido no BootCamp JAMStack Alura"
-          />
-        </Grid.Row>
+        <Box
+          width='401px'
+          minWidth='401px'
+          margin={{
+            sm: '0 0 0 20px',
+            md: '0 0 0 80px'
+          }}
+          padding='30px 0 0 0'
+        >
+          <Text variant='paragraph'>
+            Olá,
+              Sou Max Milliano, desenvolvedor web.
+            Engenheiro por formação e apaixonado pelo universo da programação.
+            Coleciono experiências e me divertindo com os resultados.
+          </Text>
+        </Box>
+      </Grid.Col>
 
-        <Grid.Row>
-          <Card
-            url="https://github.com/Eletromaximus/semanaomnistack11/blob/master/x2.png?raw=true"
-            title="Semana Omnistack 11"
-            alt="semana omnistack 11"
-            href="/project/250057820"
-          />
-          <Card
-            url="https://github.com/Eletromaximus/NLW3/blob/master/x.png?raw=true"
-            title="Next Level Week 3"
-            alt="next level week 3"
-            href="/project/303780279"
-          />
-          <Card
-            alt="pomodoro Clock"
-            title="Relógio Pomodoro"
-            url="https://raw.githubusercontent.com/Eletromaximus/PomodoroClock/master/pomodoro.png"
-            href="/project/257099735"
-          />
-        </Grid.Row>
-      </WrapperProjects>
-    </Grid.Container>
+    </Box>
   )
 }

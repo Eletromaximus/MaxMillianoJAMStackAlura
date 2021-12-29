@@ -11,6 +11,5 @@ export default websitePageHOC(HomeScreen, {
       flexWrap: 'wrap',
       justifyContent: 'space-between'
     }
-    // menuProps: true
   }
 })

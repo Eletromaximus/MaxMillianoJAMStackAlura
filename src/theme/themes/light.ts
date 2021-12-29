@@ -5,11 +5,11 @@ export default {
   title: 'light',
 
   colors: {
-    text: '#fffded',
+    text: '#000000',
     primary: '#ffb17a',
     secundary: '#fce762',
 
-    background: '#4f4789'
+    background: '#EDEDED'
   },
 
   breakpoints,

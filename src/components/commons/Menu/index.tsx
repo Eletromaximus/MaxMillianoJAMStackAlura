@@ -1,8 +1,5 @@
 import React from 'react'
-import { MenuWrapper } from './styles'
-
-// import NavbarWrapper from '../NavBar/styles'
-// import Navbar from '../NavBar'
+import * as M from './styles'
 
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
 import Button from '../../foundation/Button'
@@ -10,14 +7,16 @@ import Text from '../../foundation/Text'
 
 interface Props {
   onClick: () => void;
-  href: string;
   changeMode: () => void;
+  width?: number;
 }
 
-export default function Home ({ onClick, href, changeMode } : Props) {
+export default function Home ({ onClick, changeMode, width } : Props) {
+  const breakpoint = 992
+
   return (
-    <MenuWrapper >
-      <MenuWrapper.LeftSide>
+    <M.MenuWrapper >
+      <M.LeftSide>
         <Button
           target='_blank'
           href='https://www.behance.net/maxmilsouzam/'
@@ -38,32 +37,37 @@ export default function Home ({ onClick, href, changeMode } : Props) {
         >
           <img src={'/linkedin.svg'} alt="linkedin" />
         </Button>
-      </MenuWrapper.LeftSide>
+      </M.LeftSide>
 
-      <MenuWrapper.MiddleSide>
-        <Text>
-          Quem sou
-        </Text>
-        <Text>
-          O que Faço
-        </Text>
-        <Text>
-          Resumo
-        </Text>
-        <Text>
-          Entre em contato
-        </Text>
-      </MenuWrapper.MiddleSide>
-      <MenuWrapper.RightSide>
+      <M.MiddleSide>
+        {width && (width >= breakpoint)
+          ? <>
+            <Text>
+              Quem sou
+            </Text>
+            <Text>
+              O que Faço
+            </Text>
+            <Text>
+              Resumo
+            </Text>
+            <Text>
+              Entre em contato
+            </Text>
+          </>
+          : <Button>
+            Menu
+          </Button>
+        }
+      </M.MiddleSide>
+
+      <M.RightSide>
         <Button
           onClick={() => changeMode()}
-          padding={'0 100px 0 0'}
         >
           <EmojiObjectsIcon id='modeChange' />
         </Button>
-      </MenuWrapper.RightSide>
-
-    </MenuWrapper>
-
+      </M.RightSide>
+    </M.MenuWrapper>
   )
 }
