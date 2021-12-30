@@ -14,6 +14,7 @@ interface Props {
   href: string | object;
   paddingRight?: string | object;
   marginBottom?: string | object;
+  margin?: string | object;
 }
 
 const smallestException = css`
@@ -55,6 +56,7 @@ const TextBase = styled.span<Props>`
   ${propToStyle('color')}
   ${propToStyle('marginBottom')}
   ${propToStyle('paddingRight')}
+  ${propToStyle('margin')}
 `
 // ;
 export default function Text ({ variant, href, tag, children, ...props }: Props) {

@@ -7,12 +7,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   ${normalize}
+  html,
   body {
     margin: 0;
     padding: 0;
     font-family: ${({ theme }) => theme.fontFamily};
     color: ${({ theme }) => theme.colors.text};
     background: ${({ theme }) => theme.colors.background};
+    text-decoration: none;
   }
   
   html, body {

@@ -3,11 +3,7 @@ import { Box } from '../../foundation/layout/Box'
 import { Grid } from '../../foundation/layout/Grid'
 import Text from '../../foundation/Text'
 
-interface IHome {
-  width: number
-}
-
-export default function HomeScreen ({ width }: IHome) {
+export default function HomeScreen () {
   return (
     <Box
       display='flex'
@@ -16,7 +12,9 @@ export default function HomeScreen ({ width }: IHome) {
         lg: 'center'
       }}
       style={{
-        alignItems: 'center'
+        alignItems: 'center',
+        backgroundImage: 'url(/Ondas.png)',
+        backgroundRepeat: 'no-repeat'
       }}
       height='846px'
     >

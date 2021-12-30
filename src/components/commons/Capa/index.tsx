@@ -7,6 +7,7 @@ function Capa () {
       <span>
         Max Milliano
       </span>
+
       <br/>
       <span>
         Portfólio

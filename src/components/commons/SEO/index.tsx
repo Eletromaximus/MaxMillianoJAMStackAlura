@@ -2,12 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 
 function SEO ({ headTitle }: any) {
-  const hasHeadTitle = Boolean(headTitle)
   const pageTitleDefault = 'Portifólio - Projeto Desafio do Alura Bootcamp'
   const description = 'With Meta Tags you can edit and experiment with your content then preview how your webpage will look on Google, Facebook, Twitter and more!'
   const image = 'https://www.alura.com.br/assets/img/alura-share.1571848411.png'
   const urlBase = 'https://portifolio-puce-nine.vercel.app'
-  const title = hasHeadTitle ? (`${headTitle} |  ${pageTitleDefault}`) : pageTitleDefault
+  const title = `${headTitle}` || `${pageTitleDefault}`
 
   return (
 		<Head>
@@ -28,6 +27,8 @@ function SEO ({ headTitle }: any) {
 			<meta property="twitter:title" content={title}/>
 			<meta property="twitter:description" content={description}/>
 			<meta property="twitter:image" content={image} />
+
+			<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		</Head>
   )
 }
