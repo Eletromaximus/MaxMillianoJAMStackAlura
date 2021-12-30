@@ -14,5 +14,5 @@ export default {
 
   breakpoints,
   typographyVariants,
-  fontFamily: '\'Lato\', sans-serif'
+  fontFamily: '\'Poppins\', sans-serif'
 }

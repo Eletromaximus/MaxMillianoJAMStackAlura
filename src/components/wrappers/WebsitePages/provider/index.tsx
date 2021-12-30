@@ -3,7 +3,6 @@ import { ThemeProvider } from 'styled-components'
 import GlobalStyle from '../../../../theme/GlobalStyle'
 import PropTypes from 'prop-types'
 import React, { createContext, useEffect, useState } from 'react'
-// import useLocalStorage from '../../../../hook/useLocalStorage'
 import dark from '../../../../theme/themes/dark'
 import light from '../../../../theme/themes/light'
 import { parseCookies, setCookie, destroyCookie } from 'nookies'
@@ -12,7 +11,6 @@ export const ModeContext = createContext({
   toggleModeContext: () => {}
 })
 export default function WebsiteGlobalProvider ({ children }: any) {
-  // const [theme, setTheme] = useLocalStorage('theme', dark)
   const [theme, setTheme] = useState(dark)
 
   function createTheme () {

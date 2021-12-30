@@ -8,12 +8,14 @@ export const MenuWrapper = styled.nav`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 80px;
+  height: 60px;
   opacity: 0.8;
   background-color: #C4C4C4;
   color: #000000;
   font-family: 'Poppins', sans-serif;
-  min-width: 480px;
+  min-width: 360px;
+
+
   a + a {
     margin-left: 50px;
   }
@@ -61,6 +63,9 @@ export const MiddleSide = styled.div`
 export const RightSide = styled.div`
 
   ${breakpointsMedia({
+    xs: css`
+    padding-right: 20px;
+  `,
     sm: css`
       padding-right: 20px;
     `,

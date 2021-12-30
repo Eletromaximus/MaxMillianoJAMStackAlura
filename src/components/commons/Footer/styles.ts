@@ -1,20 +1,26 @@
-import styled, { css } from 'styled-components'
-import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
+import styled from 'styled-components'
 
 export const FooterWrapper = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
 
-  background-color: ${({ theme }) => theme.colors.primary};
-  height: 68px;
-  margin-top: 10px;
+  height: 926px;
 
-  ${breakpointsMedia({
-    md: css`
-      margin-top: 20px;
-    `
-  })}
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    label {
+      padding-top: 45px;
+    }
+
+    input {
+      margin-top: 15px;
+      width: 100%;
+    }
+  }
+
 `
 
 export default FooterWrapper

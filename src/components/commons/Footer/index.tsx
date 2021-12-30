@@ -1,29 +1,58 @@
 import React from 'react'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedInIcon from '@material-ui/icons/LinkedIn'
 
 import { FooterWrapper } from './styles'
-import Button from '../../foundation/Button'
+import { Box } from '../../foundation/layout/Box'
+import Text from '../../foundation/Text'
 
 export default function Footer () {
   return (
     <FooterWrapper>
-      <Button
-        variant='paragraph1'
-        href='https://github.com/Eletromaximus'
-        color='black'
+      <Box
+        display='flex'
+        flexDirection='column'
+        width='100%'
+        height='926px'
+        backgroundColor='#2B2929'
+        style={{
+          borderRadius: '20px',
+          alignItems: 'center'
+        }}
       >
-        <GitHubIcon fontSize='large' />
-      </Button>
+        <span
+          style={{
+            color: '#FFFFFF',
+            fontSize: '40px',
+            paddingTop: '89px'
+          }}
+        >
+          Entre em contato
+        </span>
 
-      <Button
-        variant='paragraph1'
-        href='https://www.linkedin.com/in/maxmilliano/'
-        color='black'
-      >
-        <LinkedInIcon fontSize='large' />
-      </Button>
-      <a href='https://iconscout.com/icons/linkedin' target='_blank' rel='noreferrer'>Linkedin Icon</a> by <a href='https://iconscout.com/contributors/icon-mafia' target='_blank' rel='noreferrer'>Icon Mafia</a>
+        <Text
+          color='#FFFFFF'
+          margin='27px 0 0 0 '
+        >
+        Duvidas? Sujestões?
+        Preencha o cadastro e entraremos em contato
+
+        <form>
+          <label htmlFor="name">Nome</label>
+          <input type="text" />
+
+          <label htmlFor="email">Email</label>
+          <input type="text" />
+
+          <label htmlFor="telefone">telefone/whatsapp</label>
+          <input type="text" />
+
+          <label htmlFor="assunto">Assunto</label>
+          <input type="text" />
+
+        </form>
+
+        </Text>
+        {/* <div>Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div> */}
+      </Box>
     </FooterWrapper>
   )
 }

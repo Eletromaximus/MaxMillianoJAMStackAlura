@@ -1,4 +1,6 @@
 import React from 'react'
+import GitHubIcon from '@material-ui/icons/GitHub'
+import LinkedIn from '@material-ui/icons/LinkedIn'
 import * as M from './styles'
 
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
@@ -28,14 +30,14 @@ export default function Home ({ onClick, changeMode, width } : Props) {
           target='_blank'
           href='https://github.com/Eletromaximus/'
         >
-          <img src={'/GitHub64.png'} alt='github' />
+          <GitHubIcon fontSize='large' />
         </Button>
 
         <Button
           target='_black'
           href='https://www.linkedin.com/in/maxmilliano/'
         >
-          <img src={'/linkedin.svg'} alt="linkedin" />
+          <LinkedIn fontSize='large' />
         </Button>
       </M.LeftSide>
 

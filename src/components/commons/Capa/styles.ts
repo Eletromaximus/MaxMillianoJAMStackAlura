@@ -21,6 +21,18 @@ const CapaStyle = styled.div`
   span {
     weight: 400;
     font-family: Poppins, sans-serif;
+    ${breakpointsMedia({
+      xs: css`
+        font-size: 48px;`,
+      sm: css`
+        font-size: 48px;
+      `,
+      md: css`
+        font-size: 72px;
+      `
+    })}
+    weight: 400;
+    font-family: Poppins, sans-serif;
     font-size: 72px;
   }
 
