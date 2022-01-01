@@ -9,14 +9,27 @@ const CapaStyle = styled.div`
   flex-direction: column;
   justify-content: center;
   flex-wrap: wrap;
-  width: 100%;
   height: 846px;
-  background: linear-gradient(
-          rgba(0, 0, 0, 0.7), 
-          rgba(0, 0, 0, 0.7)
-        ), url('/city2.jpg');
   color: #FFFFFF;
   font-family: 'Poppins', sans-serif;
+  background-size: content;
+
+  ${breakpointsMedia({
+    xs: css`
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ), url('/citymini.png');
+      background-repeat: no-repeat;
+    `,
+    sm: css`
+      background: linear-gradient(
+        rgba(0, 0, 0, 0.6),
+        rgba(0, 0, 0, 0.6)
+      ), url('/city.png');
+
+    `
+  })}
   
   span {
     weight: 400;

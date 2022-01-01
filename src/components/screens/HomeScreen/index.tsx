@@ -7,6 +7,7 @@ export default function HomeScreen () {
   return (
     <Box
       display='flex'
+      // flexDirection='column'
       justifyContent={{
         sm: 'space-between',
         lg: 'center'
@@ -14,7 +15,8 @@ export default function HomeScreen () {
       style={{
         alignItems: 'center',
         backgroundImage: 'url(/Ondas.png)',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        backgroundSize: 'contain'
       }}
       height='846px'
     >
@@ -33,7 +35,6 @@ export default function HomeScreen () {
       >
         <Box
           display='flex'
-          width={{ xs: '100%' }}
           style={{ justifyContent: 'center' }}
         >
           <img src='/eumini.png' alt='avatar' />
