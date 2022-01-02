@@ -3,25 +3,28 @@ import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 import { TextStyleVariants } from '../../foundation/Text'
 
 export const MenuWrapper = styled.nav`
-  position: absolute;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
   height: 60px;
   opacity: 0.8;
   background-color: #C4C4C4;
   color: #000000;
-  font-family: 'Poppins', sans-serif;
-  min-width: 360px;
-
+  min-width: 360px;  
 
   a + a {
     margin-left: 50px;
   }
 
   ${breakpointsMedia({
+    xs: css`
+      flex-wrap: wrap;
+    `,
+    sm: css`
+      flex-wrap: nowrap;
+    `,
     md: css`
+      flex-wrap: nowrap;
       a {
         ${TextStyleVariants.title}
       }
@@ -30,6 +33,8 @@ export const MenuWrapper = styled.nav`
 
 `
 export const LeftSide = styled.div`
+  order: 1;
+
   ${breakpointsMedia({
     xs: css`
       padding-left: 20px;
@@ -48,6 +53,7 @@ export const LeftSide = styled.div`
 `
 export const MiddleSide = styled.div`
   display: flex;
+  order: 2;
 
   ${breakpointsMedia({
     sm: css`
@@ -61,6 +67,7 @@ export const MiddleSide = styled.div`
 
 `
 export const RightSide = styled.div`
+  order: 3;
 
   ${breakpointsMedia({
     xs: css`

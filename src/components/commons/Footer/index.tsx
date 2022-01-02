@@ -7,17 +7,6 @@ import Text from '../../foundation/Text'
 export default function Footer () {
   return (
     <FooterWrapper>
-      <Box
-        display='flex'
-        flexDirection='column'
-        width='100%'
-        height='926px'
-        backgroundColor='#2B2929'
-        style={{
-          borderRadius: '20px',
-          alignItems: 'center'
-        }}
-      >
         <span
           style={{
             color: '#FFFFFF',
@@ -28,12 +17,19 @@ export default function Footer () {
           Entre em contato
         </span>
 
-        <Text
-          color='#FFFFFF'
-          margin='27px 0 0 0 '
-        >
-        Duvidas? Sujestões?
-        Preencha o cadastro e entraremos em contato
+          <Box
+            margin='27px 0 0 0 '
+            width={{
+              xs: '360px'
+            }}
+          >
+            <Text
+              color='#FFFFFF'
+            >
+              Duvidas? Sujestões?
+              Preencha o cadastro e entraremos em contato
+            </Text>
+          </Box>
 
         <form>
           <label htmlFor="name">Nome</label>
@@ -48,11 +44,11 @@ export default function Footer () {
           <label htmlFor="assunto">Assunto</label>
           <input type="text" />
 
+          <label htmlFor="mensagem">Mensagem</label>
+          <textarea />
         </form>
 
-        </Text>
         {/* <div>Ícones feitos por <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/br/" title="Flaticon">www.flaticon.com</a></div> */}
-      </Box>
     </FooterWrapper>
   )
 }

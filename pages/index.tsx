@@ -10,6 +10,9 @@ export default websitePageHOC(HomeScreen, {
     pageBoxProps: {
       flexWrap: 'wrap',
       justifyContent: 'space-between'
-    }
+    },
+    footerProps: true,
+    capaProps: true,
+    menuProps: true
   }
 })
