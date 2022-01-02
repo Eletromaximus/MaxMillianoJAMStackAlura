@@ -12,7 +12,7 @@ const CapaStyle = styled.div`
   height: 846px;
   color: #FFFFFF;
   font-family: 'Poppins', sans-serif;
-  background-size: content;
+  background-size: 'contain';
 
   ${breakpointsMedia({
     xs: css`

@@ -7,7 +7,6 @@ export default function HomeScreen () {
   return (
     <Box
       display='flex'
-      // flexDirection='column'
       justifyContent={{
         sm: 'space-between',
         lg: 'center'

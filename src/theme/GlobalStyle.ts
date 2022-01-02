@@ -21,6 +21,8 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     min-height: 100vh;
     width: 100vw;
+    max-width: 100%;
+    overflow-x: hidden;
   }
   #__next {
     flex: 1;

@@ -7,6 +7,10 @@ export default websitePageHOC(HomeScreen, {
     seoProps: {
       headTitle: 'Home'
     },
+    pageBoxProps: {
+      flexWrap: 'wrap',
+      justifyContent: 'space-between'
+    },
     footerProps: true,
     capaProps: true,
     menuProps: true

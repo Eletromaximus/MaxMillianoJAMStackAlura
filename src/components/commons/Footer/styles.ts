@@ -1,7 +1,7 @@
 import styled, { css } from 'styled-components'
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
 
-export const FooterWrapper = styled.footer`
+export const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

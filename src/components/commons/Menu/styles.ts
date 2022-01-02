@@ -6,7 +6,6 @@ export const MenuWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100vw;
   height: 60px;
   opacity: 0.8;
   background-color: #C4C4C4;
@@ -19,11 +18,9 @@ export const MenuWrapper = styled.nav`
 
   ${breakpointsMedia({
     xs: css`
-      position: relative;
       flex-wrap: wrap;
     `,
     sm: css`
-      position: absolute;
       flex-wrap: nowrap;
     `,
     md: css`
