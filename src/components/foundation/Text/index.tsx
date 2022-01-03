@@ -13,6 +13,7 @@ interface Props {
   name?: string;
   href: string | object;
   paddingRight?: string | object;
+  paddingTop?: string | object;
   marginBottom?: string | object;
   margin?: string | object;
 }
@@ -56,7 +57,9 @@ const TextBase = styled.span<Props>`
   ${propToStyle('color')}
   ${propToStyle('marginBottom')}
   ${propToStyle('paddingRight')}
+  ${propToStyle('paddingTop')}
   ${propToStyle('margin')}
+  ${propToStyle('textAlign')}
 `
 // ;
 export default function Text ({ variant, href, tag, children, ...props }: Props) {

@@ -12,6 +12,8 @@ interface IProps {
   alignItems?: string | object;
   justifyContent?: string | object;
   marginLeft?: string | object;
+  margin?: string | object;
+  padding?: string | object;
   marginRight?: string | object;
   marginTop?: string | object;
   marginBottom?: string | object;
@@ -70,6 +72,7 @@ export const Grid = {
     ${propToStyle('paddingLeft')}
     ${propToStyle('marginRight')}
     ${propToStyle('justifyContent')}
+    ${propToStyle('margin')}
     ${propToStyle('marginTop')}
     ${propToStyle('marginBottom')}
   `,
