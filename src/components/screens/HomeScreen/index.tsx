@@ -1,4 +1,5 @@
 import React from 'react'
+import Resume from '../../commons/Resume'
 import { Box } from '../../foundation/layout/Box'
 import { Grid } from '../../foundation/layout/Grid'
 import Text from '../../foundation/Text'
@@ -7,6 +8,7 @@ export default function HomeScreen () {
   return (
     <Box
       display='flex'
+      flexDirection='column'
       justifyContent={{
         sm: 'space-between',
         lg: 'center'
@@ -15,23 +17,36 @@ export default function HomeScreen () {
         alignItems: 'center',
         backgroundImage: 'url(/Ondas.png)',
         backgroundRepeat: 'no-repeat',
-        backgroundSize: 'contain'
+        backgroundSize: 'contain',
+        minHeight: '846px'
       }}
-      height='846px'
     >
-      <Grid.Col
-        value={{
-          xs: '12',
-          sm: '5'
-        }}
+
+      <Grid.Row
+        marginTop='200px'
+      >
+        <Text variant='title' color='#1E32E1'>
+          Quem sou
+        </Text>
+      </Grid.Row>
+
+      <Grid.Row
         display='flex'
-        justifyContent='space-between'
+        style={{
+          minWidth: '450px'
+        }}
+        justifyContent={{
+          xs: 'center',
+          sm: 'center'
+        }}
+        margin='74px auto'
         alignItems='center'
         flexWrap={{
           sm: 'nowrap',
           xs: 'wrap'
         }}
       >
+
         <Box
           display='flex'
           style={{ justifyContent: 'center' }}
@@ -55,7 +70,9 @@ export default function HomeScreen () {
             Coleciono experiências e me divertindo com os resultados.
           </Text>
         </Box>
-      </Grid.Col>
+      </Grid.Row>
+
+      <Resume />
 
     </Box>
   )
