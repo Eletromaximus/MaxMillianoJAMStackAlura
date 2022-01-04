@@ -2,7 +2,8 @@
 import React from 'react'
 import { Box } from '../../foundation/layout/Box'
 import Text from '../../foundation/Text'
-// import WorkIcon from '@material-ui/icons/Work'
+import Card from '../Cards'
+import Link from '../../foundation/Link'
 
 function Resume () {
   return (
@@ -13,7 +14,6 @@ function Resume () {
 			  alignItems: 'center',
 			  margin: 'auto'
 			}}
-
 		>
 			<Text
 				variant='title'
@@ -32,14 +32,16 @@ function Resume () {
 				padding='auto'
 				style={{
 				  borderRadius: '20px',
-				  marginTop: '53px',
 				  paddingTop: ' 17px',
-				  paddingBottom: ' 100%',
+				  paddingBottom: ' 41px',
+				  marginTop: '53px',
+				  marginBottom: ' 41px',
 				  textAlign: 'center',
 				  backgroundColor: 'rgba(196, 196, 196, 0.43)'
 				}}
 			>
 				<Box
+					display='flex'
 					margin='auto'
 					maxWidth='576px'
 				>
@@ -50,46 +52,48 @@ function Resume () {
 					</Text>
 				</Box>
 
-				<Box
-					className='card'
-					display='flex'
-					justifyContent='center'
-					flexDirection='column'
-					style={{
-					  paddingTop: '61px'
-					}}
-
-				>
-					<Box
-						maxWidth='300px'
-						margin='auto'
-						display='flex'
-						flexDirection='column'
-						style={{
-						  alignItems: 'start'
-						}}
+					<div
+						className='abilities'
 					>
-						<Text variant='titleXS'>
-							<b>Desenvolvedor Freelancer</b>
-						</Text>
-
-						<Text paddingTop='10px' >
-							2021 - presente
-						</Text>
-
-						<Text
-							paddingTop='10px'
-							textAlign='justify'
+						<Card
+							title='Desenvolvedor Freelancer'
+							data='2021 - presente'
+							option='work'
 						>
-						Desenvolvo aplicações web,
-						levatando os requisitos necessários,
-						projetando e trabalhando tanto do lado do cliente quanto do servidor.
-						Testo, implemento e documento até a apresentação ao cliente.
-						</Text>
-					</Box>
+							Desenvolvo aplicações web,
+							levatando os requisitos necessários,
+							projetando e trabalhando tanto do lado do cliente quanto do servidor.
+							Testo, implemento e documento até a apresentação ao cliente.
+						</Card>
 
-				</Box>
+						<Card
+							title='Bootcamp Front-End JAMStack Alura'
+							data='02/2021 - 06/2021'
+							option='study'
+						>
+							Bootcamp dedicado a introduzir boas práticas de programação,
+							componentização, testes, versionamento de códigos com o git,
+							CI/CD, e diversas ferramentas como GraphQL,
+							Next.js, API REST, JWT, Styled-Components e StoryBook
+						</Card>
+
+						<Card
+							title='Certificado e cursos diversos'
+						>
+							Ao longo dos anos fiz diversos cursos,
+							seja sobre docker, typescript até ferramentas na AWS.
+							Todos os certificados podem ser visualizados no meu <Link
+								href='https://www.linkedin.com/in/maxmilliano/'
+								variant='paragraph1'
+								color='blue'
+							>
+								Linkedin
+							</Link>
+						</Card>
+					</div>
+
 			</Box>
+
 		</Box>
   )
 }
