@@ -1,28 +1,92 @@
-import React from 'react'
-import Button from '../../foundation/Button'
+/* eslint-disable no-mixed-spaces-and-tabs */
+import { WorkOutlined, Book, Archive } from '@material-ui/icons'
+import React, { useEffect, useState } from 'react'
+import { Box } from '../../foundation/layout/Box'
 import Text from '../../foundation/Text'
-import { CardWrapper } from './styles'
-interface Props {
-  url: string;
-  title: string;
-  alt: string;
-  href: string;
+interface IProps {
+  data?: string,
+  title: string,
+  children: React.ReactNode,
+	option?: string
 }
 
-export default function Card ({ url, title, alt, href }: Props) {
+export default function Card ({ title, data, children, option }: IProps) {
+  const [icone, setIcone] = useState(<Archive />)
+  const [info] = useState<IProps>({
+    title, data, children
+  })
+
+  const selectIcone = () => {
+    if (option === 'work') {
+      return <WorkOutlined />
+    }
+    if (option === 'study') {
+      return <Book />
+    } else {
+      return <Archive />
+    }
+  }
+
+  useEffect(() => {
+    setIcone(selectIcone)
+  }, [option])
+
   return (
-			<CardWrapper>
-				<Button
-					padding='none'
-					href={href}
-				>
-					<CardWrapper.Image src={url} alt={alt} />
-						<Text
-							variant='title'
-						>
-							{title}
-					</Text>
-				</Button>
-			</CardWrapper>
+
+	<Box
+		maxWidth='300px'
+		margin='auto'
+		flexDirection='row'
+		display='flex'
+		justifyContent='center'
+		style={{
+		  paddingTop: '61px'
+		}}
+	>
+
+		<Box
+			display='flex'
+			flexDirection='column'
+			style={{
+			  alignItems: 'center'
+			}}
+		>
+			{icone}
+
+			<div
+				className="line"
+				style={{
+				  width: '1px',
+				  height: '100%',
+				  border: '1px solid #000000'
+				}}
+			/>
+		</Box>
+
+		<Box
+		flexDirection='column'
+		display='flex'
+		style={{
+		  marginLeft: '39px',
+		  alignItems: 'start'
+		}}
+		>
+			<Text variant='titleXS'>
+				<b>{info.title}</b>
+			</Text>
+
+			<Text paddingTop='10px' >
+				{info.data}
+			</Text>
+
+			<Text
+				paddingTop='10px'
+				textAlign='justify'
+			>
+				{info.children}
+			</Text>
+		</Box>
+
+	</Box>
   )
 }

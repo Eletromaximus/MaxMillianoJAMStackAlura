@@ -13,7 +13,7 @@ interface Props {
   width?: number;
 }
 
-export default function Home ({ onClick, changeMode, width } : Props) {
+export default function Home ({ changeMode, width } : Props) {
   const breakpoint = 992
 
   return (

@@ -36,6 +36,7 @@ export const Box = styled.div<IBox>`
   ${propToStyle('padding')}
   ${propToStyle('margin')}
   ${propToStyle('width')}
+  ${propToStyle('height')}
   ${propToStyle('maxWidth')}
   ${propToStyle('minWidth')}
   ${propToStyle('height')}
