@@ -23,6 +23,7 @@ const GlobalStyle = createGlobalStyle`
     width: 100vw;
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth;
   }
   #__next {
     flex: 1;

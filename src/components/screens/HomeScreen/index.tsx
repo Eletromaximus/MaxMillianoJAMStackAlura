@@ -31,15 +31,16 @@ export default function HomeScreen () {
       </Grid.Row>
 
       <Grid.Row
+        id='quemsou'
         display='flex'
         style={{
-          minWidth: '450px'
+          minWidth: '320px'
         }}
         justifyContent={{
           xs: 'center',
           sm: 'center'
         }}
-        margin='74px auto'
+        margin='74px 10px'
         alignItems='center'
         flexWrap={{
           sm: 'nowrap',
@@ -55,15 +56,15 @@ export default function HomeScreen () {
         </Box>
 
         <Box
-          width='401px'
-          minWidth='401px'
+          minWidth='320px'
           margin={{
             sm: '0 0 0 20px',
             md: '0 0 0 80px'
           }}
+          maxWidth='420px'
           padding='30px 0 0 0'
         >
-          <Text variant='paragraph'>
+          <Text variant='paragraph' textAlign='justify'>
             Olá,
               Sou Max Milliano, desenvolvedor web.
             Engenheiro por formação e apaixonado pelo universo da programação.

@@ -1,16 +1,14 @@
 import styled, { css } from 'styled-components'
 import breakpointsMedia from '../../../theme/utils/breakpointsMedia'
-import { TextStyleVariants } from '../../foundation/Text'
 
 export const MenuWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 60px;
-  opacity: 0.8;
   background-color: #C4C4C4;
   color: #000000;
-  min-width: 360px;  
+  padding: 10px;
+  width: 100%;
 
   a + a {
     margin-left: 50px;
@@ -18,47 +16,37 @@ export const MenuWrapper = styled.nav`
 
   ${breakpointsMedia({
     xs: css`
-      flex-wrap: wrap;
+      flex-direction: column;
     `,
     sm: css`
-      flex-wrap: nowrap;
-    `,
-    md: css`
-      flex-wrap: nowrap;
-      a {
-        ${TextStyleVariants.title}
-      }
+      flex-direction: row;
     `
+    // md: css`
+    //   justify-content: center;
+    // `
   })}
 
 `
 export const LeftSide = styled.div`
   order: 1;
-
-  ${breakpointsMedia({
-    xs: css`
-      padding-left: 20px;
-    `,
-    sm: css`
-      padding-left: 20px;
-    `,
-    md: css`
-      padding-left: 20px;
-    `,
-    xl: css`
-      padding-left: 80px;
-    `
-  })}
-
 `
 export const MiddleSide = styled.div`
   display: flex;
   order: 2;
-
+  
   ${breakpointsMedia({
-    sm: css`
+    xs: css`
       width: auto;
+      padding-top: 15px;
     `,
+    sm: css`
+      width: 170px;
+      justify-content: center;
+      `,
+    md: css`
+      width: 170px;
+      justify-content: center;
+      `,
     lg: css`
       justify-content: space-between;
       width: 511px;
@@ -71,16 +59,8 @@ export const RightSide = styled.div`
 
   ${breakpointsMedia({
     xs: css`
-    padding-right: 20px;
-  `,
-    sm: css`
-      padding-right: 20px;
-    `,
-    md: css`
-      padding-right: 40px;
-    `,
-    xl: css`
-      padding-right: 100px;
+      width: auto;
+      padding-top: 15px;
     `
   })}
   
