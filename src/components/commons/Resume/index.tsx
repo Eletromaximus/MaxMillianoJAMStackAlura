@@ -8,6 +8,7 @@ import Link from '../../foundation/Link'
 function Resume () {
   return (
 		<Box
+			id='resumo'
 			display='flex'
 			flexDirection='column'
 			style={{
@@ -26,8 +27,9 @@ function Resume () {
 				display='flex'
 				flexDirection='column'
 				width={{
-				  md: '954px',
-				  sm: 'auto'
+				  md: '768px',
+				  sm: 'auto',
+				  lg: '992px'
 				}}
 				padding='auto'
 				style={{

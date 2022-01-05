@@ -5,7 +5,6 @@ import * as M from './styles'
 
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
 import Button from '../../foundation/Button'
-import Text from '../../foundation/Text'
 
 interface Props {
   onClick: () => void;
@@ -14,7 +13,7 @@ interface Props {
 }
 
 export default function Home ({ changeMode, width } : Props) {
-  const breakpoint = 992
+  const screenLg = 992
 
   return (
     <M.MenuWrapper >
@@ -41,21 +40,36 @@ export default function Home ({ changeMode, width } : Props) {
         </Button>
       </M.LeftSide>
 
+      {}
       <M.MiddleSide>
-        {width && (width >= breakpoint)
+        {width && (width >= screenLg)
           ? <>
-            <Text>
+            <Button
+              href='#quemsou'
+              target=''
+            >
               Quem sou
-            </Text>
-            <Text>
+            </Button>
+
+            {/* <Button
+              href='#resume'
+            >
               O que Faço
-            </Text>
-            <Text>
+            </Button> */}
+
+            <Button
+              target=''
+              href='#resumo'
+            >
               Resumo
-            </Text>
-            <Text>
+            </Button>
+
+            <Button
+              target=''
+              href='#contato'
+            >
               Entre em contato
-            </Text>
+            </Button>
           </>
           : <Button>
             Menu

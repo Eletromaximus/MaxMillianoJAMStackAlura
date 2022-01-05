@@ -67,7 +67,7 @@ export default function Card ({ title, data, children, option }: IProps) {
 		flexDirection='column'
 		display='flex'
 		style={{
-		  marginLeft: '39px',
+		  marginLeft: '20px',
 		  alignItems: 'start'
 		}}
 		>

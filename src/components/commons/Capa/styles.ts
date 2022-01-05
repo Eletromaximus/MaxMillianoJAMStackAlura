@@ -26,7 +26,7 @@ const CapaStyle = styled.div`
       background: linear-gradient(
         rgba(0, 0, 0, 0.6),
         rgba(0, 0, 0, 0.6)
-      ), url('/city.png');
+      ), url('/banner.png');
 
     `
   })}
