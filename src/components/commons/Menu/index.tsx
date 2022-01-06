@@ -13,7 +13,7 @@ interface Props {
 }
 
 export default function Home ({ changeMode, width } : Props) {
-  const screenLg = 992
+  const screenLg = 768
 
   return (
     <M.MenuWrapper >
@@ -51,12 +51,6 @@ export default function Home ({ changeMode, width } : Props) {
               Quem sou
             </Button>
 
-            {/* <Button
-              href='#resume'
-            >
-              O que Faço
-            </Button> */}
-
             <Button
               target=''
               href='#resumo'
@@ -71,9 +65,7 @@ export default function Home ({ changeMode, width } : Props) {
               Entre em contato
             </Button>
           </>
-          : <Button>
-            Menu
-          </Button>
+          : ''
         }
       </M.MiddleSide>
 

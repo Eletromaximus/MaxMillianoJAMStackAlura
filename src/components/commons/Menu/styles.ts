@@ -44,7 +44,7 @@ export const MiddleSide = styled.div`
       justify-content: center;
       `,
     md: css`
-      width: 170px;
+      width: auto;
       justify-content: center;
       `,
     lg: css`
