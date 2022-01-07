@@ -5,7 +5,7 @@ function SEO ({ headTitle }: any) {
   const pageTitleDefault = 'Portifólio - Max Milliano'
   const description = 'Portifólio pessoal de programação'
   const urlBase = 'https://portifolio-maxmillianox.vercel.app'
-  const title = `${headTitle}` || `${pageTitleDefault}`
+  const title = `${pageTitleDefault}`
 
   return (
 		<Head>
