@@ -12,6 +12,7 @@ export const MenuWrapper = styled.nav`
 
   a + a {
     margin-left: 50px;
+    color: #000000;
   }
 
   ${breakpointsMedia({
@@ -21,9 +22,6 @@ export const MenuWrapper = styled.nav`
     sm: css`
       flex-direction: row;
     `
-    // md: css`
-    //   justify-content: center;
-    // `
   })}
 
 `

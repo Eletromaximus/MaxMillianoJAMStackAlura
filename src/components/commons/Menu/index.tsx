@@ -40,13 +40,13 @@ export default function Home ({ changeMode, width } : Props) {
         </Button>
       </M.LeftSide>
 
-      {}
       <M.MiddleSide>
         {width && (width >= screenLg)
           ? <>
             <Button
               href='#quemsou'
               target=''
+              color='secundary'
             >
               Quem sou
             </Button>
