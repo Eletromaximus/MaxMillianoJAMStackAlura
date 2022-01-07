@@ -11,7 +11,7 @@ export const ModeContext = createContext({
   toggleModeContext: () => {}
 })
 export default function WebsiteGlobalProvider ({ children }: any) {
-  const [theme, setTheme] = useState(dark)
+  const [theme, setTheme] = useState(light)
 
   function createTheme () {
     const DAY_IN_SECONDS = 86400

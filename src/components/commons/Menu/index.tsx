@@ -20,7 +20,7 @@ export default function Home ({ changeMode, width } : Props) {
       <M.LeftSide>
         <Button
           target='_blank'
-          href='https://www.behance.net/maxmilsouzam/'
+          href='https://www.behance.net/maxmilsouzamachado/'
         >
           <img src={'/behance.png'} alt='behance' />
         </Button>
@@ -46,7 +46,6 @@ export default function Home ({ changeMode, width } : Props) {
             <Button
               href='#quemsou'
               target=''
-              color='secundary'
             >
               Quem sou
             </Button>
@@ -69,7 +68,7 @@ export default function Home ({ changeMode, width } : Props) {
         }
       </M.MiddleSide>
 
-      <M.RightSide>
+      <M.RightSide >
         <Button
           onClick={() => changeMode()}
         >

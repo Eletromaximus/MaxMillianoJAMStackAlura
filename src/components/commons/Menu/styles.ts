@@ -5,14 +5,22 @@ export const MenuWrapper = styled.nav`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #C4C4C4;
+  background-color: ${({ theme }) => theme.colors.background};
   color: #000000;
   padding: 10px;
   width: 100%;
 
+  a {
+    color: ${({ theme }) => theme.colors.text}
+  }
+
   a + a {
     margin-left: 50px;
-    color: #000000;
+
+  }
+
+  button {
+    color: ${({ theme }) => theme.colors.text}
   }
 
   ${breakpointsMedia({
