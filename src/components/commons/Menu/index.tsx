@@ -13,14 +13,14 @@ interface Props {
 }
 
 export default function Home ({ changeMode, width } : Props) {
-  const screenLg = 992
+  const screenLg = 768
 
   return (
     <M.MenuWrapper >
       <M.LeftSide>
         <Button
           target='_blank'
-          href='https://www.behance.net/maxmilsouzam/'
+          href='https://www.behance.net/maxmilsouzamachado/'
         >
           <img src={'/behance.png'} alt='behance' />
         </Button>
@@ -40,7 +40,6 @@ export default function Home ({ changeMode, width } : Props) {
         </Button>
       </M.LeftSide>
 
-      {}
       <M.MiddleSide>
         {width && (width >= screenLg)
           ? <>
@@ -50,12 +49,6 @@ export default function Home ({ changeMode, width } : Props) {
             >
               Quem sou
             </Button>
-
-            {/* <Button
-              href='#resume'
-            >
-              O que Faço
-            </Button> */}
 
             <Button
               target=''
@@ -71,13 +64,11 @@ export default function Home ({ changeMode, width } : Props) {
               Entre em contato
             </Button>
           </>
-          : <Button>
-            Menu
-          </Button>
+          : ''
         }
       </M.MiddleSide>
 
-      <M.RightSide>
+      <M.RightSide >
         <Button
           onClick={() => changeMode()}
         >
