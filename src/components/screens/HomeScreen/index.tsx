@@ -3,6 +3,7 @@ import Resume from '../../commons/Resume'
 import { Box } from '../../foundation/layout/Box'
 import { Grid } from '../../foundation/layout/Grid'
 import Text from '../../foundation/Text'
+import Image from 'next/image'
 
 export default function HomeScreen () {
   return (
@@ -52,7 +53,12 @@ export default function HomeScreen () {
           display='flex'
           style={{ justifyContent: 'center' }}
         >
-          <img src='/eumini.png' alt='avatar' />
+          <Image
+            src='/eumini.png'
+            alt='avatar'
+            width={150}
+            height={150}
+          />
         </Box>
 
         <Box

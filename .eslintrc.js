@@ -7,7 +7,8 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard'
+    'standard',
+    'plugin:@next/next/recommended'
   ],
   parser: '@typescript-eslint/parser',
   parserOptions: {
@@ -44,7 +45,8 @@ module.exports = {
         jest: true
       },
       rules: {
-        'jest/no-commented-out-tests': 'off'
+        'jest/no-commented-out-tests': 'off',
+        'react/react-in-jsx-scope': 'off'
       },
       // eslint-disable-next-line global-require, import/no-extraneous-dependencies
       ...require('eslint-plugin-jest').configs.recommended

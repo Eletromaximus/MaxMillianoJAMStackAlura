@@ -1,6 +1,7 @@
 import React from 'react'
 import GitHubIcon from '@material-ui/icons/GitHub'
 import LinkedIn from '@material-ui/icons/LinkedIn'
+import Image from 'next/image'
 import * as M from './styles'
 
 import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
@@ -22,7 +23,12 @@ export default function Home ({ changeMode, width } : Props) {
           target='_blank'
           href='https://www.behance.net/maxmilsouzamachado/'
         >
-          <img src={'/behance.png'} alt='behance' />
+          <Image
+            src={'/behance.png'}
+            alt='behance'
+            width={45}
+            height={45}
+          />
         </Button>
 
         <Button
