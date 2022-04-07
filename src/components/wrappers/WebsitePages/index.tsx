@@ -5,14 +5,10 @@ import Menu from '../../commons/Menu'
 import Modal from '../../commons/Modal'
 import { Box } from '../../foundation/layout/Box'
 import FormCadastro from '../../patterns/FormCadastro'
-import SEO from '../../commons/SEO'
 import { ModeContext } from '../WebsitePages/provider'
 
 interface IWebsitePagesWrapper {
   children: React.ReactNode;
-  seoProps: {
-    headTitle: string;
-  };
   pageBoxProps: {
     backgroundImage: string,
     backgroundRepeat: string,
@@ -28,7 +24,6 @@ export const WebsitePagesContext = createContext({
 })
 export default function WebsitePagesWrapper ({
   children,
-  seoProps,
   pageBoxProps,
   menuProps,
   capaProps,
@@ -65,8 +60,6 @@ export default function WebsitePagesWrapper ({
         flexDirection='column'
         {...pageBoxProps}
       >
-        <SEO {...seoProps}/>
-
         {menuProps &&
             <Menu
               onClick={() => setIsModalState(!isModalOpen)}
