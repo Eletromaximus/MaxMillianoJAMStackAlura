@@ -1,13 +1,13 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
-import { WorkOutlined, Book, Archive } from '@material-ui/icons'
-import React, { useEffect, useState } from 'react'
+import { WorkOutlined, Book, Archive } from '@mui/icons-material'
+import { useEffect, useState, ReactNode } from 'react'
 import { Box } from '../../foundation/layout/Box'
 import Text from '../../foundation/Text'
 interface IProps {
   data?: string,
   title: string,
-  children: React.ReactNode,
-	option?: string
+  children: ReactNode,
+  option?: string
 }
 
 export default function Card ({ title, data, children, option }: IProps) {

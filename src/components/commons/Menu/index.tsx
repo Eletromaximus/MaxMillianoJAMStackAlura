@@ -1,10 +1,10 @@
 import React from 'react'
-import GitHubIcon from '@material-ui/icons/GitHub'
-import LinkedIn from '@material-ui/icons/LinkedIn'
+import GitHubIcon from '@mui/icons-material/GitHub'
+import LinkedIn from '@mui/icons-material/LinkedIn'
 import Image from 'next/image'
 import * as M from './styles'
 
-import EmojiObjectsIcon from '@material-ui/icons/EmojiObjects'
+import EmojiObjectsIcon from '@mui/icons-material/EmojiObjects'
 import Button from '../../foundation/Button'
 
 interface Props {
@@ -28,6 +28,7 @@ export default function Home ({ changeMode, width } : Props) {
             alt='behance'
             width={45}
             height={45}
+            layout='fixed'
           />
         </Button>
 

@@ -1,6 +1,6 @@
 import React from 'react'
 import Text from '../../foundation/Text'
-import Button from '@material-ui/core/Button'
+import Button from '@mui/material/Button'
 import { useForm } from 'react-hook-form'
 
 import { Content, FormMessageWrapper } from './styles'
