@@ -48,7 +48,7 @@ export const FooterWrapper = styled.div`
     textarea {
       margin-top: 15px;
       height: 140px;
-      border-radius: 20px;
+      border-radius: 8px;
       resize: none;
 
       ${breakpointsMedia({
@@ -63,8 +63,10 @@ export const FooterWrapper = styled.div`
         `
       })}
     }
+    button {
+      margin-top: 10px;
+    }
   }
-
 `
 
 export default FooterWrapper
