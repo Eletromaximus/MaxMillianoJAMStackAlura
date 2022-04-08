@@ -10,5 +10,8 @@ module.exports = {
       'avatars.githubusercontent.com',
       'www.datocms-assets.com'
     ]
-  }
+  },
+  env: {
+    emailPadrao: 'maxmillianox@gmail.com',
+  },
 }
