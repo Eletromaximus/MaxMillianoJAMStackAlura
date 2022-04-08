@@ -12,6 +12,6 @@ module.exports = {
     ]
   },
   env: {
-    emailPadrao: 'maxmillianox@gmail.com',
-  },
+    emailPadrao: 'maxmillianox@gmail.com'
+  }
 }
