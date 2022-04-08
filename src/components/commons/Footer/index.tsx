@@ -29,7 +29,7 @@ export default function Footer () {
   })
 
   const onSubmit = async (data: IForm) => {
-    await fetch(`https://formsubmit.co/${process.env.EMAIL_PADRAO}`, {
+    await fetch(`https://formsubmit.co/${process.env.emailPadrao}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -90,7 +90,6 @@ export default function Footer () {
         </Box>
 
       <form
-        action="https://formsubmit.co/maxmillianox@gmail.com"
         onSubmit={handleSubmit(onSubmit)}
       >
         <label htmlFor="name">Nome</label>
@@ -123,7 +122,7 @@ export default function Footer () {
         <label htmlFor="assunto">Assunto</label>
         <input {...register('assunto', {
           required: true,
-          maxLength: 20
+          maxLength: 100
         })} />
         {errors.assunto?.type === 'required' &&
           <span>Preencha o assunto apropriadamente</span>
