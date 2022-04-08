@@ -28,7 +28,7 @@ export default function Home ({ changeMode, width } : Props) {
             alt='behance'
             width={45}
             height={45}
-            layout='fixed'
+            layout='intrinsic'
           />
         </Button>
 

@@ -111,7 +111,7 @@ export default function Footer () {
           <span>Preencha o email apropriadamente</span>
         }
 
-        <label htmlFor="telefone">telefone/whatsapp*</label>
+        <label htmlFor="telefone">telefone/whatsapp *</label>
         <input {...register('telefone', {
           // eslint-disable-next-line no-useless-escape
           pattern: /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g
@@ -144,8 +144,8 @@ export default function Footer () {
         >
           Submeter
         </Button>
+        <span>* preenchimento não obrigatório</span>
       </form>
-      <p>* Preenchimento não obrigatório</p>
 
     </FooterWrapper>
   )
