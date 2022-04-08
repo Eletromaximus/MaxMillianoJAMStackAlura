@@ -7,7 +7,6 @@ export const MenuWrapper = styled.nav`
   align-items: center;
   background-color: ${({ theme }) => theme.colors.background};
   color: #000000;
-  padding: 10px;
   width: 100%;
 
   a {
@@ -31,10 +30,15 @@ export const MenuWrapper = styled.nav`
       flex-direction: row;
     `
   })}
-
 `
 export const LeftSide = styled.div`
+  display: flex;
   order: 1;
+  padding-left: 5px;
+
+  a + a {
+    padding-top: 5px;
+  }
 `
 export const MiddleSide = styled.div`
   display: flex;
@@ -43,7 +47,6 @@ export const MiddleSide = styled.div`
   ${breakpointsMedia({
     xs: css`
       width: auto;
-      padding-top: 15px;
     `,
     sm: css`
       width: 170px;
@@ -58,7 +61,6 @@ export const MiddleSide = styled.div`
       width: 511px;
     `
   })}
-
 `
 export const RightSide = styled.div`
   order: 3;
@@ -66,8 +68,6 @@ export const RightSide = styled.div`
   ${breakpointsMedia({
     xs: css`
       width: auto;
-      padding-top: 15px;
     `
   })}
-  
 `

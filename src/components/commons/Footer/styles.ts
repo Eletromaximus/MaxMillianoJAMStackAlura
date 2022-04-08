@@ -6,8 +6,10 @@ export const FooterWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 926px;
+  height: 1000px;
+  width: 100%;
   background-color: #2B2929;
+  color: ${({ theme }) => theme.colors.primary};
 
   ${breakpointsMedia({
     sm: css`
@@ -22,23 +24,19 @@ export const FooterWrapper = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 100%;
+    
     label {
       padding-top: 45px;
-      color: ${({ theme }) => theme.colors.primary};
     }
 
     input {
       margin-top: 15px;
       height: 46px;
       border-radius: 20px;
+      width: 80%;
 
       ${breakpointsMedia({
-        xs: css`
-          width: auto;
-        `,
-        sm: css`
-          width: auto;
-        `,
         md: css`
           width: 700px;
         `
@@ -50,22 +48,22 @@ export const FooterWrapper = styled.div`
       height: 140px;
       border-radius: 8px;
       resize: none;
+      width: 80%;
 
       ${breakpointsMedia({
-        xs: css`
-          width: auto;
-        `,
-        sm: css`
-          width: auto;
-        `,
         md: css`
           width: 700px;
         `
       })}
     }
+
     button {
-      margin-top: 10px;
+      margin: 10px;
     }
+
+    /* span {
+      color:
+    } */
   }
 `
 
