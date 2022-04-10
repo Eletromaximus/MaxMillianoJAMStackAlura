@@ -2,9 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import Capa from '../../commons/Capa'
 import Footer from '../../commons/Footer'
 import Menu from '../../commons/Menu'
-import Modal from '../../commons/Modal'
 import { Box } from '../../foundation/layout/Box'
-import FormCadastro from '../../patterns/FormCadastro'
 import { ModeContext } from '../WebsitePages/provider'
 
 interface IWebsitePagesWrapper {
@@ -71,17 +69,6 @@ export default function WebsitePagesWrapper ({
         }
 
         { capaProps && <Capa/>}
-
-        <Modal
-          isOpen={isModalOpen}
-          onClose={() => { setIsModalState(false) }}>
-          {(propsDoModal: any) => (
-            <FormCadastro
-              propsDoModal={propsDoModal}
-              Close={() => setIsModalState(false)}
-            />
-          )}
-        </Modal>
 
         {children}
 
