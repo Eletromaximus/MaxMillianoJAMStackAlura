@@ -1,11 +1,11 @@
 import Head from 'next/head'
 
 function SEO ({ headTitle }: any) {
-  const pageTitleDefault = 'Portifólio - Max Milliano'
-  const description = 'Portifólio pessoal de programação'
+  const pageTitleDefault = 'Portifólio de Max Milliano'
+  const description = 'Portifólio pessoal de programação focado em React e Node'
   const urlBase = 'https://portifolio-maxmillianox.vercel.app'
   const title = `${pageTitleDefault}`
-  const image = 'https://twitter.com/MillianoSouza/photo'
+  const image = 'https://pbs.twimg.com/profile_images/1521086557373009920/9xcS5ExT_400x400.jpg'
 
   return (
 		<Head>
@@ -21,7 +21,8 @@ function SEO ({ headTitle }: any) {
 			<meta property="og:image" content={image}/>
 
 			{/* <!-- Twitter --> */}
-			<meta property="twitter:card" content="summary_large_image"/>
+			<meta property="twitter:card" content="summary"/>
+			<meta property="twitter:site" content="@MillianoSouza"/>
 			<meta property="twitter:url" content={urlBase} />
 			<meta property="twitter:title" content={title}/>
 			<meta property="twitter:description" content={description}/>

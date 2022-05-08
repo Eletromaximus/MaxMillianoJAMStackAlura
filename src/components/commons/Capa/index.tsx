@@ -4,14 +4,15 @@ import CapaStyle from './styles'
 function Capa () {
   return (
     <CapaStyle>
-      <span>
+      <h1>
         Max Milliano
-      </span>
+      </h1>
 
       <br/>
-      <span>
+
+      <h2>
         Portfólio
-      </span>
+      </h2>
     </CapaStyle>
   )
 }
