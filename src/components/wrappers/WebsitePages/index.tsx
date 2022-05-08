@@ -2,6 +2,7 @@ import React, { createContext, useContext, useEffect, useState } from 'react'
 import Capa from '../../commons/Capa'
 import Footer from '../../commons/Footer'
 import Menu from '../../commons/Menu'
+import SEO from '../../commons/SEO'
 import { Box } from '../../foundation/layout/Box'
 import { ModeContext } from '../WebsitePages/provider'
 
@@ -58,6 +59,7 @@ export default function WebsitePagesWrapper ({
         flexDirection='column'
         {...pageBoxProps}
       >
+        <SEO />
         {menuProps &&
             <Menu
               onClick={() => setIsModalState(!isModalOpen)}
