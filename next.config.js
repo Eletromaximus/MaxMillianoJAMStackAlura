@@ -11,7 +11,7 @@ module.exports = {
       'www.datocms-assets.com'
     ]
   },
-  env: {
-    emailPadrao: 'maxmillianox@gmail.com'
+  compiler: {
+    styledComponent: true
   }
 }

@@ -44,13 +44,18 @@ export function FormCadastro ({ onSubmit }: ISubmit) {
       }
 
       <label htmlFor='email'>Email</label>
-      <input data-testid='email' {...register('email', {
-        required: true,
-        pattern: /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
-      })}/>
+      <input
+        data-testid='email'
+        {...register('email', {
+          // required: true,
+          pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+
+        })}
+      />
       {errors.email?.type === ('pattern' || 'required') &&
         <span>Preencha o email apropriadamente</span>
       }
+      <span>{errors.email?.type}</span>
 
       <label htmlFor='telefone'>telefone/whatsapp *</label>
       <input data-testid='telefone' {...register('telefone', {
@@ -76,7 +81,7 @@ export function FormCadastro ({ onSubmit }: ISubmit) {
         maxLength: 1000
       })}/>
       {errors.mensagem?.type === 'required' &&
-        <span>Preencha o mensagem apropriadamente</span>
+        <span>Preencha a mensagem apropriadamente</span>
       }
 
       <Button
