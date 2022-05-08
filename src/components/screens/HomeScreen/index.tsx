@@ -74,7 +74,7 @@ export default function HomeScreen () {
             Olá,
               Sou Max Milliano, desenvolvedor web.
             Engenheiro por formação e apaixonado pelo universo da programação.
-            Coleciono experiências e me divertindo com os resultados.
+            Coleciono experiências e me divirto com os resultados.
           </Text>
         </Box>
       </Grid.Row>

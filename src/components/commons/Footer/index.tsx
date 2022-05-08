@@ -2,9 +2,7 @@ import React from 'react'
 import { FooterWrapper } from './styles'
 import { Box } from '../../foundation/layout/Box'
 import Text from '../../foundation/Text'
-import Button from '@mui/material/Button'
-import { useForm } from 'react-hook-form'
-
+import { FormCadastro } from '../../patterns/FormCadastro'
 interface IForm{
   name: string,
   email: string,
@@ -14,20 +12,6 @@ interface IForm{
 }
 
 export default function Footer () {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset
-  } = useForm<IForm>({
-    defaultValues: {
-      name: '',
-      email: '',
-      assunto: '',
-      mensagem: ''
-    }
-  })
-
   const onSubmit = async (data: IForm) => {
     await fetch(`https://formsubmit.co/${process.env.emailPadrao}`, {
       method: 'POST',
@@ -46,14 +30,6 @@ export default function Footer () {
         console.log(error)
         alert('Serviço indisponível, tente mais tarde')
       })
-
-    reset({
-      name: '',
-      assunto: '',
-      email: '',
-      mensagem: '',
-      telefone: ''
-    })
   }
 
   return (
@@ -89,62 +65,7 @@ export default function Footer () {
           </Text>
         </Box>
 
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-      >
-        <label htmlFor="name">Nome</label>
-        <input {...register('name', {
-          required: true,
-          pattern: /[A-Z][a-z]* [A-Z][a-z]*/
-        })}/>
-        {errors.name?.type === 'pattern' &&
-          <span>Preencha o nome apropriadamente</span>
-        }
-
-        <label htmlFor="email">Email</label>
-        <input {...register('email', {
-          required: true,
-          pattern: /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+(\.[a-z]+)?$/i
-        })}/>
-        {errors.email?.type === ('pattern' || 'required') &&
-          <span>Preencha o email apropriadamente</span>
-        }
-
-        <label htmlFor="telefone">telefone/whatsapp *</label>
-        <input {...register('telefone', {
-          // eslint-disable-next-line no-useless-escape
-          pattern: /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g
-        })}/>
-        {errors.telefone?.type === 'pattern' &&
-          <span>Preencha o telefone apropriadamente</span>
-        }
-
-        <label htmlFor="assunto">Assunto</label>
-        <input {...register('assunto', {
-          required: true,
-          maxLength: 100
-        })} />
-        {errors.assunto?.type === 'required' &&
-          <span>Preencha o assunto apropriadamente</span>
-        }
-
-        <label htmlFor="mensagem">Mensagem</label>
-        <textarea {...register('mensagem', {
-          required: true,
-          maxLength: 1000
-        })}/>
-        {errors.mensagem?.type === 'required' &&
-          <span>Preencha o mensagem apropriadamente</span>
-        }
-
-        <Button
-          type='submit'
-          variant='contained'
-        >
-          Submeter
-        </Button>
-        <span>* preenchimento não obrigatório</span>
-      </form>
+      <FormCadastro onSubmit={onSubmit} />
 
     </FooterWrapper>
   )

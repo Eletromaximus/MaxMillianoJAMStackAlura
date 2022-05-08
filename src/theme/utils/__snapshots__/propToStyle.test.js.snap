@@ -2,25 +2,45 @@
 
 exports[`propToStyle() when receives an argument with breakpoints renders only one breakpoint resolution 1`] = `
 Array [
-  "@media only screen and (min-width:",
+  "
+        ",
+  "
+        @media only screen and (min-width: ",
   "0",
-  "px){",
+  "px) {
+          ",
   "text-align: center;",
-  "}",
+  "
+        }
+      ",
+  "
+      ",
 ]
 `;
 
 exports[`propToStyle() when receives an argument with breakpoints renders two or more breakpoint resolutions 1`] = `
 Array [
-  "@media only screen and (min-width:",
+  "
+        ",
+  "
+        @media only screen and (min-width: ",
   "0",
-  "px){",
+  "px) {
+          ",
   "text-align: center;",
-  "}",
-  "@media only screen and (min-width:",
+  "
+        }
+      ",
+  "
+        @media only screen and (min-width: ",
   "768",
-  "px){",
+  "px) {
+          ",
   "text-align: right;",
-  "}",
+  "
+        }
+      ",
+  "
+      ",
 ]
 `;

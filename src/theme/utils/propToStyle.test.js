@@ -1,5 +1,9 @@
 import propToStyle from './propToStyle'
 
+/**
+ * @jest-environment jsdom
+ */
+
 describe('propToStyle()', () => {
   describe('when receives an sample argument', () => {
     test('an it is a string', () => {

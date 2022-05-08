@@ -1,116 +1,96 @@
 import React from 'react'
-import Text from '../../foundation/Text'
 import Button from '@mui/material/Button'
-import { useForm } from 'react-hook-form'
+import { useForm, SubmitHandler } from 'react-hook-form'
 
-import { Content, FormMessageWrapper } from './styles'
+import { FormMessageWrapper } from './styles'
 
-function FormContent () {
-  const { register, handleSubmit, formState: { errors } } = useForm({
+interface IForm{
+  name: string,
+  email: string,
+  telefone?: string,
+  assunto: string,
+  mensagem: string,
+}
+
+interface ISubmit {
+  onSubmit: SubmitHandler<IForm>
+}
+
+export function FormCadastro ({ onSubmit }: ISubmit) {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm<IForm>({
     defaultValues: {
       name: '',
       email: '',
-      message: ''
+      assunto: '',
+      mensagem: ''
     }
   })
 
-  const onSubmit = (data: any) => console.log(data)
-
   return (
-    <form
+    <FormMessageWrapper
       onSubmit={handleSubmit(onSubmit)}
-      style={{
-        margin: '30px 20px'
-      }}
-      id='formMessage'
     >
+      <label htmlFor='name'>Nome</label>
+      <input data-testid='name' {...register('name', {
+        required: true,
+        pattern: /([A-Z][a-z]* )?([A-Z][a-z]*)?/
+      })}/>
+      {errors.name?.type === 'pattern' &&
+        <span>Preencha o nome apropriadamente</span>
+      }
 
-      <Text
-        variant='subtitle'
-        tag='h2'
-        color='black'
-      >
-        ENVIE SUA MENSAGEM
-      </Text>
-
-      <Text
-        variant='paragraph1'
-        tag='h3'
-        color='black'
-        name='name'
-      >
-        Seu Nome
-      </Text>
-
+      <label htmlFor='email'>Email</label>
       <input
-        placeholder='Seu Nome'
-        type='text'
-        {...register('name', { required: true, pattern: /[^a-zà-ú]/gi })}
+        data-testid='email'
+        {...register('email', {
+          // required: true,
+          pattern: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i
+
+        })}
       />
-       {errors.name?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
+      {errors.email?.type === ('pattern' || 'required') &&
+        <span>Preencha o email apropriadamente</span>
+      }
+      <span>{errors.email?.type}</span>
 
-      <Text
-        variant='paragraph1'
-        tag='h3'
-        color='black'
-      >
-        Seu Email
-      </Text>
+      <label htmlFor='telefone'>telefone/whatsapp *</label>
+      <input data-testid='telefone' {...register('telefone', {
+        // eslint-disable-next-line no-useless-escape
+        pattern: /(\(?\d{2}\)?\s)?(\d{4,5}\-\d{4})/g
+      })}/>
+      {errors.telefone?.type === 'pattern' &&
+        <span>Preencha o telefone apropriadamente</span>
+      }
 
-      <input
-        placeholder='Seu Email'
-        type='text'
-        {...register('email', { required: true })}
-      />
-      {errors.email?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
+      <label htmlFor='assunto'>Assunto</label>
+      <input data-testid='assunto' {...register('assunto', {
+        required: true,
+        maxLength: 100
+      })} />
+      {errors.assunto?.type === 'required' &&
+        <span>Preencha o assunto apropriadamente</span>
+      }
 
-      <Text
-        variant='paragraph1'
-        tag='h3'
-        color='black'
-      >
-        Sua Mensagem
-      </Text>
-
-      <textarea
-        style={{
-          width: '80%',
-          border: '1px solid black',
-          padding: '12px 16px',
-          outline: '0',
-          resize: 'none'
-        }}
-        {...register('message', { required: true, maxLength: 500 })}
-      />
-      {errors.message?.type === 'required' && <Text tag='span' color='purple'> Esse campo é necessário </Text>}
+      <label htmlFor='mensagem'>Mensagem</label>
+      <textarea data-testid='mensagem' {...register('mensagem', {
+        required: true,
+        maxLength: 1000
+      })}/>
+      {errors.mensagem?.type === 'required' &&
+        <span>Preencha a mensagem apropriadamente</span>
+      }
 
       <Button
         type='submit'
-        style={{
-          marginTop: '20px',
-          width: '80%',
-          backgroundColor: '#4f4789',
-          color: '#fffded'
-        }}
-        // disabled={isFomInvalid}
-        fullWidth
-        variant='outlined'
+        variant='contained'
       >
-        Cadastrar
+        Submeter
       </Button>
-
-    </form>
-  )
-}
-
-export default function FormCadastro ({ propsDoModal }: any) {
-  return (
-
-    <FormMessageWrapper>
-      <Content {...propsDoModal}>
-        <FormContent />
-      </Content>
+      <span>* preenchimento não obrigatório</span>
     </FormMessageWrapper>
-
   )
 }
