@@ -1,7 +1,6 @@
 import React from 'react'
 import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
-import SEO from '../src/components/commons/SEO'
 export default class MyDocument extends Document {
   static async getInitialProps (ctx: any): Promise<any> {
     const sheet = new ServerStyleSheet()
@@ -31,9 +30,8 @@ export default class MyDocument extends Document {
 
   render () {
     return (
-      <Html lang="en">
+      <Html lang="pt-BR">
         <Head>
-          <SEO />
           <link
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
