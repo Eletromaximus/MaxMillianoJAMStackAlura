@@ -24,7 +24,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "jest.config.js",
+    "jest.config.ts",
     "config/redirects.test.js",
     "jest.setup.js"
   ],
