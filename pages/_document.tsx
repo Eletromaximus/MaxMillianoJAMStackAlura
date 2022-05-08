@@ -3,7 +3,7 @@ import Document, { Head, Html, Main, NextScript } from 'next/document'
 import { ServerStyleSheet } from 'styled-components'
 import SEO from '../src/components/commons/SEO'
 export default class MyDocument extends Document {
-  static async getInitialProps (ctx: any) {
+  static async getInitialProps (ctx: any): Promise<any> {
     const sheet = new ServerStyleSheet()
     const originalRenderPage = ctx.renderPage
 
