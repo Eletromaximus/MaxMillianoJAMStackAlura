@@ -31,7 +31,7 @@ const CapaStyle = styled.div`
     `
   })}
   
-  span {
+  h1 {
     weight: 400;
     font-family: Poppins, sans-serif;
     ${breakpointsMedia({
@@ -49,7 +49,7 @@ const CapaStyle = styled.div`
     font-size: 72px;
   }
 
-  span:nth-child(3) {
+  h2:nth-child(3) {
     font-size: 42px;
   }
 

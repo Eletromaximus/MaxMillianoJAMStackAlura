@@ -17,10 +17,11 @@ function Resume () {
 			}}
 		>
 			<Text
+				tag='h2'
 				variant='title'
 				color='#1E32E1'
 			>
-				Resume
+				Resumo
 			</Text>
 
 			<Box
@@ -48,6 +49,7 @@ function Resume () {
 					maxWidth='576px'
 				>
 					<Text
+						tag='h2'
 						variant='title'
 					>
 						Minha tragetória profissional e acadêmica
